@@ -8,7 +8,8 @@ Addressindex
 
 Returns the balance for an address(es) (requires addressindex to be enabled).
 
-*Arguments:*```
+*Arguments:*
+```
 1. {
   "addresses"
     [
@@ -18,16 +19,22 @@ Returns the balance for an address(es) (requires addressindex to be enabled).
 }
 2. separated_output(boolean) If set to true, will return balances of the addresses passed in as an array instead of the summed balance. Default is false.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "balance"  (string) The current balance in satoshis
   "received"  (string) The total number of satoshis received (including change)
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddressbalance '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}' true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaddressdeltas`**
 
@@ -35,7 +42,8 @@ Returns the balance for an address(es) (requires addressindex to be enabled).
 
 Returns all changes for an address (requires addressindex to be enabled).
 
-*Arguments:*```
+*Arguments:*
+```
 {
   "addresses"
     [
@@ -46,7 +54,10 @@ Returns all changes for an address (requires addressindex to be enabled).
   "end" (number) The end block height
 }
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "satoshis"  (number) The difference of satoshis
@@ -58,10 +69,13 @@ Returns all changes for an address (requires addressindex to be enabled).
   }
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddressdeltas '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaddressmempool`**
 
@@ -69,7 +83,8 @@ Returns all changes for an address (requires addressindex to be enabled).
 
 Returns all mempool deltas for an address (requires addressindex to be enabled).
 
-*Arguments:*```
+*Arguments:*
+```
 {
   "addresses"
     [
@@ -78,7 +93,10 @@ Returns all mempool deltas for an address (requires addressindex to be enabled).
     ]
 }
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "address"  (string) The base58check encoded address
@@ -91,10 +109,13 @@ Returns all mempool deltas for an address (requires addressindex to be enabled).
   }
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddressmempool '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressmempool", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaddresstxids`**
 
@@ -102,7 +123,8 @@ Returns all mempool deltas for an address (requires addressindex to be enabled).
 
 Returns the txids for an address(es) (requires addressindex to be enabled).
 
-*Arguments:*```
+*Arguments:*
+```
 {
   "addresses"
     [
@@ -113,16 +135,22 @@ Returns the txids for an address(es) (requires addressindex to be enabled).
   "end" (number) The end block height
 }
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   "transactionid"  (string) The transaction id
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddresstxids '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddresstxids", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaddressutxos`**
 
@@ -130,7 +158,8 @@ Returns the txids for an address(es) (requires addressindex to be enabled).
 
 Returns all unspent outputs for an address (requires addressindex to be enabled).
 
-*Arguments:*```
+*Arguments:*
+```
 {
   "addresses"
     [
@@ -139,7 +168,10 @@ Returns all unspent outputs for an address (requires addressindex to be enabled)
     ]
 }
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "address"  (string) The address base58check encoded
@@ -151,10 +183,13 @@ Returns all unspent outputs for an address (requires addressindex to be enabled)
   }
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddressutxos '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressutxos", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 
 
@@ -166,13 +201,19 @@ Blockchain
 
 Returns the hash of the best (tip) block in the longest blockchain.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "hex"      (string) the block hash hex encoded
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getbestblockhash 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbestblockhash", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblock`**
 
@@ -181,11 +222,15 @@ Returns the hash of the best (tip) block in the longest blockchain.
 If verbose is false, returns a string that is serialized, hex-encoded data for block 'hash'.
 If verbose is true, returns an Object with information about block <hash>.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "blockhash"          (string, required) The block hash
 2. verbose                (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
-```*Result (for verbose = true):*```
+```
+
+*Result*
+``` (for verbose = true):
 {
   "hash" : "hash",     (string) the block hash (same as provided)
   "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -208,20 +253,29 @@ If verbose is true, returns an Object with information about block <hash>.
   "nextblockhash" : "hash"       (string) The hash of the next block
 }
 
-```*Result (for verbose=false):*```
+```
+
+*Result*
+``` (for verbose=false):
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblock "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblockchaininfo`**
 
 *`getblockchaininfo`*
 Returns an object containing various state info regarding blockchain processing.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "chain": "xxxx",        (string) current network name as defined in BIP70 (main, test, regtest)
   "blocks": xxxxxx,         (numeric) the current number of blocks processed in the server
@@ -253,10 +307,13 @@ Returns an object containing various state info regarding blockchain processing.
   }
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblockchaininfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblockcount`**
 
@@ -264,13 +321,19 @@ Returns an object containing various state info regarding blockchain processing.
 
 Returns the number of blocks in the longest blockchain.
 
-```*Result:*```
+```
+
+*Result*
+```:
 n    (numeric) The current block count
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblockcount 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblockhash`**
 
@@ -278,16 +341,23 @@ n    (numeric) The current block count
 
 Returns hash of block in best-block-chain at height provided.
 
-*Arguments:*```
+*Arguments:*
+```
 1. height         (numeric, required) The height index
 
-```*Result:*```
+```
+
+*Result*
+```:
 "hash"         (string) The block hash
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblockhash 1000
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhash", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblockhashes`**
 
@@ -295,19 +365,26 @@ Returns hash of block in best-block-chain at height provided.
 
 Returns array of hashes of blocks within the timestamp range provided.
 
-*Arguments:*```
+*Arguments:*
+```
 1. high         (numeric, required) The newer block timestamp
 2. low          (numeric, required) The older block timestamp
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   "hash"         (string) The block hash
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblockhashes 1231614698 1231024505
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblockheader`**
 
@@ -316,11 +393,15 @@ Returns array of hashes of blocks within the timestamp range provided.
 If verbose is false, returns a string that is serialized, hex-encoded data for blockheader 'hash'.
 If verbose is true, returns an Object with information about blockheader <hash>.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hash"          (string, required) The block hash
 2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
-```*Result (for verbose = true):*```
+```
+
+*Result*
+``` (for verbose = true):
 {
   "hash" : "hash",     (string) the block hash (same as provided)
   "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -338,13 +419,19 @@ If verbose is true, returns an Object with information about blockheader <hash>.
   "nextblockhash" : "hash",      (string) The hash of the next block
 }
 
-```*Result (for verbose=false):*```
+```
+
+*Result*
+``` (for verbose=false):
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockheader", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblockheaders`**
 
@@ -355,12 +442,16 @@ Returns an array of items with information about <count> blockheaders starting f
 If verbose is false, each item is a string that is serialized, hex-encoded data for a single blockheader.
 If verbose is true, each item is an Object with information about a single blockheader.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hash"          (string, required) The block hash
 2. count           (numeric, optional, default/max=2000)
 3. verbose         (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
-```*Result (for verbose = true):*```
+```
+
+*Result*
+``` (for verbose = true):
 [ {
   "hash" : "hash",               (string)  The block hash
   "confirmations" : n,           (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -381,27 +472,37 @@ If verbose is true, each item is an Object with information about a single block
 ...
 ]
 
-```*Result (for verbose=false):*```
+```
+
+*Result*
+``` (for verbose=false):
 [
   "data",                        (string)  A string that is serialized, hex-encoded data for block header.
   ...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblockheaders "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09" 2000
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockheaders", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09" 2000] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getchaintips`**
 
 *`getchaintips ( count branchlen )`*
 Return information about all known tips in the block tree, including the main chain as well as orphaned branches.
 
-*Arguments:*```
+*Arguments:*
+```
 1. count       (numeric, optional) only show this much of latest tips
 2. branchlen   (numeric, optional) only show tips that have equal or greater length of branch
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "height": xxxx,             (numeric) height of the chain tip
@@ -429,10 +530,13 @@ Possible values for status:
 4.  "valid-fork"            This branch is not part of the active chain, but is fully validated
 5.  "active"                This is the tip of the active main chain, which is certainly valid
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getchaintips 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getchaintips", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getdifficulty`**
 
@@ -440,13 +544,19 @@ Possible values for status:
 
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-```*Result:*```
+```
+
+*Result*
+```:
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getdifficulty 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getdifficulty", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getmempoolancestors`**
 
@@ -454,17 +564,24 @@ n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum 
 
 If txid is in the mempool, returns all in-mempool ancestors.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"                 (string, required) The transaction id (must be in mempool)
 2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
-```*Result (for verbose=false):*```
+```
+
+*Result*
+``` (for verbose=false):
 [                       (json array of strings)
   "transactionid"           (string) The transaction id of an in-mempool ancestor transaction
   ,...
 ]
 
-```*Result (for verbose=true):*```
+```
+
+*Result*
+``` (for verbose=true):
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -486,10 +603,13 @@ If txid is in the mempool, returns all in-mempool ancestors.
   }, ...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getmempoolancestors "mytxid"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolancestors", "params": ["mytxid"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getmempooldescendants`**
 
@@ -497,17 +617,24 @@ If txid is in the mempool, returns all in-mempool ancestors.
 
 If txid is in the mempool, returns all in-mempool descendants.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"                 (string, required) The transaction id (must be in mempool)
 2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
-```*Result (for verbose=false):*```
+```
+
+*Result*
+``` (for verbose=false):
 [                       (json array of strings)
   "transactionid"           (string) The transaction id of an in-mempool descendant transaction
   ,...
 ]
 
-```*Result (for verbose=true):*```
+```
+
+*Result*
+``` (for verbose=true):
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -529,10 +656,13 @@ If txid is in the mempool, returns all in-mempool descendants.
   }, ...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getmempooldescendants "mytxid"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempooldescendants", "params": ["mytxid"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getmempoolentry`**
 
@@ -540,10 +670,14 @@ If txid is in the mempool, returns all in-mempool descendants.
 
 Returns mempool data for given transaction
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"                   (string, required) The transaction id (must be in mempool)
 
-```*Result:*```
+```
+
+*Result*
+```:
 {                           (json object)
     "size" : n,             (numeric) transaction size in bytes
     "fee" : n,              (numeric) transaction fee in SYS
@@ -563,10 +697,13 @@ Returns mempool data for given transaction
        ... ]
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getmempoolentry "mytxid"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolentry", "params": ["mytxid"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getmempoolinfo`**
 
@@ -574,7 +711,10 @@ Returns mempool data for given transaction
 
 Returns details on the active state of the TX memory pool.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "size": xxxxx,               (numeric) Current tx count
   "bytes": xxxxx,              (numeric) Sum of all tx sizes
@@ -583,10 +723,13 @@ Returns details on the active state of the TX memory pool.
   "mempoolminfee": xxxxx       (numeric) Minimum fee for tx to be accepted
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getmempoolinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getrawmempool`**
 
@@ -596,16 +739,23 @@ Returns all transaction ids in memory pool as a json array of string transaction
 
 Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
-*Arguments:*```
+*Arguments:*
+```
 1. verbose (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
-```*Result: (for verbose = false):*```
+```
+
+*Result*
+```: (for verbose = false):
 [                     (json array of string)
   "transactionid"     (string) The transaction id
   ,...
 ]
 
-```*Result: (for verbose = true):*```
+```
+
+*Result*
+```: (for verbose = true):
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -627,10 +777,13 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
   }, ...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getrawmempool true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawmempool", "params": [true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getspentinfo`**
 
@@ -638,23 +791,30 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
 Returns the txid and index where an output is spent.
 
-*Arguments:*```
+*Arguments:*
+```
 {
   "txid" (string) The hex string of the txid
   "index" (number) The start block height
 }
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "txid"  (string) The transaction id
   "index"  (number) The spending input index
   ,...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getspentinfo '{"txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9", "index": 0}'
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getspentinfo", "params": [{"txid": "0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9", "index": 0}] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`gettxout`**
 
@@ -662,12 +822,16 @@ Returns the txid and index where an output is spent.
 
 Returns details about an unspent transaction output.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"       (string, required) The transaction id
 2. n              (numeric, required) vout number
 3. include_mempool  (boolean, optional) Whether to include the mempool
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "bestblock" : "hash",    (string) the block hash
   "confirmations" : n,       (numeric) The number of confirmations
@@ -686,7 +850,10 @@ Returns details about an unspent transaction output.
   "coinbase" : true|false   (boolean) Coinbase or not
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Get unspent transactions
 > syscoin-cli listunspent 
@@ -696,7 +863,7 @@ View the details
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxout", "params": ["txid", 1] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`gettxoutproof`**
 
@@ -709,7 +876,8 @@ unspent output in the utxo for this transaction. To make it always work,
 you need to maintain a transaction index, using the -txindex command line option or
 specify the block in which the transaction is included manually (by blockhash).
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txids"       (string) A json array of txids to filter
     [
       "txid"     (string) A transaction hash
@@ -717,14 +885,20 @@ specify the block in which the transaction is included manually (by blockhash).
     ]
 2. "blockhash"   (string, optional) If specified, looks for txid in the block with this hash
 
-```*Result:*```
+```
+
+*Result*
+```:
 "data"           (string) A string that is a serialized, hex-encoded data for the proof.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli gettxoutproof '["mytxid",...]'
 > syscoin-cli gettxoutproof '["mytxid",...]' "blockhash"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutproof", "params": [["mytxid",...], "blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`gettxoutsetinfo`**
 
@@ -733,7 +907,10 @@ specify the block in which the transaction is included manually (by blockhash).
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "height":n,     (numeric) The current block height (index)
   "bestblock": "hex",   (string) the best block hash hex
@@ -744,10 +921,13 @@ Note this call may take some time.
   "total_amount": x.xxx          (numeric) The total amount
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli gettxoutsetinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`preciousblock`**
 
@@ -759,31 +939,45 @@ A later preciousblock call can override the effect of an earlier one.
 
 The effects of preciousblock are not retained across restarts.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "blockhash"   (string, required) the hash of the block to mark as precious
 
-```*Result:*```
+```
 
-```*Examples:*```
+*Result*
+```:
+
+```
+
+*Examples:*
+```
 > syscoin-cli preciousblock "blockhash"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "preciousblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`pruneblockchain`**
 
 *`pruneblockchain`*
 
-*Arguments:*```
+*Arguments:*
+```
 1. "height"       (numeric, required) The block height to prune up to. May be set to a discrete height, or a unix timestamp
                   to prune blocks whose block time is at least 2 hours older than the provided timestamp.
 
-```*Result:*```
+```
+
+*Result*
+```:
 n    (numeric) Height of the last block pruned.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli pruneblockchain 1000
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "pruneblockchain", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`verifychain`**
 
@@ -791,17 +985,24 @@ n    (numeric) Height of the last block pruned.
 
 Verifies blockchain database.
 
-*Arguments:*```
+*Arguments:*
+```
 1. checklevel   (numeric, optional, 0-4, default=4) How thorough the block verification is.
 2. nblocks      (numeric, optional, default=6, 0=all) The number of blocks to check.
 
-```*Result:*```
+```
+
+*Result*
+```:
 true|false       (boolean) Verified or not
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli verifychain 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`verifytxoutproof`**
 
@@ -810,16 +1011,23 @@ true|false       (boolean) Verified or not
 Verifies that a proof points to a transaction in a block, returning the transaction it commits to
 and throwing an RPC error if the block is not in our best chain
 
-*Arguments:*```
+*Arguments:*
+```
 1. "proof"    (string, required) The hex-encoded proof generated by gettxoutproof
 
-```*Result:*```
+```
+
+*Result*
+```:
 ["txid"]      (array, strings) The txid(s) which the proof commits to, or empty array if the proof is invalid
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli verifytxoutproof "proof"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutproof", "params": ["proof"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 
 
@@ -830,10 +1038,13 @@ Control
 *`debug ( 0|1|addrman|alert|bench|coindb|db|lock|rand|rpc|selectcoins|mempool|mempoolrej|net|proxy|prune|http|libevent|tor|zmq|syscoin|privatesend|instantsend|masternode|spork|keepass|mnpayments|gobject )`*
 Change debug category on the fly. Specify single category or use '+' to specify many.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli debug syscoin
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "debug", "params": [syscoin+net] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getinfo`**
 
@@ -841,7 +1052,10 @@ Change debug category on the fly. Specify single category or use '+' to specify 
 
 DEPRECATED. Returns an object containing various state info.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "version": xxxxx,           (numeric) the server version
   "dashversion": xxxxx,       (numeric) the server dashpay version
@@ -863,17 +1077,23 @@ DEPRECATED. Returns an object containing various state info.
   "errors": "..."           (string) any error messages
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getmemoryinfo`**
 
 *`getmemoryinfo`*
 Returns an object containing information about memory usage.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "locked": {               (json object) Information about locked memory manager
     "used": xxxxx,          (numeric) Number of bytes used
@@ -885,10 +1105,13 @@ Returns an object containing information about memory usage.
   }
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getmemoryinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmemoryinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`help`**
 
@@ -896,19 +1119,23 @@ Returns an object containing information about memory usage.
 
 List all commands, or get help for a specified command.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "command"     (string, optional) The command to get help on
 
-```*Result:*```
+```
+
+*Result*
+```:
 "text"     (string) The help text
-\`\`\`
+```
 
 ## **`stop`**
 
 *`stop`*
 
 Stop Syscoin Core server.
-\`\`\`
+```
 
 
 
@@ -920,18 +1147,25 @@ Generating
 
 Mine up to nblocks blocks immediately (before the RPC call returns) to an address in the wallet.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks      (numeric, required) How many blocks are generated immediately.
 2. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
 
-```*Result:*```
+```
+
+*Result*
+```:
 [ blockhashes ]     (array) hashes of blocks generated
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Generate 11 blocks
 > syscoin-cli generate 11
-\`\`\`
+```
 
 ## **`generatetoaddress`**
 
@@ -939,19 +1173,26 @@ Generate 11 blocks
 
 Mine blocks immediately to a specified address (before the RPC call returns)
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks      (numeric, required) How many blocks are generated immediately.
 2. address      (string, required) The address to send the newly generated Syscoin to.
 3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
 
-```*Result:*```
+```
+
+*Result*
+```:
 [ blockhashes ]     (array) hashes of blocks generated
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Generate 11 blocks to myaddress
 > syscoin-cli generatetoaddress 11 "myaddress"
-\`\`\`
+```
 
 
 
@@ -963,10 +1204,14 @@ Mining
 
 create a new block and return information required to merge-mine it.
 
-*Arguments:*```
+*Arguments:*
+```
 1. address      (string, required) specify coinbase transaction payout address
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "hash"               (string) hash of the created block
   "chainid"            (numeric) chain ID for this block
@@ -977,10 +1222,13 @@ create a new block and return information required to merge-mine it.
   "_target"            (string) target in reversed byte order, deprecated
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli createauxblock "address"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createauxblock", "params": ["address"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getauxblock`**
 
@@ -992,11 +1240,15 @@ Without arguments, create a new block and return information
 required to merge-mine it.  With arguments, submit a solved
 auxpow for a previously returned block.
 
-*Arguments:*```
+*Arguments:*
+```
 1. hash      (string, optional) hash of the block to submit
 2. auxpow    (string, optional) serialised auxpow found
 
-```*Result (without arguments):*```
+```
+
+*Result*
+``` (without arguments):
 {
   "hash"               (string) hash of the created block
   "chainid"            (numeric) chain ID for this block
@@ -1007,14 +1259,20 @@ auxpow for a previously returned block.
   "_target"            (string) target in reversed byte order, deprecated
 }
 
-```*Result (with arguments):*```
+```
+
+*Result*
+``` (with arguments):
 xxxxx        (boolean) whether the submitted block was correct
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getauxblock 
 > syscoin-cli getauxblock "hash" "serialised auxpow"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getauxblock", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getblocktemplate`**
 
@@ -1027,7 +1285,8 @@ For full specification, see BIPs 22, 23, and 9:
     https://github.com/syscoin/bips/blob/master/bip-0023.mediawiki
     https://github.com/syscoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes
 
-*Arguments:*```
+*Arguments:*
+```
 1. template_request         (json object, optional) A json object in the following spec
      {
        "mode":"template"    (string, optional) This must be set to "template", "proposal" (see BIP 23), or omitted
@@ -1042,7 +1301,10 @@ For full specification, see BIPs 22, 23, and 9:
      }
 
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "capabilities" : [ "capability", ... ],    (array of strings) specific client side supported features
   "version" : n,                    (numeric) The preferred block version
@@ -1103,17 +1365,23 @@ For full specification, see BIPs 22, 23, and 9:
   "superblocks_enabled" : true|false  (boolean) true, if superblock payments are enabled
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getblocktemplate 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getmininginfo`**
 
 *`getmininginfo`*
 
 Returns a json object containing mining-related information.
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "blocks": nnn,             (numeric) The current block
   "currentblocksize": nnn,   (numeric) The last block size
@@ -1125,10 +1393,13 @@ Returns a json object containing mining-related information.
   "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getmininginfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getnetworkhashps`**
 
@@ -1138,24 +1409,32 @@ Returns the estimated network hashes per second based on the last n blocks.
 Pass in [blocks] to override # of blocks, -1 specifies since last difficulty change.
 Pass in [height] to estimate the network speed at the time when a certain block was found.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.
 2. height      (numeric, optional, default=-1) To estimate at the time of the given height.
 
-```*Result:*```
+```
+
+*Result*
+```:
 x             (numeric) Hashes per second estimated
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getnetworkhashps 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkhashps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`prioritisetransaction`**
 
 *`prioritisetransaction <txid> <priority delta> <fee delta>`*
 Accepts the transaction into mined blocks at a higher (or lower) priority
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"       (string, required) The transaction id.
 2. priority_delta (numeric, required) The priority to add or subtract.
                   The transaction selection algorithm considers the tx as it would have a higher priority.
@@ -1164,13 +1443,19 @@ Accepts the transaction into mined blocks at a higher (or lower) priority
                   The fee is not actually paid, only the algorithm for selecting transactions into a block
                   considers the transaction as it would have paid a higher (or lower) fee.
 
-```*Result:*```
+```
+
+*Result*
+```:
 true              (boolean) Returns true
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli prioritisetransaction "txid" 0.0 10000
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "prioritisetransaction", "params": ["txid", 0.0, 10000] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`submitauxblock`**
 
@@ -1178,17 +1463,24 @@ true              (boolean) Returns true
 
 submit a solved auxpow for a previously block created by 'createauxblock'.
 
-*Arguments:*```
+*Arguments:*
+```
 1. hash      (string, required) hash of the block to submit
 2. auxpow    (string, required) serialised auxpow found
 
-```*Result:*```
+```
+
+*Result*
+```:
 xxxxx        (boolean) whether the submitted block was correct
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli submitauxblock "hash" "serialised auxpow"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitauxblock", "params": ["hash" "serialised auxpow"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`submitblock`**
 
@@ -1198,19 +1490,26 @@ Attempts to submit new block to network.
 The 'jsonparametersobject' parameter is currently ignored.
 See https://en.syscoin.it/wiki/BIP_0022 for full specification.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexdata"        (string, required) the hex-encoded block data to submit
 2. "parameters"     (string, optional) object of optional parameters
     {
       "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
     }
 
-```*Result:*```
+```
 
-```*Examples:*```
+*Result*
+```:
+
+```
+
+*Examples:*
+```
 > syscoin-cli submitblock "mydata"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitblock", "params": ["mydata"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 
 
@@ -1223,14 +1522,18 @@ Network
 Attempts add or remove a node from the addnode list.
 Or try a connection to a node once.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "node"     (string, required) The node (see getpeerinfo for nodes)
 2. "command"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli addnode "192.168.0.6:8369" "onetry"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addnode", "params": ["192.168.0.6:8369", "onetry"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`clearbanned`**
 
@@ -1238,10 +1541,13 @@ Or try a connection to a node once.
 
 Clear all banned IPs.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli clearbanned 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "clearbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`disconnectnode`**
 
@@ -1249,13 +1555,17 @@ Clear all banned IPs.
 
 Immediately disconnects from the specified node.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"     (string, required) The IP address/port of the node
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli disconnectnode "192.168.0.6:8369"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "disconnectnode", "params": ["192.168.0.6:8369"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaddednodeinfo`**
 
@@ -1264,10 +1574,14 @@ Immediately disconnects from the specified node.
 Returns information about the given added node, or all added nodes
 (note that onetry addnodes are not listed here)
 
-*Arguments:*```
+*Arguments:*
+```
 1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "addednode" : "192.168.0.201",   (string) The node ip address or name (as provided to addnode)
@@ -1282,11 +1596,14 @@ Returns information about the given added node, or all added nodes
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddednodeinfo 
 > syscoin-cli getaddednodeinfo "192.168.0.201"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddednodeinfo", "params": ["192.168.0.201"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getconnectioncount`**
 
@@ -1294,13 +1611,19 @@ Returns information about the given added node, or all added nodes
 
 Returns the number of connections to other nodes.
 
-```*Result:*```
+```
+
+*Result*
+```:
 n          (numeric) The connection count
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getconnectioncount 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getconnectioncount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getnettotals`**
 
@@ -1309,7 +1632,10 @@ n          (numeric) The connection count
 Returns information about network traffic, including bytes in, bytes out,
 and current time.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "totalbytesrecv": n,   (numeric) Total bytes received
   "totalbytessent": n,   (numeric) Total bytes sent
@@ -1325,17 +1651,23 @@ and current time.
   }
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getnettotals 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnettotals", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getnetworkinfo`**
 
 *`getnetworkinfo`*
 Returns an object containing various state info regarding P2P networking.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "version": xxxxx,                      (numeric) the server version
   "subversion": "/Syscoin Core:x.x.x/",     (string) the server subversion string
@@ -1368,10 +1700,13 @@ Returns an object containing various state info regarding P2P networking.
   "warnings": "..."                    (string) any network warnings
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getnetworkinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getpeerinfo`**
 
@@ -1379,7 +1714,10 @@ Returns an object containing various state info regarding P2P networking.
 
 Returns data about each connected network node as a json array of objects.
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "id": n,                   (numeric) Peer index
@@ -1421,10 +1759,13 @@ Returns data about each connected network node as a json array of objects.
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getpeerinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpeerinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listbanned`**
 
@@ -1432,23 +1773,32 @@ Returns data about each connected network node as a json array of objects.
 
 List all banned IPs/Subnets.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listbanned 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`ping`**
 
 *`ping`*
 
 Requests that a ping be sent to all other nodes, to measure ping time.
-```*Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.*```
+```
+
+*Result*
+```s provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
 Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli ping 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`setban`**
 
@@ -1456,17 +1806,21 @@ Ping command is handled in queue with all other commands, so it measures process
 
 Attempts add or remove a IP/Subnet from the banned list.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "subnet"       (string, required) The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)
 2. "command"      (string, required) 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list
 3. "bantime"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)
 4. "absolute"     (boolean, optional) If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli setban "192.168.0.6" "add" 86400
 > syscoin-cli setban "192.168.0.0/24" "add"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setban", "params": ["192.168.0.6", "add", 86400] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`setnetworkactive`**
 
@@ -1474,9 +1828,10 @@ Attempts add or remove a IP/Subnet from the banned list.
 
 Disable/enable all p2p network activity.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "state"        (boolean, required) true to enable networking, false to disable
-\`\`\`
+```
 
 
 
@@ -1492,7 +1847,8 @@ Returns hex-encoded raw transaction.
 Note that the transaction's inputs are not signed, and
 it is not stored in the wallet or transmitted to the network.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "inputs"                (array, required) A json array of json objects
      [
        {
@@ -1510,15 +1866,21 @@ it is not stored in the wallet or transmitted to the network.
     }
 3. locktime                  (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs
 
-```*Result:*```
+```
+
+*Result*
+```:
 "transaction"              (string) hex string of the transaction
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"address\":0.01}"
 > syscoin-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"data\":\"00010203\"}"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"address\":0.01}"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"data\":\"00010203\"}"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`decoderawtransaction`**
 
@@ -1526,10 +1888,14 @@ it is not stored in the wallet or transmitted to the network.
 
 Return a JSON object representing the serialized, hex-encoded transaction.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexstring"      (string, required) The transaction hex string
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "txid" : "id",        (string) The transaction id
   "size" : n,             (numeric) The transaction size
@@ -1566,10 +1932,13 @@ Return a JSON object representing the serialized, hex-encoded transaction.
   ],
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli decoderawtransaction "hexstring"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decoderawtransaction", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`decodescript`**
 
@@ -1577,10 +1946,14 @@ Return a JSON object representing the serialized, hex-encoded transaction.
 
 Decode a hex-encoded script.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexstring"     (string) the hex encoded script
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "asm":"asm",   (string) Script public key
   "hex":"hex",   (string) hex encoded public key
@@ -1593,10 +1966,13 @@ Decode a hex-encoded script.
   "p2sh","address" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli decodescript "hexstring"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decodescript", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`fundrawtransaction`**
 
@@ -1613,7 +1989,8 @@ in the wallet using importaddress or addmultisigaddress (to calculate fees).
 You can see whether this is the case by checking the "solvable" field in the listunspent output.
 Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexstring"           (string, required) The hex string of the raw transaction
 2. options                 (object, optional)
    {
@@ -1632,14 +2009,20 @@ Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported 
    }
                          for backward compatibility: passing in a true instead of an object will result in {"includeWatching":true}
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)
   "fee":       n,         (numeric) Fee in SYS the resulting transaction pays
   "changepos": n          (numeric) The position of the added change output, or -1
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Create a transaction with no inputs
 > syscoin-cli createrawtransaction "[]" "{\"myaddress\":0.01}"
@@ -1652,7 +2035,7 @@ Sign the transaction
 
 Send the transaction
 > syscoin-cli sendrawtransaction "signedtransactionhex"
-\`\`\`
+```
 
 ## **`getrawtransaction`**
 
@@ -1667,14 +2050,21 @@ Return the raw transaction data.
 If verbose is 'true', returns an Object with information about 'txid'.
 If verbose is 'false' or omitted, returns a string that is serialized, hex-encoded data for 'txid'.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"      (string, required) The transaction id
 2. verbose       (bool, optional, default=false) If false, return a string, otherwise return a json object
 
-```*Result (if verbose is not set or set to false):*```
+```
+
+*Result*
+``` (if verbose is not set or set to false):
 "data"      (string) The serialized, hex-encoded data for 'txid'
 
-```*Result (if verbose is set to true):*```
+```
+
+*Result*
+``` (if verbose is set to true):
 {
   "hex" : "data",       (string) The serialized, hex-encoded data for 'txid'
   "txid" : "id",        (string) The transaction id (same as provided)
@@ -1716,11 +2106,14 @@ If verbose is 'false' or omitted, returns a string that is serialized, hex-encod
   "blocktime" : ttt         (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getrawtransaction "mytxid"
 > syscoin-cli getrawtransaction "mytxid" true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawtransaction", "params": ["mytxid", true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`sendrawtransaction`**
 
@@ -1730,15 +2123,22 @@ Submits raw transaction (serialized, hex-encoded) to local node and network.
 
 Also see createrawtransaction and signrawtransaction calls.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexstring"    (string, required) The hex string of the raw transaction)
 2. allowhighfees  (boolean, optional, default=false) Allow high fees
 3. instantsend    (boolean, optional, default=false) Use InstantSend to send this transaction
 
-```*Result:*```
+```
+
+*Result*
+```:
 "hex"             (string) The transaction hash in hex
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Create a transaction
 > syscoin-cli createrawtransaction "[{\"txid\" : \"mytxid\",\"vout\":0}]" "{\"myaddress\":0.01}"
@@ -1750,7 +2150,7 @@ Send the transaction (signed hex)
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendrawtransaction", "params": ["signedhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`signrawtransaction`**
 
@@ -1764,7 +2164,8 @@ keys that, if given, will be the only keys used to sign the transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexstring"     (string, required) The transaction hex string
 2. "prevtxs"       (string, optional) An json array of previous dependent transaction outputs
      [               (json array of json objects, or 'null' if none provided)
@@ -1789,7 +2190,10 @@ Requires wallet passphrase to be set with walletpassphrase call.
        "NONE|ANYONECANPAY"
        "SINGLE|ANYONECANPAY"
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
   "complete" : true|false,   (boolean) If the transaction has a complete set of signatures
@@ -1805,10 +2209,13 @@ Requires wallet passphrase to be set with walletpassphrase call.
   ]
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli signrawtransaction "myhex"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signrawtransaction", "params": ["myhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 
 
@@ -1819,7 +2226,10 @@ Syscoin
 *`getgovernanceinfo`*
 Returns an object containing governance parameters.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "governanceminquorum": xxxxx,           (numeric) the absolute minimum number of votes needed to trigger a governance action
   "masternodewatchdogmaxseconds": xxxxx,  (numeric) sentinel watchdog expiration time in seconds (DEPRECATED)
@@ -1831,16 +2241,19 @@ Returns an object containing governance parameters.
   "maxgovobjdatasize": xxxxx,             (numeric) maximum governance object data size in bytes
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getgovernanceinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgovernanceinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getpoolinfo`**
 
 *`getpoolinfo`*
 Returns an object containing mixing pool related information.
-\`\`\`
+```
 
 ## **`getsuperblockbudget`**
 
@@ -1848,16 +2261,23 @@ Returns an object containing mixing pool related information.
 
 Returns the absolute maximum sum of superblock payments allowed.
 
-*Arguments:*```
+*Arguments:*
+```
 1. index         (numeric, required) The block index
 
-```*Result:*```
+```
+
+*Result*
+```:
 n                (numeric) The absolute maximum sum of superblock payments allowed, in SYS
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getsuperblockbudget 1000
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsuperblockbudget", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`gobject`**
 
@@ -1878,14 +2298,15 @@ Available commands:
   vote-name         - Vote on a governance object by masternode name (using masternode.conf setup)
   vote-conf          - Vote on a governance object by masternode configured in syscoin.conf
   vote-many          - Vote on a governance object by all masternodes (using masternode.conf setup)
-\`\`\`
+```
 
 ## **`masternode`**
 
 *`masternode "command"...`*
 Set of commands to execute masternode related actions
 
-*Arguments:*```
+*Arguments:*
+```
 1. "command"        (string or set of strings, required) The command to execute
 
 Available commands:
@@ -1900,14 +2321,15 @@ Available commands:
   list-conf    - Print masternode.conf in JSON format
   winner       - Print info on next masternode winner to vote for
   winners      - Print list of masternode winners
-\`\`\`
+```
 
 ## **`masternodebroadcast`**
 
 *`masternodebroadcast "command"...`*
 Set of commands to create and relay masternode broadcast messages
 
-*Arguments:*```
+*Arguments:*
+```
 1. "command"        (string or set of strings, required) The command to execute
 
 Available commands:
@@ -1915,14 +2337,15 @@ Available commands:
   create-all    - Create remote masternode broadcast messages for all masternodes configured in masternode.conf
   decode        - Decode masternode broadcast message
   relay         - Relay masternode broadcast message to the network
-\`\`\`
+```
 
 ## **`masternodelist`**
 
 *`masternodelist ( "mode" "filter" )`*
 Get a list of masternodes in different modes
 
-*Arguments:*```
+*Arguments:*
+```
 1. "mode"      (string, optional/required to use filter, defaults = json) The mode to run list in
 2. "filter"    (string, optional) Filter results. Partial match by outpoint by default in all modes,
                                     additional matches in some modes are also available
@@ -1948,26 +2371,27 @@ Available modes:
   sentinel       - Print sentinel version of a masternode (can be additionally filtered, exact match)
   status         - Print masternode status: PRE_ENABLED / ENABLED / EXPIRED / SENTINEL_PING_EXPIRED / NEW_START_REQUIRED /
                    UPDATE_REQUIRED / POSE_BAN / OUTPOINT_SPENT (can be additionally filtered, partial match)
-\`\`\`
+```
 
 ## **`mnsync`**
 
 *`mnsync [status|next|reset]`*
 Returns the sync status, updates to the next step or resets it entirely.
-\`\`\`
+```
 
 ## **`privatesend`**
 
 *`privatesend "command"`*
 
-*Arguments:*```
+*Arguments:*
+```
 1. "command"        (string or set of strings, required) The command to execute
 
 Available commands:
   start       - Start mixing
   stop        - Stop mixing
   reset       - Reset mixing
-\`\`\`
+```
 
 ## **`sentinelping`**
 
@@ -1975,16 +2399,23 @@ Available commands:
 
 Sentinel ping.
 
-*Arguments:*```
+*Arguments:*
+```
 1. version           (string, required) Sentinel version in the form "x.x.x"
 
-```*Result:*```
+```
+
+*Result*
+```:
 state                (boolean) Ping result
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli sentinelping 1.0.2
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sentinelping", "params": [1.0.2] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`spork`**
 
@@ -1992,10 +2423,14 @@ state                (boolean) Ping result
 
 Shows information about current state of sporks
 
-*Arguments:*```
+*Arguments:*
+```
 1. "command"                     (string, required) 'show' to show all current spork values, 'active' to show which sporks are active
 
-```*Result:*```
+```
+
+*Result*
+```:
 For 'show':
 {
   "SPORK_NAME" : spork_value,    (number) The value of the specific spork with the name SPORK_NAME
@@ -2007,16 +2442,19 @@ For 'active':
   ...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli spork show
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "spork", "params": ["show"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`voteraw`**
 
 *`voteraw <masternode-tx-hash> <masternode-tx-index> <governance-hash> <vote-signal> [yes|no|abstain] <time> <vote-sig>`*
 Compile and relay a governance vote with provided external signature instead of signing vote internally
-\`\`\`
+```
 
 
 
@@ -2029,7 +2467,8 @@ Util
 Creates a multi-signature address with n signature of m keys required.
 It returns a json object with the address and redeemScript.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.
 2. "keys"       (string, required) A json array of keys which are syscoin addresses or hex-encoded public keys
      [
@@ -2037,20 +2476,26 @@ It returns a json object with the address and redeemScript.
        ,...
      ]
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "address":"multisigaddress",  (string) The value of the new multisig address.
   "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Create a multisig address from 2 addresses
 > syscoin-cli createmultisig 2 "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\"]"
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createmultisig", "params": [2, "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`estimatefee`**
 
@@ -2059,10 +2504,14 @@ As a json rpc call
 Estimates the approximate fee per kilobyte needed for a transaction to begin
 confirmation within nblocks blocks.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks     (numeric, required)
 
-```*Result:*```
+```
+
+*Result*
+```:
 n              (numeric) estimated fee-per-kilobyte
 
 A negative value is returned if not enough transactions and blocks
@@ -2072,7 +2521,7 @@ a fee that is high enough to get reliably included in the next block.
 
 Example:
 > syscoin-cli estimatefee 6
-\`\`\`
+```
 
 ## **`estimatepriority`**
 
@@ -2081,10 +2530,14 @@ Example:
 DEPRECATED. Estimates the approximate priority a zero-fee transaction needs to begin
 confirmation within nblocks blocks.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks     (numeric, required)
 
-```*Result:*```
+```
+
+*Result*
+```:
 n              (numeric) estimated priority
 
 A negative value is returned if not enough transactions and blocks
@@ -2092,7 +2545,7 @@ have been observed to make an estimate.
 
 Example:
 > syscoin-cli estimatepriority 6
-\`\`\`
+```
 
 ## **`estimatesmartfee`**
 
@@ -2104,10 +2557,14 @@ Estimates the approximate fee per kilobyte needed for a transaction to begin
 confirmation within nblocks blocks if possible and return the number of blocks
 for which the estimate is valid.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks     (numeric)
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in SYS)
   "blocks" : n         (numeric) block number where estimate was found
@@ -2119,7 +2576,7 @@ However it will not return a value below the mempool reject fee.
 
 Example:
 > syscoin-cli estimatesmartfee 6
-\`\`\`
+```
 
 ## **`estimatesmartpriority`**
 
@@ -2131,10 +2588,14 @@ Estimates the approximate priority a zero-fee transaction needs to begin
 confirmation within nblocks blocks if possible and return the number of blocks
 for which the estimate is valid.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nblocks     (numeric, required)
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "priority" : x.x,    (numeric) estimated priority
   "blocks" : n         (numeric) block number where estimate was found
@@ -2146,7 +2607,7 @@ However if the mempool reject fee is set it will return 1e9 * MAX_MONEY.
 
 Example:
 > syscoin-cli estimatesmartpriority 6
-\`\`\`
+```
 
 ## **`signmessagewithprivkey`**
 
@@ -2154,14 +2615,21 @@ Example:
 
 Sign a message with the private key of an address
 
-*Arguments:*```
+*Arguments:*
+```
 1. "privkey"         (string, required) The private key to sign the message with.
 2. "message"         (string, required) The message to create a signature of.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "signature"          (string) The signature of the message encoded in base 64
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Create the signature
 > syscoin-cli signmessagewithprivkey "privkey" "my message"
@@ -2171,7 +2639,7 @@ Verify the signature
 
 As json rpc
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signmessagewithprivkey", "params": ["privkey", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`validateaddress`**
 
@@ -2179,10 +2647,14 @@ As json rpc
 
 Return information about the given syscoin address.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"     (string, required) The syscoin address to validate
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "isvalid" : true|false,       (boolean) If the address is valid or not. If not, this is the only property returned.
   "address" : "syscoinaddress", (string) The syscoin address validated
@@ -2201,10 +2673,13 @@ Return information about the given syscoin address.
   "hdchainid" : "<hash>"        (string, optional) The ID of the HD chain
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli validateaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "validateaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`verifymessage`**
 
@@ -2212,15 +2687,22 @@ Return information about the given syscoin address.
 
 Verify a signed message
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"         (string, required) The syscoin address to use for the signature.
 2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
 3. "message"         (string, required) The message that was signed.
 
-```*Result:*```
+```
+
+*Result*
+```:
 true|false   (boolean) If the signature is verified or not.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Unlock the wallet for 30 seconds
 > syscoin-cli walletpassphrase "mypassphrase" 30
@@ -2233,7 +2715,7 @@ Verify the signature
 
 As json rpc
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifymessage", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", "signature", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 
 
@@ -2249,15 +2731,22 @@ for their inputs to be respent.  It can be used to replace "stuck" or evicted tr
 It only works on transactions which are not included in a block and are not currently in the mempool.
 It has no effect on transactions which are already conflicted or abandoned.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"    (string, required) The transaction id
 
-```*Result:*```
+```
 
-```*Examples:*```
+*Result*
+```:
+
+```
+
+*Examples:*
+```
 > syscoin-cli abandontransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "abandontransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`addmultisigaddress`**
 
@@ -2267,7 +2756,8 @@ Add a nrequired-to-sign multisignature address to the wallet.
 Each key is a Syscoin address or hex-encoded public key.
 If 'account' is specified (DEPRECATED), assign address to that account.
 
-*Arguments:*```
+*Arguments:*
+```
 1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.
 2. "keys"         (string, required) A json array of syscoin addresses or hex-encoded public keys
      [
@@ -2276,23 +2766,29 @@ If 'account' is specified (DEPRECATED), assign address to that account.
      ]
 3. "account"      (string, optional) DEPRECATED. An account to assign the addresses to.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "address"         (string) A syscoin address associated with the keys.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Add a multisig address from 2 addresses
 > syscoin-cli addmultisigaddress 2 "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrS\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK2\"]"
 
 As json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addmultisigaddress", "params": [2, "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrS\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK2\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`aliasaddscript`**
 
 *`aliasaddscript redeemscript`*
 Add redeemscript to local wallet for signing smart contract based alias transactions.
-\`\`\`
+```
 
 ## **`aliasbalance`**
 
@@ -2300,10 +2796,11 @@ Add redeemscript to local wallet for signing smart contract based alias transact
 
 Returns the total amount received by the given alias in transactions.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "alias"  (string, required) The syscoin alias for transactions.
 2. "instantsend"  (boolean, optional) Check for balance available to instant send. Default is false.
-\`\`\`
+```
 
 ## **`aliasbalancemulti`**
 
@@ -2311,10 +2808,11 @@ Returns the total amount received by the given alias in transactions.
 
 Returns an array of balances based on an array of aliases passed in, internally calls aliasbalance for each alias.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "aliases"  (array, required) The syscoin aliases to find balances for. Must be an array.
 2. "instantsend"  (boolean, optional) Check for balance available to instant send. Default is false.
-\`\`\`
+```
 
 ## **`aliasclearwhitelist`**
 
@@ -2322,13 +2820,13 @@ Returns an array of balances based on an array of aliases passed in, internally 
 Clear your whitelist(controls who can resell).
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`aliasinfo`**
 
 *`aliasinfo <aliasname>`*
 Show values of an alias.
-\`\`\`
+```
 
 ## **`aliasnew`**
 
@@ -2343,7 +2841,7 @@ Show values of an alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`aliaspay`**
 
@@ -2352,7 +2850,8 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Send multiple times from an alias. Amounts are double-precision floating point numbers.
 Requires wallet passphrase to be set with walletpassphrase call.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "aliasfrom"			(string, required) Alias to pay from
 2. "amounts"             (string, required) A json object with aliases and amounts
     {
@@ -2369,11 +2868,17 @@ Requires wallet passphrase to be set with walletpassphrase call.
       ,...
     ]
 
-```*Result:*```
+```
+
+*Result*
+```:
 "transaction hex"          (string) The transaction hex (unsigned) for signing and sending. Only 1 transaction is created regardless of 
                                     the number of addresses.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Send two amounts to two different aliases:
 > syscoin-cli aliaspay "senderalias" "{\"alias1\":0.01,\"alias2\":0.02}"
@@ -2386,7 +2891,7 @@ Send two amounts to two different addresses, subtract fee from amount:
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "aliaspay", "params": ["senderalias", {"Sa8H1Mq4pd6z3N4xFzxvVah9AWzZyykJiJ":0.01,"SkbcpmjqkERwvPPqke3puu9k9bCdHLaVoP":0.02}, false, "testing"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`aliasupdate`**
 
@@ -2402,7 +2907,7 @@ Update and possibly transfer an alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`aliasupdatewhitelist`**
 
@@ -2421,13 +2926,13 @@ To remove whitelist entry, pass the whilelist entry without changing discount pe
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`aliaswhitelist`**
 
 *`aliaswhitelist <alias>`*
 List all affiliates for this alias.
-\`\`\`
+```
 
 ## **`assetallocationcollectinterest`**
 
@@ -2438,13 +2943,13 @@ Collect interest on this asset allocation if an interest rate is set on this ass
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`assetallocationinfo`**
 
 *`assetallocationinfo <asset> <alias> <getinputs>`*
 Show stored values of a single asset allocation. Set getinputs to true if you want to get the allocation inputs, if applicable.
-\`\`\`
+```
 
 ## **`assetallocationsend`**
 
@@ -2460,7 +2965,7 @@ Send an asset allocation you own to another alias. Maximimum recipients is 250.
 The third parameter can be either an array of alias and amounts if sending amount pairs or an array of alias and array of start/end pairs of indexes for input ranges.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`assetallocationsenderstatus`**
 
@@ -2471,13 +2976,13 @@ Level -1 means not found, not a ZDAG transaction, perhaps it is already confirme
 Level 0 means OK.
 Level 1 means warning (checked that in the mempool there are more spending balances than current POW sender balance). An active stance should be taken and perhaps a deeper analysis as to potential conflicts related to the sender.
 Level 2 means an active double spend was found and any depending asset allocation sends are also flagged as dangerous and should wait for POW confirmation before proceeding.
-\`\`\`
+```
 
 ## **`assetinfo`**
 
 *`assetinfo <asset> <getinputs>`*
 Show stored values of a single asset and its. Set getinputs to true if you want to get the allocation inputs, if applicable.
-\`\`\`
+```
 
 ## **`assetnew`**
 
@@ -2495,7 +3000,7 @@ Show stored values of a single asset and its. Set getinputs to true if you want 
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`assetsend`**
 
@@ -2511,7 +3016,7 @@ Send an asset you own to another alias as an asset allocation. Maximimum recipie
 The third parameter can be either an array of alias and amounts if sending amount pairs or an array of alias and array of start/end pairs of indexes for input ranges.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`assettransfer`**
 
@@ -2522,7 +3027,7 @@ Transfer a asset allocation you own to another alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`assetupdate`**
 
@@ -2536,7 +3041,7 @@ Perform an update on an asset you control.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`backupwallet`**
 
@@ -2544,19 +3049,23 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 Safely copies current wallet file to destination, which can be a directory or a path with filename.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "destination"   (string) The destination directory or file
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli backupwallet "backup.dat"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backup.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`certinfo`**
 
 *`certinfo <guid>`*
 Show stored values of a single certificate and its .
-\`\`\`
+```
 
 ## **`certnew`**
 
@@ -2568,7 +3077,7 @@ Show stored values of a single certificate and its .
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`certtransfer`**
 
@@ -2581,7 +3090,7 @@ Transfer a certificate you own to another alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`certupdate`**
 
@@ -2594,24 +3103,30 @@ Perform an update on an certificate you control.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`dumphdinfo`**
 
 *`dumphdinfo`*
 Returns an object containing sensitive private info about this HD wallet.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "hdseed": "seed",                    (string) The HD seed (bip32, in hex)
   "mnemonic": "words",                 (string) The mnemonic for this HD wallet (bip39, english words) 
   "mnemonicpassphrase": "passphrase",  (string) The mnemonic passphrase for this HD wallet (bip39)
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli dumphdinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumphdinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`dumpprivkey`**
 
@@ -2620,17 +3135,24 @@ Returns an object containing sensitive private info about this HD wallet.
 Reveals the private key corresponding to 'address'.
 Then the importprivkey can be used with this output
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"   (string, required) The syscoin address for the private key
 
-```*Result:*```
+```
+
+*Result*
+```:
 "key"                (string) The private key
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli dumpprivkey "myaddress"
 > syscoin-cli importprivkey "mykey"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpprivkey", "params": ["myaddress"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`dumpwallet`**
 
@@ -2638,13 +3160,17 @@ Then the importprivkey can be used with this output
 
 Dumps all wallet keys in a human-readable format.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "filename"    (string, required) The filename
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli dumpwallet "test"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`escrowacknowledge`**
 
@@ -2653,7 +3179,7 @@ Acknowledge escrow payment as seller of offer.
 <instantsend> Set to true to use InstantSend to send this transaction or false otherwise.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowbid`**
 
@@ -2665,7 +3191,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowcompleterefund`**
 
@@ -2675,7 +3201,7 @@ Completes an escrow refund by creating the escrow complete refund transaction on
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowcompleterelease`**
 
@@ -2685,7 +3211,7 @@ Completes an escrow release by creating the escrow complete release transaction 
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowcreaterawtransaction`**
 
@@ -2693,7 +3219,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Creates raw transaction for escrow refund or release, sign the output raw transaction and pass it via the rawtx parameter to escrowrelease. Type is 'refund' or 'release'. Third parameter is array of input (txid, vout, amount) pairs to be used to fund escrow payment. User role represents either 'seller', 'buyer' or 'arbiter', represents who signed for the payment of the escrow. 'seller' or 'arbiter' is valid for type 'refund' (if you are the buyer during refund leave this empty), while 'buyer' or 'arbiter' is valid for type 'release' (if you are the seller during release leave this empty). You only need to provide this parameter when calling escrowrelease or escrowrefund. 
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowfeedback`**
 
@@ -2701,13 +3227,13 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Send feedback for primary and secondary users in escrow, depending on who you are. Ratings are numbers from 1 to 5. User From and User To is either 'buyer', 'seller', 'reseller', or 'arbiter'.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowinfo`**
 
 *`escrowinfo <guid>`*
 Show stored values of a single escrow
-\`\`\`
+```
 
 ## **`escrownew`**
 
@@ -2730,7 +3256,7 @@ Show stored values of a single escrow
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowrefund`**
 
@@ -2738,7 +3264,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Refunds escrow funds to buyer. User role represents either 'seller' or 'arbiter'. Third parameter (rawtx) is the signed response from escrowcreaterawtransaction. You must sign this transaction externally prior to passing in.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`escrowrelease`**
 
@@ -2746,7 +3272,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Releases escrow funds to seller. User role represents either 'buyer' or 'arbiter'. Third parameter (rawtx) is the signed response from escrowcreaterawtransaction. You must sign this transaction externally prior to passing in.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`getaccount`**
 
@@ -2754,16 +3280,23 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 DEPRECATED. Returns the account associated with the given address.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"         (string, required) The syscoin address for account lookup.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "accountname"        (string) the account address
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaccount "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaccount", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaccountaddress`**
 
@@ -2771,18 +3304,25 @@ DEPRECATED. Returns the account associated with the given address.
 
 DEPRECATED. Returns the current Syscoin address for receiving payments to this account.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "account"       (string, required) The account name for the address. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "address"          (string) The account syscoin address
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaccountaddress 
 > syscoin-cli getaccountaddress ""
 > syscoin-cli getaccountaddress "myaccount"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaccountaddress", "params": ["myaccount"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getaddressesbyaccount`**
 
@@ -2790,19 +3330,26 @@ DEPRECATED. Returns the current Syscoin address for receiving payments to this a
 
 DEPRECATED. Returns the list of addresses for the given account.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "account"        (string, required) The account name.
 
-```*Result:*```
+```
+
+*Result*
+```:
 [                     (json array of string)
   "address"         (string) a syscoin address associated with the given account
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getaddressesbyaccount "tabby"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressesbyaccount", "params": ["tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getbalance`**
 
@@ -2813,16 +3360,23 @@ If account is specified (DEPRECATED), returns the balance in the account.
 Note that the account "" is not the same as leaving the parameter out.
 The server total may be different to the balance in the default "" account.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "account"        (string, optional) DEPRECATED. The selected account, or "*" for entire wallet. It may be the default account using "".
 2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf      (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 4. include_watchonly (bool, optional, default=false) Also include balance in watch-only addresses (see 'importaddress')
 
-```*Result:*```
+```
+
+*Result*
+```:
 amount              (numeric) The total amount in SYS received for this account.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 The total amount in the wallet
 > syscoin-cli getbalance 
@@ -2832,7 +3386,7 @@ The total amount in the wallet at least 5 blocks confirmed
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getnewaddress`**
 
@@ -2842,16 +3396,23 @@ Returns a new Syscoin address for receiving payments.
 If 'account' is specified (DEPRECATED), it is added to the address book 
 so payments received with the address will be credited to 'account'.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "account"        (string, optional) DEPRECATED. The account name for the address to be linked to. If not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "address"    (string) The new syscoin address
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getnewaddress 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnewaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getrawchangeaddress`**
 
@@ -2860,13 +3421,19 @@ so payments received with the address will be credited to 'account'.
 Returns a new Syscoin address, for receiving change.
 This is for use with raw transactions, NOT normal use.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "address"    (string) The address
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getrawchangeaddress 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getreceivedbyaccount`**
 
@@ -2874,15 +3441,22 @@ This is for use with raw transactions, NOT normal use.
 
 DEPRECATED. Returns the total amount received by addresses with <account> in transactions with specified minimum number of confirmations.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "account"      (string, required) The selected account, may be the default account using "".
 2. minconf        (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf    (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 
-```*Result:*```
+```
+
+*Result*
+```:
 amount            (numeric) The total amount in SYS received for this account.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Amount received by the default account with at least 1 confirmation
 > syscoin-cli getreceivedbyaccount ""
@@ -2895,7 +3469,7 @@ The amount with at least 6 confirmation, very safe
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaccount", "params": ["tabby", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getreceivedbyaddress`**
 
@@ -2903,15 +3477,22 @@ As a json rpc call
 
 Returns the total amount received by the given address in transactions with at least minconf confirmations.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"         (string, required) The syscoin address for transactions.
 2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf         (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 
-```*Result:*```
+```
+
+*Result*
+```:
 amount   (numeric) The total amount in SYS received at this address.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 The amount from transactions with at least 1 confirmation
 > syscoin-cli getreceivedbyaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG"
@@ -2924,7 +3505,7 @@ The amount with at least 6 confirmation, very safe
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`gettransaction`**
 
@@ -2932,11 +3513,15 @@ As a json rpc call
 
 Get detailed information about in-wallet transaction <txid>
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"                  (string, required) The transaction id
 2. "include_watchonly"     (bool, optional, default=false) Whether to include watch-only addresses in balance calculation and details[]
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "amount" : x.xxx,        (numeric) The transaction amount in SYS
   "fee": x.xxx,            (numeric) The amount of the fee in SYS. This is negative and only available for the 
@@ -2969,24 +3554,30 @@ Get detailed information about in-wallet transaction <txid>
   "hex" : "data"                      (string) Raw data for transaction
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"
 > syscoin-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`getunconfirmedbalance`**
 
 *`getunconfirmedbalance`*
 Returns the server's total unconfirmed balance
-\`\`\`
+```
 
 ## **`getwalletinfo`**
 
 *`getwalletinfo`*
 Returns an object containing various wallet state info.
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "walletversion": xxxxx,     (numeric) the wallet version
   "balance": xxxxxxx,         (numeric) the total confirmed balance of the wallet in SYS
@@ -3012,10 +3603,13 @@ Returns an object containing various wallet state info.
     ]
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli getwalletinfo 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getwalletinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`importaddress`**
 
@@ -3023,7 +3617,8 @@ Returns an object containing various wallet state info.
 
 Adds a script (in hex) or address that can be watched as if it were in your wallet but cannot be used to spend.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "script"           (string, required) The hex-encoded script (or address)
 2. "label"            (string, optional, default="") An optional label
 3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions
@@ -3035,7 +3630,10 @@ If you have the full public key, you should call importpubkey instead of this.
 Note: If you import a non-standard raw script in hex form, outputs sending to it will be treated
 as change, and not show up in many RPCs.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Import a script with rescan
 > syscoin-cli importaddress "myscript"
@@ -3045,7 +3643,7 @@ Import using a label without rescan
 
 As a JSON-RPC call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importaddress", "params": ["myscript", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`importelectrumwallet`**
 
@@ -3053,11 +3651,15 @@ As a JSON-RPC call
 
 Imports keys from an Electrum wallet export file (.csv or .json)
 
-*Arguments:*```
+*Arguments:*
+```
 1. "filename"    (string, required) The Electrum wallet export file, should be in csv or json format
 2. index         (numeric, optional, default=0) Rescan the wallet for transactions starting from this block index
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Import the wallet
 > syscoin-cli importelectrumwallet "test.csv"
@@ -3066,7 +3668,7 @@ Import the wallet
 Import using the json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importelectrumwallet", "params": ["test.csv"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importelectrumwallet", "params": ["test.json"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`importmulti`**
 
@@ -3074,7 +3676,8 @@ Import using the json rpc call
 
 Import addresses/scripts (with private or public keys, redeem script (P2SH)), rescanning all addresses in one-shot-only (rescan can be disabled via options).
 
-*Arguments:*```
+*Arguments:*
+```
 1. requests     (array, required) Data to be imported
   [     (array of json objects)
     {
@@ -3099,13 +3702,16 @@ Import addresses/scripts (with private or public keys, redeem script (P2SH)), re
      "rescan": <false>,         (boolean, optional, default: true) Stating if should rescan the blockchain after all imports
   }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli importmulti '[{ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }, { "scriptPubKey": { "address": "<my 2nd address>" }, "label": "example 2", "timestamp": 1455191480 }]'
 > syscoin-cli importmulti '[{ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }]' '{ "rescan": false}'
 
 Response is an array with the same size as the input that has the execution result :
   [{ "success": true } , { "success": false, "error": { "code": -1, "message": "Internal Server Error"} }, ... ]
-\`\`\`
+```
 
 ## **`importprivkey`**
 
@@ -3113,14 +3719,18 @@ Response is an array with the same size as the input that has the execution resu
 
 Adds a private key (as returned by dumpprivkey) to your wallet.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "syscoinprivkey"   (string, required) The private key (see dumpprivkey)
 2. "label"            (string, optional, default="") An optional label
 3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions
 
 Note: This call can take minutes to complete if rescan is true.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Dump a private key
 > syscoin-cli dumpprivkey "myaddress"
@@ -3136,7 +3746,7 @@ Import using default blank label and without rescan
 
 As a JSON-RPC call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importprivkey", "params": ["mykey", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`importprunedfunds`**
 
@@ -3144,10 +3754,11 @@ As a JSON-RPC call
 
 Imports funds without rescan. Corresponding address or script must previously be included in wallet. Aimed towards pruned wallets. The end-user is responsible to import additional transactions that subsequently spend the imported outputs or rescan after the point in the blockchain the transaction is included.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "rawtransaction" (string, required) A raw transaction in hex funding an already-existing address in wallet
 2. "txoutproof"     (string, required) The hex output from gettxoutproof that contains the transaction
-\`\`\`
+```
 
 ## **`importpubkey`**
 
@@ -3155,14 +3766,18 @@ Imports funds without rescan. Corresponding address or script must previously be
 
 Adds a public key (in hex) that can be watched as if it were in your wallet but cannot be used to spend.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "pubkey"           (string, required) The hex-encoded public key
 2. "label"            (string, optional, default="") An optional label
 3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions
 
 Note: This call can take minutes to complete if rescan is true.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Import a public key with rescan
 > syscoin-cli importpubkey "mypubkey"
@@ -3172,7 +3787,7 @@ Import using a label without rescan
 
 As a JSON-RPC call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importpubkey", "params": ["mypubkey", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`importwallet`**
 
@@ -3180,10 +3795,14 @@ As a JSON-RPC call
 
 Imports keys from a wallet dump file (see dumpwallet).
 
-*Arguments:*```
+*Arguments:*
+```
 1. "filename"    (string, required) The wallet file
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Dump the wallet
 > syscoin-cli dumpwallet "test"
@@ -3193,7 +3812,7 @@ Import the wallet
 
 Import using the json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`instantsendtoaddress`**
 
@@ -3202,7 +3821,8 @@ Import using the json rpc call
 Send an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001
 
 Requires wallet passphrase to be set with walletpassphrase call.
-*Arguments:*```
+*Arguments:*
+```
 1. "address"     (string, required) The syscoin address to send to.
 2. "amount"      (numeric, required) The amount in SYS to send. eg 0.1
 3. "comment"     (string, optional) A comment used to store what the transaction is for. 
@@ -3213,20 +3833,26 @@ Requires wallet passphrase to be set with walletpassphrase call.
 5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.
                              The recipient will receive less amount of Syscoin than you enter in the amount field.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "transactionid"  (string) The transaction id.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli instantsendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1
 > syscoin-cli instantsendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1 "donation" "seans outpost"
 > syscoin-cli instantsendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1 "" "" true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "instantsendtoaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 0.1, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`keepass`**
 
 *`keepass <genkey|init|setpassphrase>`*
-\`\`\`
+```
 
 ## **`keypoolrefill`**
 
@@ -3235,13 +3861,17 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Fills the keypool.
 Requires wallet passphrase to be set with walletpassphrase call.
 
-*Arguments:*```
+*Arguments:*
+```
 1. newsize     (numeric, optional, default=1000) The new keypool size
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli keypoolrefill 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "keypoolrefill", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listaccounts`**
 
@@ -3249,18 +3879,25 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 DEPRECATED. Returns Object that has account names as keys, account balances as values.
 
-*Arguments:*```
+*Arguments:*
+```
 1. minconf             (numeric, optional, default=1) Only include transactions with at least this many confirmations
 2. addlockconf         (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 3. include_watchonly   (bool, optional, default=false) Include balances in watch-only addresses (see 'importaddress')
 
-```*Result:*```
+```
+
+*Result*
+```:
 {                    (json object where keys are account names, and values are numeric balances
   "account": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.
   ...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 List account balances where there at least 1 confirmation
 > syscoin-cli listaccounts 
@@ -3273,7 +3910,7 @@ List account balances for 6 or more confirmations
 
 As json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaccounts", "params": [6] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listaddressbalances`**
 
@@ -3281,21 +3918,28 @@ As json rpc call
 
 Lists addresses of this wallet and their balances
 
-*Arguments:*```
+*Arguments:*
+```
 1. minamount               (numeric, optional, default=0) Minimum balance in SYS an address should have to be shown in the list
 
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "address": amount,       (string) The syscoin address and the amount in SYS
   ,...
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listaddressbalances 
 > syscoin-cli listaddressbalances 10
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressbalances", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressbalances", "params": [10] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listaddressgroupings`**
 
@@ -3305,7 +3949,10 @@ Lists groups of addresses which have had their common ownership
 made public by common use as inputs or as the resulting change
 in past transactions
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   [
     [
@@ -3318,10 +3965,13 @@ in past transactions
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listaddressgroupings 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressgroupings", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listaliases`**
 
@@ -3339,7 +3989,7 @@ scan through all aliases.
 > syscoin-cli listaliases 10 10
 > syscoin-cli listaliases 0 0 '{"alias":"find-this-alias"}'
 > syscoin-cli listaliases 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1","startblock":0}'
-\`\`\`
+```
 
 ## **`listassetallocations`**
 
@@ -3360,7 +4010,7 @@ scan through all asset allocations.
 > syscoin-cli listassetallocations 0 0 '{"asset":"32bff1fa844c124","startblock":0}'
 > syscoin-cli listassetallocations 0 0 '{"sender":"sender-alias","receiver":"receiver-alias"}'
 > syscoin-cli listassetallocations 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-\`\`\`
+```
 
 ## **`listassetallocationtransactions`**
 
@@ -3380,7 +4030,7 @@ list asset allocations sent or recieved in this wallet.
 > syscoin-cli listassetallocationtransactions 0 0 '{"asset":"32bff1fa844c124","startblock":0}'
 > syscoin-cli listassetallocationtransactions 0 0 '{"sender":"sender-alias","receiver":"receiver-alias"}'
 > syscoin-cli listassetallocationtransactions 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-\`\`\`
+```
 
 ## **`listassets`**
 
@@ -3399,7 +4049,7 @@ scan through all assets.
 > syscoin-cli listassets 10 10
 > syscoin-cli listassets 0 0 '{"alias":"owner-alias"}'
 > syscoin-cli listassets 0 0 '{"asset":"32bff1fa844c124","alias":"owner-alias","startblock":0}'
-\`\`\`
+```
 
 ## **`listcerts`**
 
@@ -3419,7 +4069,7 @@ scan through all certificates.
 > syscoin-cli listcerts 0 0 '{"alias":"cert-owner-alias","startblock":0}'
 > syscoin-cli listcerts 0 0 '{"cert":"32bff1fa844c124"}'
 > syscoin-cli listcerts 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-\`\`\`
+```
 
 ## **`listescrows`**
 
@@ -3441,7 +4091,7 @@ scan through all escrows.
 > syscoin-cli listcerts 0 0 '{"escrow":"32bff1fa844c124"}'
 > syscoin-cli listcerts 0 0 '{"buyeralias":"buyer-alias","selleralias":"seller-alias","arbiteralias":"arbiter-alias"}'
 > syscoin-cli listcerts 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1","startblock":0}'
-\`\`\`
+```
 
 ## **`listlockunspent`**
 
@@ -3450,7 +4100,10 @@ scan through all escrows.
 Returns list of temporarily unspendable outputs.
 See the lockunspent call to lock and unlock transactions for spending.
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "txid" : "transactionid",     (string) The transaction id locked
@@ -3459,7 +4112,10 @@ See the lockunspent call to lock and unlock transactions for spending.
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 List the unspent transactions
 > syscoin-cli listunspent 
@@ -3475,7 +4131,7 @@ Unlock the transaction again
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listlockunspent", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listoffers`**
 
@@ -3495,7 +4151,7 @@ scan through all offers.
 > syscoin-cli listoffers 0 0 '{"offer":"32bff1fa844c124","startblock":0}'
 > syscoin-cli listoffers 0 0 '{"alias":"offer-owner-alias"}'
 > syscoin-cli listoffers 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-\`\`\`
+```
 
 ## **`listreceivedbyaccount`**
 
@@ -3503,13 +4159,17 @@ scan through all offers.
 
 DEPRECATED. List balances by account.
 
-*Arguments:*```
+*Arguments:*
+```
 1. minconf           (numeric, optional, default=1) The minimum number of confirmations before payments are included.
 2. addlockconf       (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 3. include_empty     (bool, optional, default=false) Whether to include accounts that haven't received any payments.
 4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "involvesWatchonly" : true,   (bool) Only returned if imported addresses were involved in transaction
@@ -3521,11 +4181,14 @@ DEPRECATED. List balances by account.
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listreceivedbyaccount 
 > syscoin-cli listreceivedbyaccount 6 false true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaccount", "params": [6, false, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listreceivedbyaddress`**
 
@@ -3533,13 +4196,17 @@ DEPRECATED. List balances by account.
 
 List balances by receiving address.
 
-*Arguments:*```
+*Arguments:*
+```
 1. minconf           (numeric, optional, default=1) The minimum number of confirmations before payments are included.
 2. addlockconf       (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 3. include_empty     (bool, optional, default=false) Whether to include addresses that haven't received any payments.
 4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "involvesWatchonly" : true,        (bool) Only returned if imported addresses were involved in transaction
@@ -3558,11 +4225,14 @@ List balances by receiving address.
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listreceivedbyaddress 
 > syscoin-cli listreceivedbyaddress 6 false true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaddress", "params": [6, false, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listsinceblock`**
 
@@ -3570,11 +4240,15 @@ List balances by receiving address.
 
 Get all transactions in blocks since block [blockhash], or all transactions if omitted
 
-*Arguments:*```
+*Arguments:*
+```
 1. "blockhash"            (string, optional) The block hash to list transactions since
 2. target_confirmations:    (numeric, optional) The confirmations required, must be 1 or more
 3. include_watchonly:       (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
-```*Result:*```
+```
+
+*Result*
+```:
 {
   "transactions": [
     "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction. Will be "" for the default account.
@@ -3603,11 +4277,14 @@ Get all transactions in blocks since block [blockhash], or all transactions if o
   "lastblock": "lastblockhash"  (string) The hash of the last block
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listsinceblock 
 > syscoin-cli listsinceblock "000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad" 6
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listsinceblock", "params": ["000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listtransactions`**
 
@@ -3615,13 +4292,17 @@ Get all transactions in blocks since block [blockhash], or all transactions if o
 
 Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "account"        (string, optional) DEPRECATED. The account name. Should be "*".
 2. count            (numeric, optional, default=10) The number of transactions to return
 3. skip           (numeric, optional, default=0) The number of transactions to skip
 4. include_watchonly (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction. 
@@ -3664,7 +4345,10 @@ Returns up to 'count' most recent transactions skipping the first 'from' transac
   }
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 List the most recent 10 transactions in the systems
 > syscoin-cli listtransactions 
@@ -3674,7 +4358,7 @@ List transactions 100 to 120
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`listunspent`**
 
@@ -3684,7 +4368,8 @@ Returns array of unspent transaction outputs
 with between minconf and maxconf (inclusive) confirmations.
 Optionally filter to only include txouts paid to specified addresses.
 
-*Arguments:*```
+*Arguments:*
+```
 1. minconf          (numeric, optional, default=1) The minimum confirmations to filter
 2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter
 3. "addresses"      (string) A json array of syscoin addresses to filter
@@ -3697,7 +4382,10 @@ Optionally filter to only include txouts paid to specified addresses.
                   replacement transactions (cases where we are less sure that a conflicting
                   transaction won't be mined).
 
-```*Result:*```
+```
+
+*Result*
+```:
 [                             (array of json object)
   {
     "txid" : "txid",          (string) the transaction id 
@@ -3715,11 +4403,14 @@ Optionally filter to only include txouts paid to specified addresses.
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli listunspent 
 > syscoin-cli listunspent 6 9999999 "[\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\",\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\"]"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listunspent", "params": [6, 9999999 "[\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\",\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`lockunspent`**
 
@@ -3733,7 +4424,8 @@ Locks are stored in memory only. Nodes start with zero locked outputs, and the l
 is always cleared (by virtue of process exit) when a node stops or fails.
 Also see the listunspent call
 
-*Arguments:*```
+*Arguments:*
+```
 1. unlock            (boolean, required) Whether to unlock (true) or lock (false) the specified transactions
 2. "transactions"  (string, optional) A json array of objects. Each object the txid (string) vout (numeric)
      [           (json array of json objects)
@@ -3744,10 +4436,16 @@ Also see the listunspent call
        ,...
      ]
 
-```*Result:*```
+```
+
+*Result*
+```:
 true|false    (boolean) Whether the command was successful or not
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 List the unspent transactions
 > syscoin-cli listunspent 
@@ -3763,7 +4461,7 @@ Unlock the transaction again
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "lockunspent", "params": [false, "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`move`**
 
@@ -3771,17 +4469,24 @@ As a json rpc call
 
 DEPRECATED. Move a specified amount from one account in your wallet to another.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "fromaccount"    (string, required) The name of the account to move funds from. May be the default account using "".
 2. "toaccount"      (string, required) The name of the account to move funds to. May be the default account using "".
 3. amount           (numeric) Quantity of SYS to move between accounts.
 4. (dummy)          (numeric, optional) Ignored. Remains for backward compatibility.
 5. "comment"        (string, optional) An optional comment, stored in the wallet only.
 
-```*Result:*```
+```
+
+*Result*
+```:
 true|false          (boolean) true if successful.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Move 0.01 SYS from the default account to the account named tabby
 > syscoin-cli move "" "tabby" 0.01
@@ -3791,13 +4496,13 @@ Move 0.01 SYS timotei to akiko with a comment and funds have 6 confirmations
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`offerinfo`**
 
 *`offerinfo <guid>`*
 Show offer details
-\`\`\`
+```
 
 ## **`offerlink`**
 
@@ -3808,7 +4513,7 @@ Show offer details
 <description> description, 512 characters max.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`offernew`**
 
@@ -3832,7 +4537,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`offerupdate`**
 
@@ -3840,7 +4545,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Perform an update on an offer you control.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`prunesyscoinservices`**
 
@@ -3848,7 +4553,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 Prune expired Syscoin service data from the internal database.
 > syscoin-cli prunesyscoinservices 
-\`\`\`
+```
 
 ## **`removeprunedfunds`**
 
@@ -3856,15 +4561,19 @@ Prune expired Syscoin service data from the internal database.
 
 Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds. This will effect wallet balances.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "txid"           (string, required) The hex-encoded id of the transaction you are deleting
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli removeprunedfunds "a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5"
 
 As a JSON-RPC call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "removprunedfunds", "params": ["a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`sendfrom`**
 
@@ -3873,7 +4582,8 @@ As a JSON-RPC call
 DEPRECATED (use sendtoaddress). Sent an amount from an account to a syscoin address.
 Requires wallet passphrase to be set with walletpassphrase call.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "fromaccount"       (string, required) The name of the account to send funds from. May be the default account using "".
                        Specifying an account does not influence coin selection, but it does associate the newly created
                        transaction with the account, so the account's balance computation and transaction history can reflect
@@ -3888,10 +4598,16 @@ Requires wallet passphrase to be set with walletpassphrase call.
                        to which you're sending the transaction. This is not part of the transaction, 
                        it is just kept in your wallet.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "txid"                 (string) The transaction id.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Send 0.01 SYS from the default account to the address, must have at least 1 confirmation
 > syscoin-cli sendfrom "" "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.01
@@ -3901,7 +4617,7 @@ Send 0.01 from the tabby account to the given address, funds must have at least 
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendfrom", "params": ["tabby", "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 0.01, 6, false, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`sendmany`**
 
@@ -3910,7 +4626,8 @@ As a json rpc call
 Send multiple times. Amounts are double-precision floating point numbers.
 Requires wallet passphrase to be set with walletpassphrase call.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "fromaccount"           (string, required) DEPRECATED. The account to send the funds from. Should be "" for the default account
 2. "amounts"               (string, required) A json object with addresses and amounts
     {
@@ -3931,11 +4648,17 @@ Requires wallet passphrase to be set with walletpassphrase call.
 7. "use_is"                (bool, optional) Send this transaction as InstantSend (default: false)
 8. "use_ps"                (bool, optional) Use anonymized funds only (default: false)
 
-```*Result:*```
+```
+
+*Result*
+```:
 "txid"                   (string) The transaction id for the send. Only 1 transaction is created regardless of 
                                     the number of addresses.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Send two amounts to two different addresses:
 > syscoin-cli sendmany "tabby" "{\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\":0.01,\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcG\":0.02}"
@@ -3945,7 +4668,7 @@ Send two amounts to two different addresses setting the confirmation and comment
 
 As a json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendmany", "params": ["tabby", "{\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\":0.01,\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcG\":0.02}", 6, false, "testing"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`sendtoaddress`**
 
@@ -3954,7 +4677,8 @@ As a json rpc call
 Send an amount to a given address.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-*Arguments:*```
+*Arguments:*
+```
 1. "address"            (string, required) The syscoin address to send to.
 2. "amount"             (numeric or string, required) The amount in SYS to send. eg 0.1
 3. "comment"            (string, optional) A comment used to store what the transaction is for. 
@@ -3967,15 +4691,21 @@ Requires wallet passphrase to be set with walletpassphrase call.
 6. "use_is"             (bool, optional) Send this transaction as InstantSend (default: false)
 7. "use_ps"             (bool, optional) Use anonymized funds only (default: false)
 
-```*Result:*```
+```
+
+*Result*
+```:
 "txid"                  (string) The transaction id.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1
 > syscoin-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1 "donation" "seans outpost"
 > syscoin-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1 "" "" true
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendtoaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 0.1, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`setaccount`**
 
@@ -3983,14 +4713,18 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 DEPRECATED. Sets the account associated with the given address.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"         (string, required) The syscoin address to be associated with an account.
 2. "account"         (string, required) The account to assign the address to.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli setaccount "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" "tabby"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setaccount", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", "tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`settxfee`**
 
@@ -3998,16 +4732,23 @@ DEPRECATED. Sets the account associated with the given address.
 
 Set the transaction fee per kB. Overwrites the paytxfee parameter.
 
-*Arguments:*```
+*Arguments:*
+```
 1. amount         (numeric or string, required) The transaction fee in SYS/kB
 
-```*Result:*```
+```
+
+*Result*
+```:
 true|false        (boolean) Returns true if successful
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli settxfee 0.00001
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "settxfee", "params": [0.00001] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`signmessage`**
 
@@ -4016,14 +4757,21 @@ true|false        (boolean) Returns true if successful
 Sign a message with the private key of an address
 Requires wallet passphrase to be set with walletpassphrase call.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "address"         (string, required) The syscoin address to use for the private key.
 2. "message"         (string, required) The message to create a signature of.
 
-```*Result:*```
+```
+
+*Result*
+```:
 "signature"          (string) The signature of the message encoded in base 64
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Unlock the wallet for 30 seconds
 > syscoin-cli walletpassphrase "mypassphrase" 30
@@ -4036,14 +4784,14 @@ Verify the signature
 
 As json rpc
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signmessage", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`syscoindecoderawtransaction`**
 
 *`syscoindecoderawtransaction <hexstring>`*
 Decode raw syscoin transaction (serialized, hex-encoded) and display information pertaining to the service that is included in the transactiion data output(OP_RETURN)
 <hexstring> The transaction hex string.
-\`\`\`
+```
 
 ## **`syscoinlistreceivedbyaddress`**
 
@@ -4051,7 +4799,10 @@ Decode raw syscoin transaction (serialized, hex-encoded) and display information
 
 List balances by receiving address.
 
-```*Result:*```
+```
+
+*Result*
+```:
 [
   {
     "address" : "receivingaddress",    (string) The receiving address
@@ -4062,9 +4813,12 @@ List balances by receiving address.
   ,...
 ]
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli syscoinlistreceivedbyaddress 
-\`\`\`
+```
 
 ## **`syscoinsendrawtransaction`**
 
@@ -4074,11 +4828,12 @@ Submits raw transaction (serialized, hex-encoded) to local node and network.
 
 Also see createrawtransaction and signrawtransaction calls.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "hexstring"    (string, required) The hex string of the raw transaction)
 2. allowhighfees  (boolean, optional, default=false) Allow high fees
 3. instantsend    (boolean, optional, default=false) Use InstantSend to send this transaction
-\`\`\`
+```
 
 ## **`syscointxfund`**
 
@@ -4086,7 +4841,8 @@ Also see createrawtransaction and signrawtransaction calls.
 
 Funds a new syscoin transaction with inputs used from wallet or an array of addresses specified.
 
-*Arguments:*```
+*Arguments:*
+```
   "hexstring" (string, required) The raw syscoin transaction output given from rpc (ie: aliasnew, aliasupdate)
   "addresses (object, optional) "
     [
@@ -4096,18 +4852,21 @@ Funds a new syscoin transaction with inputs used from wallet or an array of addr
 	"instantsend" (boolean, optional, default=false) Use InstantSend to send this transaction. 
 }
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli syscointxfund  <hexstring> '{"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]}' false
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring> {"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]} true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
 
 Requires wallet passphrase to be set with walletpassphrase call.
-\`\`\`
+```
 
 ## **`tpstestinfo`**
 
 *`tpstestinfo`*
 Gets TPS Test information for receivers of assetallocation transfers
-\`\`\`
+```
 
 ## **`walletlock`**
 
@@ -4117,7 +4876,10 @@ Removes the wallet encryption key from memory, locking the wallet.
 After calling this method, you will need to call walletpassphrase again
 before being able to call any methods which require the wallet to be unlocked.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Set the passphrase for 2 minutes to perform a transaction
 > syscoin-cli walletpassphrase "my pass phrase" 120
@@ -4130,7 +4892,7 @@ Clear the passphrase since we are done before 2 minutes is up
 
 As json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletlock", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`walletpassphrase`**
 
@@ -4139,7 +4901,8 @@ As json rpc call
 Stores the wallet decryption key in memory for 'timeout' seconds.
 This is needed prior to performing transactions related to private keys such as sending syscoins
 
-*Arguments:*```
+*Arguments:*
+```
 1. "passphrase"        (string, required) The wallet passphrase
 2. timeout             (numeric, required) The time to keep the decryption key in seconds.
 3. mixingonly          (boolean, optional, default=false) If is true sending functions are disabled.
@@ -4148,7 +4911,10 @@ Note:
 Issuing the walletpassphrase command while the wallet is already unlocked will set a new unlock
 time that overrides the old one.
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 
 Unlock the wallet for 60 seconds
 > syscoin-cli walletpassphrase "my pass phrase" 60
@@ -4161,7 +4927,7 @@ Lock the wallet again (before 60 seconds)
 
 As json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrase", "params": ["my pass phrase", 60] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
 ## **`walletpassphrasechange`**
 
@@ -4169,12 +4935,16 @@ As json rpc call
 
 Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'.
 
-*Arguments:*```
+*Arguments:*
+```
 1. "oldpassphrase"      (string) The current passphrase
 2. "newpassphrase"      (string) The new passphrase
 
-```*Examples:*```
+```
+
+*Examples:*
+```
 > syscoin-cli walletpassphrasechange "old one" "new one"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-\`\`\`
+```
 
