@@ -31,4 +31,4 @@ syscoin_of_the_markdown() {
   done < <(syscoin-cli help)
 }
 
-syscoin_of_the_markdown
+echo "$(syscoin_of_the_markdown) " > README.md
