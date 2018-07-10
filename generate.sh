@@ -45,10 +45,10 @@ syscoin_of_the_markdown() {
       helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n')
 
       # ad command to parent readme
-      echo "### [\`$cmd\`](${head}/${cmd}.md)" >> ../README.md
+      echo "* [\`$cmd\`](${head}/${cmd}.md)" >> ../README.md
 
       # add command to directory readme
-      echo "## [\`$cmd\`](${cmd}.md)" >> README.md
+      echo "* [\`$cmd\`](${cmd}.md)" >> README.md
       echo "> \`$cli\`" >> README.md
       echo "" >> README.md
 
