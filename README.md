@@ -225,7 +225,7 @@ Returns the hash of the best (tip) block in the longest blockchain.
 ```
 "hex"      (string) the block hash hex encoded
 
-
+```
 
 ***Examples:***
 ```
@@ -334,7 +334,7 @@ Returns an object containing various state info regarding blockchain processing.
   }
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -357,7 +357,7 @@ Returns the number of blocks in the longest blockchain.
 ```
 n    (numeric) The current block count
 
-
+```
 
 ***Examples:***
 ```
@@ -604,7 +604,7 @@ Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 ```
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-
+```
 
 ***Examples:***
 ```
@@ -795,7 +795,7 @@ Returns details on the active state of the TX memory pool.
   "mempoolminfee": xxxxx       (numeric) Minimum fee for tx to be accepted
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1011,7 +1011,7 @@ Note this call may take some time.
   "total_amount": x.xxx          (numeric) The total amount
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1182,7 +1182,7 @@ DEPRECATED. Returns an object containing various state info.
   "errors": "..."           (string) any error messages
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1213,7 +1213,7 @@ Returns an object containing information about memory usage.
   }
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1525,7 +1525,7 @@ Returns a json object containing mining-related information.
   "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1767,7 +1767,7 @@ Returns the number of connections to other nodes.
 ```
 n          (numeric) The connection count
 
-
+```
 
 ***Examples:***
 ```
@@ -1804,7 +1804,7 @@ and current time.
   }
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1856,7 +1856,7 @@ Returns an object containing various state info regarding P2P networking.
   "warnings": "..."                    (string) any network warnings
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -1918,7 +1918,7 @@ Returns data about each connected network node as a json array of objects.
   ,...
 ]
 
-
+```
 
 ***Examples:***
 ```
@@ -2424,7 +2424,7 @@ Returns an object containing governance parameters.
   "maxgovobjdatasize": xxxxx,             (numeric) maximum governance object data size in bytes
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -3348,7 +3348,7 @@ Returns an object containing sensitive private info about this HD wallet.
   "mnemonicpassphrase": "passphrase",  (string) The mnemonic passphrase for this HD wallet (bip39)
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -3676,7 +3676,7 @@ This is for use with raw transactions, NOT normal use.
 ```
 "address"    (string) The address
 
-
+```
 
 ***Examples:***
 ```
@@ -3864,7 +3864,7 @@ Returns an object containing various wallet state info.
     ]
 }
 
-
+```
 
 ***Examples:***
 ```
@@ -4238,7 +4238,7 @@ in past transactions
   ,...
 ]
 
-
+```
 
 ***Examples:***
 ```
@@ -4388,7 +4388,7 @@ See the lockunspent call to lock and unlock transactions for spending.
   ,...
 ]
 
-
+```
 
 ***Examples:***
 ```
@@ -5128,7 +5128,7 @@ List balances by receiving address.
   ,...
 ]
 
-
+```
 
 ***Examples:***
 ```
