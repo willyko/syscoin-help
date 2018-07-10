@@ -2,13 +2,20 @@
 
 syscoin_of_the_markdown() {
   LC_ALL=C
+  echo "# Syscoin Command Reference" > README.md
   while read i; do 
     c=$(echo "$i" | head -n1 | awk '{print $1;}');
     if [[ $c == "==" ]]; then 
       h=$(echo "$i" | head -n1 | awk '{print $2;}');
       if [[ $h != $head ]]; then
+        if [ "$head" != "" ]; then
+          popd
+        fi
         head="$h";
-        printf "\n\n$head\n==============================\n";
+        echo "## [$head](/$head)" >> README.md
+        mkdir -p $head
+        pushd $head
+        #printf "\n\n$head\n==============================\n";
       fi
     else
       if [[ $c != $cmd ]]; then
@@ -20,7 +27,6 @@ syscoin_of_the_markdown() {
       RTICKS=""
       ETICKS=""
       EXAMPLES=""
-      printf "## **\`${cmd}\`**\n\n";
       helpdoc=$(syscoin-cli help $cmd)
       echo "$helpdoc" | grep -q "Arguments:" && RTICKS=$TICKS
       echo "$helpdoc" | grep -q "Arguments:" && ETICKS=$TICKS
@@ -31,14 +37,17 @@ syscoin_of_the_markdown() {
       helpdoc=$(echo "$helpdoc" | sed -e "s#^${cmd}\(.*\)#**\`${cmd}\\1\`**#")
       helpdoc=$(echo "$helpdoc" | sed -e "s/Arguments:/***Arguments:***é$TICKS/" | tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:/${RTICKS}éé***Result\1:***é$TICKS/" | tr 'é' '\n') 
-      helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n') 
-      echo "$helpdoc"
+      helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n')
+
+      echo "## **\`${cmd}\`**" > "${cmd}.md"
+      echo "" >> "${cmd}.md"
+      echo "$helpdoc" >> "${cmd}.md"
       if [ "$ETICKS" != "" ] || [ "$RTICKS" != "" ] || [ "$EXAMPLES" != "" ]; then
-        echo "\`\`\`"
+        echo "\`\`\`" >> "${cmd}.md"
       fi
-      echo ""
     fi
   done < <(syscoin-cli help)
 }
 
-echo "$(syscoin_of_the_markdown) " > README.md
+syscoin_of_the_markdown
+#echo "$(syscoin_of_the_markdown) " > README.md

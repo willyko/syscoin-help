@@ -1,0 +1,26 @@
+## **`getblockhashes`**
+
+**`getblockhashes timestamp`**
+
+Returns array of hashes of blocks within the timestamp range provided.
+
+***Arguments:***
+```
+1. high         (numeric, required) The newer block timestamp
+2. low          (numeric, required) The older block timestamp
+
+```
+
+***Result:***
+```
+[
+  "hash"         (string) The block hash
+]
+
+```
+
+***Examples:***
+```
+> syscoin-cli getblockhashes 1231614698 1231024505
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+```
