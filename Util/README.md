@@ -1,25 +1,41 @@
 # Util
 ## [`createmultisig`](createmultisig.md)
-> `createmultisig nrequired ["key",...]`
+```
+createmultisig nrequired ["key",...]
+```
 
 ## [`estimatefee`](estimatefee.md)
-> `estimatefee nblocks`
+```
+estimatefee nblocks
+```
 
 ## [`estimatepriority`](estimatepriority.md)
-> `estimatepriority nblocks`
+```
+estimatepriority nblocks
+```
 
 ## [`estimatesmartfee`](estimatesmartfee.md)
-> `estimatesmartfee nblocks`
+```
+estimatesmartfee nblocks
+```
 
 ## [`estimatesmartpriority`](estimatesmartpriority.md)
-> `estimatesmartpriority nblocks`
+```
+estimatesmartpriority nblocks
+```
 
 ## [`signmessagewithprivkey`](signmessagewithprivkey.md)
-> `signmessagewithprivkey "privkey" "message"`
+```
+signmessagewithprivkey "privkey" "message"
+```
 
 ## [`validateaddress`](validateaddress.md)
-> `validateaddress "address"`
+```
+validateaddress "address"
+```
 
 ## [`verifymessage`](verifymessage.md)
-> `verifymessage "address" "signature" "message"`
+```
+verifymessage "address" "signature" "message"
+```
 

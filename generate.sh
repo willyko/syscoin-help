@@ -49,7 +49,9 @@ syscoin_of_the_markdown() {
 
       # add command to directory readme
       echo "## [\`$cmd\`](${cmd}.md)" >> README.md
-      echo "> \`$cli\`" >> README.md
+      echo "\`\`\`" >> README.md
+      echo "$cli" >> README.md
+      echo "\`\`\`" >> README.md
       echo "" >> README.md
 
       # create command markdown file

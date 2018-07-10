@@ -1,7 +1,11 @@
 # Generating
 ## [`generate`](generate.md)
-> `generate nblocks ( maxtries )`
+```
+generate nblocks ( maxtries )
+```
 
 ## [`generatetoaddress`](generatetoaddress.md)
-> `generatetoaddress nblocks address (maxtries)`
+```
+generatetoaddress nblocks address (maxtries)
+```
 

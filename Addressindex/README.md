@@ -1,16 +1,26 @@
 # Addressindex
 ## [`getaddressbalance`](getaddressbalance.md)
-> `getaddressbalance`
+```
+getaddressbalance
+```
 
 ## [`getaddressdeltas`](getaddressdeltas.md)
-> `getaddressdeltas`
+```
+getaddressdeltas
+```
 
 ## [`getaddressmempool`](getaddressmempool.md)
-> `getaddressmempool`
+```
+getaddressmempool
+```
 
 ## [`getaddresstxids`](getaddresstxids.md)
-> `getaddresstxids`
+```
+getaddresstxids
+```
 
 ## [`getaddressutxos`](getaddressutxos.md)
-> `getaddressutxos`
+```
+getaddressutxos
+```
 

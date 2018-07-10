@@ -1,37 +1,61 @@
 # Syscoin
 ## [`getgovernanceinfo`](getgovernanceinfo.md)
-> `getgovernanceinfo`
+```
+getgovernanceinfo
+```
 
 ## [`getpoolinfo`](getpoolinfo.md)
-> `getpoolinfo`
+```
+getpoolinfo
+```
 
 ## [`getsuperblockbudget`](getsuperblockbudget.md)
-> `getsuperblockbudget index`
+```
+getsuperblockbudget index
+```
 
 ## [`gobject`](gobject.md)
-> `gobject "command"...`
+```
+gobject "command"...
+```
 
 ## [`masternode`](masternode.md)
-> `masternode "command"...`
+```
+masternode "command"...
+```
 
 ## [`masternodebroadcast`](masternodebroadcast.md)
-> `masternodebroadcast "command"...`
+```
+masternodebroadcast "command"...
+```
 
 ## [`masternodelist`](masternodelist.md)
-> `masternodelist ( "mode" "filter" )`
+```
+masternodelist ( "mode" "filter" )
+```
 
 ## [`mnsync`](mnsync.md)
-> `mnsync [status|next|reset]`
+```
+mnsync [status|next|reset]
+```
 
 ## [`privatesend`](privatesend.md)
-> `privatesend "command"`
+```
+privatesend "command"
+```
 
 ## [`sentinelping`](sentinelping.md)
-> `sentinelping version`
+```
+sentinelping version
+```
 
 ## [`spork`](spork.md)
-> `spork "command"`
+```
+spork "command"
+```
 
 ## [`voteraw`](voteraw.md)
-> `voteraw <masternode-tx-hash> <masternode-tx-index> <governance-hash> <vote-signal> [yes|no|abstain] <time> <vote-sig>`
+```
+voteraw <masternode-tx-hash> <masternode-tx-index> <governance-hash> <vote-signal> [yes|no|abstain] <time> <vote-sig>
+```
 

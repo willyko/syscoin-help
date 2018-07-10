@@ -1,37 +1,61 @@
 # Network
 ## [`addnode`](addnode.md)
-> `addnode "node" "add|remove|onetry"`
+```
+addnode "node" "add|remove|onetry"
+```
 
 ## [`clearbanned`](clearbanned.md)
-> `clearbanned`
+```
+clearbanned
+```
 
 ## [`disconnectnode`](disconnectnode.md)
-> `disconnectnode "address" `
+```
+disconnectnode "address" 
+```
 
 ## [`getaddednodeinfo`](getaddednodeinfo.md)
-> `getaddednodeinfo ( "node" )`
+```
+getaddednodeinfo ( "node" )
+```
 
 ## [`getconnectioncount`](getconnectioncount.md)
-> `getconnectioncount`
+```
+getconnectioncount
+```
 
 ## [`getnettotals`](getnettotals.md)
-> `getnettotals`
+```
+getnettotals
+```
 
 ## [`getnetworkinfo`](getnetworkinfo.md)
-> `getnetworkinfo`
+```
+getnetworkinfo
+```
 
 ## [`getpeerinfo`](getpeerinfo.md)
-> `getpeerinfo`
+```
+getpeerinfo
+```
 
 ## [`listbanned`](listbanned.md)
-> `listbanned`
+```
+listbanned
+```
 
 ## [`ping`](ping.md)
-> `ping`
+```
+ping
+```
 
 ## [`setban`](setban.md)
-> `setban "subnet" "add|remove" (bantime) (absolute)`
+```
+setban "subnet" "add|remove" (bantime) (absolute)
+```
 
 ## [`setnetworkactive`](setnetworkactive.md)
-> `setnetworkactive true|false`
+```
+setnetworkactive true|false
+```
 

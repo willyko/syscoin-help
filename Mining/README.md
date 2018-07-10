@@ -1,25 +1,41 @@
 # Mining
 ## [`createauxblock`](createauxblock.md)
-> `createauxblock <address>`
+```
+createauxblock <address>
+```
 
 ## [`getauxblock`](getauxblock.md)
-> `getauxblock (hash auxpow)`
+```
+getauxblock (hash auxpow)
+```
 
 ## [`getblocktemplate`](getblocktemplate.md)
-> `getblocktemplate ( TemplateRequest )`
+```
+getblocktemplate ( TemplateRequest )
+```
 
 ## [`getmininginfo`](getmininginfo.md)
-> `getmininginfo`
+```
+getmininginfo
+```
 
 ## [`getnetworkhashps`](getnetworkhashps.md)
-> `getnetworkhashps ( nblocks height )`
+```
+getnetworkhashps ( nblocks height )
+```
 
 ## [`prioritisetransaction`](prioritisetransaction.md)
-> `prioritisetransaction <txid> <priority delta> <fee delta>`
+```
+prioritisetransaction <txid> <priority delta> <fee delta>
+```
 
 ## [`submitauxblock`](submitauxblock.md)
-> `submitauxblock <hash> <auxpow>`
+```
+submitauxblock <hash> <auxpow>
+```
 
 ## [`submitblock`](submitblock.md)
-> `submitblock "hexdata" ( "jsonparametersobject" )`
+```
+submitblock "hexdata" ( "jsonparametersobject" )
+```
 
