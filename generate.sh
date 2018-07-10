@@ -48,7 +48,7 @@ syscoin_of_the_markdown() {
       echo "* [\`$cmd\`](${head}/${cmd}.md)" >> ../README.md
 
       # add command to directory readme
-      echo "* [\`$cmd\`](${cmd}.md)" >> README.md
+      echo "## [\`$cmd\`](${cmd}.md)" >> README.md
       echo "> \`$cli\`" >> README.md
       echo "" >> README.md
 
