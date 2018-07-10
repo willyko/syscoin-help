@@ -1,4 +1,4 @@
-# [Addressindex]
+# Addressindex
 ## [getaddressbalance](getaddressbalance.md)
 ## [getaddressdeltas](getaddressdeltas.md)
 ## [getaddressmempool](getaddressmempool.md)

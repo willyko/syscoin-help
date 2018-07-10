@@ -1,4 +1,4 @@
-# [Syscoin]
+# Syscoin
 ## [getgovernanceinfo](getgovernanceinfo.md)
 ## [getpoolinfo](getpoolinfo.md)
 ## [getsuperblockbudget](getsuperblockbudget.md)

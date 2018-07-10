@@ -1,4 +1,4 @@
-# [Control]
+# Control
 ## [debug](debug.md)
 ## [getinfo](getinfo.md)
 ## [getmemoryinfo](getmemoryinfo.md)

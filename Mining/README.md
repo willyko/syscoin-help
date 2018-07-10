@@ -1,4 +1,4 @@
-# [Mining]
+# Mining
 ## [createauxblock](createauxblock.md)
 ## [getauxblock](getauxblock.md)
 ## [getblocktemplate](getblocktemplate.md)

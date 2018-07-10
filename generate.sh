@@ -16,7 +16,7 @@ syscoin_of_the_markdown() {
         echo "## [$head](/$head)" >> README.md
         mkdir -p $head
         cd $head
-        echo "# [$head]" > README.md
+        echo "# $head" > README.md
       fi
     else
       if [[ $c != $cmd ]]; then

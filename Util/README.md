@@ -1,4 +1,4 @@
-# [Util]
+# Util
 ## [createmultisig](createmultisig.md)
 ## [estimatefee](estimatefee.md)
 ## [estimatepriority](estimatepriority.md)

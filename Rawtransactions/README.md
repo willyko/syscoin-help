@@ -1,4 +1,4 @@
-# [Rawtransactions]
+# Rawtransactions
 ## [createrawtransaction](createrawtransaction.md)
 ## [decoderawtransaction](decoderawtransaction.md)
 ## [decodescript](decodescript.md)

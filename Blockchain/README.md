@@ -1,4 +1,4 @@
-# [Blockchain]
+# Blockchain
 ## [getbestblockhash](getbestblockhash.md)
 ## [getblock](getblock.md)
 ## [getblockchaininfo](getblockchaininfo.md)

@@ -1,4 +1,4 @@
-# [Network]
+# Network
 ## [addnode](addnode.md)
 ## [clearbanned](clearbanned.md)
 ## [disconnectnode](disconnectnode.md)

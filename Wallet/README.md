@@ -1,4 +1,4 @@
-# [Wallet]
+# Wallet
 ## [abandontransaction](abandontransaction.md)
 ## [addmultisigaddress](addmultisigaddress.md)
 ## [aliasaddscript](aliasaddscript.md)
