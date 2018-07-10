@@ -278,7 +278,7 @@ If verbose is true, returns an Object with information about block <hash>.
 
 
 
-***Result (for verbose=false):***
+***Result (for verbose = false):***
 
 ```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
@@ -462,7 +462,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
 
 
 
-***Result (for verbose=false):***
+***Result (for verbose = false):***
 
 ```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
@@ -521,7 +521,7 @@ If verbose is true, each item is an Object with information about a single block
 
 
 
-***Result (for verbose=false):***
+***Result (for verbose = false):***
 
 ```
 [
@@ -627,7 +627,7 @@ If txid is in the mempool, returns all in-mempool ancestors.
 
 
 
-***Result (for verbose=false):***
+***Result (for verbose = false):***
 
 ```
 [                       (json array of strings)
@@ -639,7 +639,7 @@ If txid is in the mempool, returns all in-mempool ancestors.
 
 
 
-***Result (for verbose=true):***
+***Result (for verbose = true):***
 
 ```
 {                           (json object)
@@ -686,7 +686,7 @@ If txid is in the mempool, returns all in-mempool descendants.
 
 
 
-***Result (for verbose=false):***
+***Result (for verbose = false):***
 
 ```
 [                       (json array of strings)
@@ -698,7 +698,7 @@ If txid is in the mempool, returns all in-mempool descendants.
 
 
 
-***Result (for verbose=true):***
+***Result (for verbose = true):***
 
 ```
 {                           (json object)
@@ -819,9 +819,9 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
 
 
-***Result:***
+***Result (for verbose = false):***
 
-``` (for verbose = false):
+```
 [                     (json array of string)
   "transactionid"     (string) The transaction id
   ,...
@@ -831,9 +831,9 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
 
 
-***Result:***
+***Result (for verbose = true):***
 
-``` (for verbose = true):
+```
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -2290,7 +2290,7 @@ If verbose is 'false' or omitted, returns a string that is serialized, hex-encod
 
 ## **`sendrawtransaction`**
 
-**`sendrawtransaction "hexstring" ( allowhighfees instantsend )`**
+**`sendrawtransaction "hexstring" ( allowhighfees instantsend bypasslimits)`**
 
 Submits raw transaction (serialized, hex-encoded) to local node and network.
 
@@ -2301,6 +2301,7 @@ Also see createrawtransaction and signrawtransaction calls.
 1. "hexstring"    (string, required) The hex string of the raw transaction)
 2. allowhighfees  (boolean, optional, default=false) Allow high fees
 3. instantsend    (boolean, optional, default=false) Use InstantSend to send this transaction
+3. bypasslimits   (boolean, optional, default=false) Bypass transactions policy limits
 
 ```
 
@@ -3048,7 +3049,22 @@ Show values of an alias.
 <aliasname> alias name.
 <public value> alias public profile data, 256 characters max.
 <accept_transfers_flags> 0 for none, 1 for accepting certificate transfers, 2 for accepting asset transfers and 3 for all. Default is 3.
-<expire_timestamp> Epoch time when to expire alias. It is exponentially more expensive per year, calculation is FEERATE*(2.88^years). FEERATE is the dynamic satoshi per byte fee set in the rate peg alias used for this alias. Defaults to 1 hour.
+<expire_timestamp> Epoch time when to expire alias. It is exponentially more expensive per year, calculation is FEERATE*(2.88^years). FEERATE is the dynamic based on the size of the transaction and what the minimum fee rate is currently which depends on how congested the network is. Defaults to 1 hour.
+<address> Address for this alias.
+<encryption_privatekey> Encrypted private key used for encryption/decryption of private data related to this alias. Should be encrypted to publickey.
+<encryption_publickey> Public key used for encryption/decryption of private data related to this alias.
+<witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
+
+Requires wallet passphrase to be set with walletpassphrase call.
+
+## **`aliasnewestimatedfee`**
+
+**`aliasnewestimatedfee [aliasname] [public value] [accept_transfers_flags=3] [expire_timestamp] [address] [encryption_privatekey] [encryption_publickey] [witness]`**
+Estimate the fee for a new alias.
+<aliasname> alias name.
+<public value> alias public profile data, 256 characters max.
+<accept_transfers_flags> 0 for none, 1 for accepting certificate transfers, 2 for accepting asset transfers and 3 for all. Default is 3.
+<expire_timestamp> Epoch time when to expire alias. It is exponentially more expensive per year, calculation is FEERATE*(2.88^years). FEERATE is the dynamic based on the size of the transaction and what the minimum fee rate is currently which depends on how congested the network is. Defaults to 1 hour.
 <address> Address for this alias.
 <encryption_privatekey> Encrypted private key used for encryption/decryption of private data related to this alias. Should be encrypted to publickey.
 <encryption_publickey> Public key used for encryption/decryption of private data related to this alias.
@@ -3117,7 +3133,22 @@ Update and possibly transfer an alias.
 <public_value> alias public profile data, 256 characters max.
 <address> Address of alias.
 <accept_transfers_flags> 0 for none, 1 for accepting certificate transfers, 2 for accepting asset transfers and 3 for all. Default is 3.
-<expire_timestamp> Epoch time when to expire alias. It is exponentially more expensive per year, calculation is 2.88^years. FEERATE is the dynamic satoshi per byte fee set in the rate peg alias used for this alias. Defaults to 1 hour. Set to 0 if not changing expiration.
+<expire_timestamp> Epoch time when to expire alias. It is exponentially more expensive per year, calculation is FEERATE*(2.88^years). FEERATE is the dynamic based on the size of the transaction and what the minimum fee rate is currently which depends on how congested the network is. Set to 0 if not changing expiration, if non-empty a fee will be applied for changing the expiry time.
+<encryption_privatekey> Encrypted private key used for encryption/decryption of private data related to this alias. If transferring, the key should be encrypted to alias_pubkey.
+<encryption_publickey> Public key used for encryption/decryption of private data related to this alias. Useful if you are changing pub/priv keypair for encryption on this alias.
+<witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
+
+Requires wallet passphrase to be set with walletpassphrase call.
+
+## **`aliasupdateestimatedfee`**
+
+**`aliasupdateestimatedfee [aliasname] [public value] [address] [accept_transfers_flags=3] [expire_timestamp] [encryption_privatekey] [encryption_publickey] [witness]`**
+Estimate the fee for an update and possibly transfer action on an alias.
+<aliasname> alias name.
+<public_value> alias public profile data, 256 characters max.
+<address> Address of alias.
+<accept_transfers_flags> 0 for none, 1 for accepting certificate transfers, 2 for accepting asset transfers and 3 for all. Default is 3.
+<expire_timestamp> Epoch time when to expire alias. It is exponentially more expensive per year, calculation is FEERATE*(2.88^years). FEERATE is the dynamic based on the size of the transaction and what the minimum fee rate is currently which depends on how congested the network is. Set to 0 if not changing expiration, if non-empty a fee will be applied for changing the expiry time.
 <encryption_privatekey> Encrypted private key used for encryption/decryption of private data related to this alias. If transferring, the key should be encrypted to alias_pubkey.
 <encryption_publickey> Public key used for encryption/decryption of private data related to this alias. Useful if you are changing pub/priv keypair for encryption on this alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
@@ -4046,6 +4077,7 @@ Import using the json rpc call
 Send an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001
 
 Requires wallet passphrase to be set with walletpassphrase call.
+
 ***Arguments:***
 ```
 1. "address"     (string, required) The syscoin address to send to.
@@ -5108,7 +5140,6 @@ Funds a new syscoin transaction with inputs used from the wallet or an option ar
 are specified a new change address is created. When creating an alias via aliasnew it is recommended to specify
 the same address you assigned to the alias in the addresses argument.
 
-
 ***Arguments:***
 ```
   "hexstring" (string, required) The raw syscoin transaction output given from rpc (ie: aliasnew, aliasupdate)
@@ -5120,19 +5151,12 @@ the same address you assigned to the alias in the addresses argument.
 	"instantsend" (boolean, optional, default=false) Use InstantSend to send this transaction. 
 }
 
-CLI ```
+```
 
 ***Examples:***
 ```
-> syscoin-cli syscointxfund  <hexstring>
 > syscoin-cli syscointxfund  <hexstring> '{"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]}' false
-
-RPC ```
-
-***Examples:***
-```
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring>] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring> '{"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]}' true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring> {"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]} true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
 
 Requires wallet passphrase to be set with walletpassphrase call.
 ```
