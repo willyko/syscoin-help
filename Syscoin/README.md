@@ -1,0 +1,13 @@
+# [Syscoin]
+## [getgovernanceinfo](getgovernanceinfo.md)
+## [getpoolinfo](getpoolinfo.md)
+## [getsuperblockbudget](getsuperblockbudget.md)
+## [gobject](gobject.md)
+## [masternode](masternode.md)
+## [masternodebroadcast](masternodebroadcast.md)
+## [masternodelist](masternodelist.md)
+## [mnsync](mnsync.md)
+## [privatesend](privatesend.md)
+## [sentinelping](sentinelping.md)
+## [spork](spork.md)
+## [voteraw](voteraw.md)

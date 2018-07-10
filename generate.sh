@@ -7,15 +7,16 @@ syscoin_of_the_markdown() {
     c=$(echo "$i" | head -n1 | awk '{print $1;}');
     if [[ $c == "==" ]]; then 
       h=$(echo "$i" | head -n1 | awk '{print $2;}');
+      echo "$h"
       if [[ $h != $head ]]; then
         if [ "$head" != "" ]; then
-          popd
+          cd ..
         fi
         head="$h";
         echo "## [$head](/$head)" >> README.md
         mkdir -p $head
-        pushd $head
-        #printf "\n\n$head\n==============================\n";
+        cd $head
+        echo "# [$head]" > README.md
       fi
     else
       if [[ $c != $cmd ]]; then
@@ -23,6 +24,7 @@ syscoin_of_the_markdown() {
       fi
     fi
     if [[ $cmd != "" ]]; then
+      echo " - $cmd"
       TICKS="\\\`\\\`\\\`"
       RTICKS=""
       ETICKS=""
@@ -39,6 +41,10 @@ syscoin_of_the_markdown() {
       helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:/${RTICKS}éé***Result\1:***é$TICKS/" | tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n')
 
+      # add command to directory readme
+      echo "## [$cmd](${cmd}.md)" >> README.md
+
+      # create command markdown file
       echo "## **\`${cmd}\`**" > "${cmd}.md"
       echo "" >> "${cmd}.md"
       echo "$helpdoc" >> "${cmd}.md"
