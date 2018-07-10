@@ -1146,6 +1146,7 @@ Change debug category on the fly. Specify single category or use '+' to specify 
 ```
 > syscoin-cli debug syscoin
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "debug", "params": [syscoin+net] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+```
 
 ## **`getinfo`**
 
@@ -1689,6 +1690,7 @@ Clear all banned IPs.
 ```
 > syscoin-cli clearbanned 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "clearbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+```
 
 ## **`disconnectnode`**
 
@@ -1935,6 +1937,7 @@ List all banned IPs/Subnets.
 ```
 > syscoin-cli listbanned 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+```
 
 ## **`ping`**
 
@@ -1950,6 +1953,7 @@ Ping command is handled in queue with all other commands, so it measures process
 ```
 > syscoin-cli ping 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+```
 
 ## **`setban`**
 
@@ -5162,6 +5166,7 @@ Clear the passphrase since we are done before 2 minutes is up
 
 As json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletlock", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+```
 
 ## **`walletpassphrase`**
 

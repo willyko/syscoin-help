@@ -18,6 +18,7 @@ syscoin_of_the_markdown() {
       TICKS="\\\`\\\`\\\`"
       RTICKS=""
       ETICKS=""
+      EXAMPLES=""
       printf "## **\`${cmd}\`**\n\n";
       helpdoc=$(syscoin-cli help $cmd)
       echo "$helpdoc" | grep -q "Arguments:" && RTICKS=$TICKS
@@ -25,12 +26,13 @@ syscoin_of_the_markdown() {
       if [ "$ETICKS" = "" ]; then
         echo "$helpdoc" | grep -q "Result\( (.*)\)*:" && ETICKS=$TICKS
       fi
+      echo "$helpdoc" | grep -q "Examples:" && EXAMPLES="Y"
       helpdoc=$(echo "$helpdoc" | sed -e "s#^${cmd}\(.*\)#**\`${cmd}\\1\`**#")
       helpdoc=$(echo "$helpdoc" | awk -v patt="Arguments:" "\$0 ~ patt {gsub(patt, \"***\"patt\"***\n$TICKS\")}1")
       helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:/${RTICKS}éé***Result\1:***é$TICKS/" | LC_ALL=C tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | awk -v patt="Examples:" "\$0 ~ patt {gsub(patt, \"$ETICKS\n\n***\"patt\"***\n$TICKS\")}1")
       echo "$helpdoc"
-      if [ "$ETICKS" != "" ] || [ "$RTICKS" != "" ]; then
+      if [ "$ETICKS" != "" ] || [ "$RTICKS" != "" ] || [ "$EXAMPLES" != "" ]; then
         echo "\`\`\`"
       fi
       echo ""
