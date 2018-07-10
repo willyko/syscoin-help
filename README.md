@@ -1146,7 +1146,6 @@ Change debug category on the fly. Specify single category or use '+' to specify 
 ```
 > syscoin-cli debug syscoin
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "debug", "params": [syscoin+net] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-```
 
 ## **`getinfo`**
 
@@ -1246,7 +1245,6 @@ List all commands, or get help for a specified command.
 **`stop`**
 
 Stop Syscoin Core server.
-```
 
 
 
@@ -1691,7 +1689,6 @@ Clear all banned IPs.
 ```
 > syscoin-cli clearbanned 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "clearbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-```
 
 ## **`disconnectnode`**
 
@@ -1938,7 +1935,6 @@ List all banned IPs/Subnets.
 ```
 > syscoin-cli listbanned 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-```
 
 ## **`ping`**
 
@@ -1954,7 +1950,6 @@ Ping command is handled in queue with all other commands, so it measures process
 ```
 > syscoin-cli ping 
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-```
 
 ## **`setban`**
 
@@ -2436,7 +2431,6 @@ Returns an object containing governance parameters.
 
 **`getpoolinfo`**
 Returns an object containing mixing pool related information.
-```
 
 ## **`getsuperblockbudget`**
 
@@ -2484,7 +2478,6 @@ Available commands:
   vote-name         - Vote on a governance object by masternode name (using masternode.conf setup)
   vote-conf          - Vote on a governance object by masternode configured in syscoin.conf
   vote-many          - Vote on a governance object by all masternodes (using masternode.conf setup)
-```
 
 ## **`masternode`**
 
@@ -2563,7 +2556,6 @@ Available modes:
 
 **`mnsync [status|next|reset]`**
 Returns the sync status, updates to the next step or resets it entirely.
-```
 
 ## **`privatesend`**
 
@@ -2646,7 +2638,6 @@ For 'active':
 
 **`voteraw <masternode-tx-hash> <masternode-tx-index> <governance-hash> <vote-signal> [yes|no|abstain] <time> <vote-sig>`**
 Compile and relay a governance vote with provided external signature instead of signing vote internally
-```
 
 
 
@@ -3010,7 +3001,6 @@ As json rpc call
 
 **`aliasaddscript redeemscript`**
 Add redeemscript to local wallet for signing smart contract based alias transactions.
-```
 
 ## **`aliasbalance`**
 
@@ -3042,13 +3032,11 @@ Returns an array of balances based on an array of aliases passed in, internally 
 Clear your whitelist(controls who can resell).
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`aliasinfo`**
 
 **`aliasinfo <aliasname>`**
 Show values of an alias.
-```
 
 ## **`aliasnew`**
 
@@ -3063,7 +3051,6 @@ Show values of an alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`aliaspay`**
 
@@ -3132,7 +3119,6 @@ Update and possibly transfer an alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`aliasupdatewhitelist`**
 
@@ -3151,13 +3137,11 @@ To remove whitelist entry, pass the whilelist entry without changing discount pe
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`aliaswhitelist`**
 
 **`aliaswhitelist <alias>`**
 List all affiliates for this alias.
-```
 
 ## **`assetallocationcollectinterest`**
 
@@ -3168,13 +3152,11 @@ Collect interest on this asset allocation if an interest rate is set on this ass
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`assetallocationinfo`**
 
 **`assetallocationinfo <asset> <alias> <getinputs>`**
 Show stored values of a single asset allocation. Set getinputs to true if you want to get the allocation inputs, if applicable.
-```
 
 ## **`assetallocationsend`**
 
@@ -3190,7 +3172,6 @@ Send an asset allocation you own to another alias. Maximimum recipients is 250.
 The third parameter can be either an array of alias and amounts if sending amount pairs or an array of alias and array of start/end pairs of indexes for input ranges.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`assetallocationsenderstatus`**
 
@@ -3201,13 +3182,11 @@ Level -1 means not found, not a ZDAG transaction, perhaps it is already confirme
 Level 0 means OK.
 Level 1 means warning (checked that in the mempool there are more spending balances than current POW sender balance). An active stance should be taken and perhaps a deeper analysis as to potential conflicts related to the sender.
 Level 2 means an active double spend was found and any depending asset allocation sends are also flagged as dangerous and should wait for POW confirmation before proceeding.
-```
 
 ## **`assetinfo`**
 
 **`assetinfo <asset> <getinputs>`**
 Show stored values of a single asset and its. Set getinputs to true if you want to get the allocation inputs, if applicable.
-```
 
 ## **`assetnew`**
 
@@ -3225,7 +3204,6 @@ Show stored values of a single asset and its. Set getinputs to true if you want 
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`assetsend`**
 
@@ -3241,7 +3219,6 @@ Send an asset you own to another alias as an asset allocation. Maximimum recipie
 The third parameter can be either an array of alias and amounts if sending amount pairs or an array of alias and array of start/end pairs of indexes for input ranges.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`assettransfer`**
 
@@ -3252,7 +3229,6 @@ Transfer a asset allocation you own to another alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`assetupdate`**
 
@@ -3266,7 +3242,6 @@ Perform an update on an asset you control.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`backupwallet`**
 
@@ -3290,7 +3265,6 @@ Safely copies current wallet file to destination, which can be a directory or a 
 
 **`certinfo <guid>`**
 Show stored values of a single certificate and its .
-```
 
 ## **`certnew`**
 
@@ -3302,7 +3276,6 @@ Show stored values of a single certificate and its .
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`certtransfer`**
 
@@ -3315,7 +3288,6 @@ Transfer a certificate you own to another alias.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`certupdate`**
 
@@ -3328,7 +3300,6 @@ Perform an update on an certificate you control.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`dumphdinfo`**
 
@@ -3410,7 +3381,6 @@ Acknowledge escrow payment as seller of offer.
 <instantsend> Set to true to use InstantSend to send this transaction or false otherwise.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowbid`**
 
@@ -3422,7 +3392,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowcompleterefund`**
 
@@ -3432,7 +3401,6 @@ Completes an escrow refund by creating the escrow complete refund transaction on
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowcompleterelease`**
 
@@ -3442,7 +3410,6 @@ Completes an escrow release by creating the escrow complete release transaction 
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowcreaterawtransaction`**
 
@@ -3450,7 +3417,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Creates raw transaction for escrow refund or release, sign the output raw transaction and pass it via the rawtx parameter to escrowrelease. Type is 'refund' or 'release'. Third parameter is array of input (txid, vout, amount) pairs to be used to fund escrow payment. User role represents either 'seller', 'buyer' or 'arbiter', represents who signed for the payment of the escrow. 'seller' or 'arbiter' is valid for type 'refund' (if you are the buyer during refund leave this empty), while 'buyer' or 'arbiter' is valid for type 'release' (if you are the seller during release leave this empty). You only need to provide this parameter when calling escrowrelease or escrowrefund. 
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowfeedback`**
 
@@ -3458,13 +3424,11 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Send feedback for primary and secondary users in escrow, depending on who you are. Ratings are numbers from 1 to 5. User From and User To is either 'buyer', 'seller', 'reseller', or 'arbiter'.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowinfo`**
 
 **`escrowinfo <guid>`**
 Show stored values of a single escrow
-```
 
 ## **`escrownew`**
 
@@ -3487,7 +3451,6 @@ Show stored values of a single escrow
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowrefund`**
 
@@ -3495,7 +3458,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Refunds escrow funds to buyer. User role represents either 'seller' or 'arbiter'. Third parameter (rawtx) is the signed response from escrowcreaterawtransaction. You must sign this transaction externally prior to passing in.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`escrowrelease`**
 
@@ -3503,7 +3465,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Releases escrow funds to seller. User role represents either 'buyer' or 'arbiter'. Third parameter (rawtx) is the signed response from escrowcreaterawtransaction. You must sign this transaction externally prior to passing in.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`getaccount`**
 
@@ -3825,7 +3786,6 @@ Get detailed information about in-wallet transaction <txid>
 
 **`getunconfirmedbalance`**
 Returns the server's total unconfirmed balance
-```
 
 ## **`getwalletinfo`**
 
@@ -4116,7 +4076,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 ## **`keepass`**
 
 **`keepass <genkey|init|setpassphrase>`**
-```
 
 ## **`keypoolrefill`**
 
@@ -4262,7 +4221,6 @@ scan through all aliases.
 > syscoin-cli listaliases 10 10
 > syscoin-cli listaliases 0 0 '{"alias":"find-this-alias"}'
 > syscoin-cli listaliases 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1","startblock":0}'
-```
 
 ## **`listassetallocations`**
 
@@ -4283,7 +4241,6 @@ scan through all asset allocations.
 > syscoin-cli listassetallocations 0 0 '{"asset":"32bff1fa844c124","startblock":0}'
 > syscoin-cli listassetallocations 0 0 '{"sender":"sender-alias","receiver":"receiver-alias"}'
 > syscoin-cli listassetallocations 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-```
 
 ## **`listassetallocationtransactions`**
 
@@ -4303,7 +4260,6 @@ list asset allocations sent or recieved in this wallet.
 > syscoin-cli listassetallocationtransactions 0 0 '{"asset":"32bff1fa844c124","startblock":0}'
 > syscoin-cli listassetallocationtransactions 0 0 '{"sender":"sender-alias","receiver":"receiver-alias"}'
 > syscoin-cli listassetallocationtransactions 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-```
 
 ## **`listassets`**
 
@@ -4322,7 +4278,6 @@ scan through all assets.
 > syscoin-cli listassets 10 10
 > syscoin-cli listassets 0 0 '{"alias":"owner-alias"}'
 > syscoin-cli listassets 0 0 '{"asset":"32bff1fa844c124","alias":"owner-alias","startblock":0}'
-```
 
 ## **`listcerts`**
 
@@ -4342,7 +4297,6 @@ scan through all certificates.
 > syscoin-cli listcerts 0 0 '{"alias":"cert-owner-alias","startblock":0}'
 > syscoin-cli listcerts 0 0 '{"cert":"32bff1fa844c124"}'
 > syscoin-cli listcerts 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-```
 
 ## **`listescrows`**
 
@@ -4364,7 +4318,6 @@ scan through all escrows.
 > syscoin-cli listcerts 0 0 '{"escrow":"32bff1fa844c124"}'
 > syscoin-cli listcerts 0 0 '{"buyeralias":"buyer-alias","selleralias":"seller-alias","arbiteralias":"arbiter-alias"}'
 > syscoin-cli listcerts 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1","startblock":0}'
-```
 
 ## **`listlockunspent`**
 
@@ -4427,7 +4380,6 @@ scan through all offers.
 > syscoin-cli listoffers 0 0 '{"offer":"32bff1fa844c124","startblock":0}'
 > syscoin-cli listoffers 0 0 '{"alias":"offer-owner-alias"}'
 > syscoin-cli listoffers 0 0 '{"txid":"1c7f966dab21119bac53213a2bc7532bff1fa844c124fd750a7d0b1332440bd1"}'
-```
 
 ## **`listreceivedbyaccount`**
 
@@ -4799,7 +4751,6 @@ As a json rpc call
 
 **`offerinfo <guid>`**
 Show offer details
-```
 
 ## **`offerlink`**
 
@@ -4810,7 +4761,6 @@ Show offer details
 <description> description, 512 characters max.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`offernew`**
 
@@ -4834,7 +4784,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 <witness> Witness alias name that will sign for web-of-trust notarization of this transaction.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`offerupdate`**
 
@@ -4842,7 +4791,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 Perform an update on an offer you control.
 
 Requires wallet passphrase to be set with walletpassphrase call.
-```
 
 ## **`prunesyscoinservices`**
 
@@ -4850,7 +4798,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 Prune expired Syscoin service data from the internal database.
 > syscoin-cli prunesyscoinservices 
-```
 
 ## **`removeprunedfunds`**
 
@@ -5103,7 +5050,6 @@ As json rpc
 **`syscoindecoderawtransaction <hexstring>`**
 Decode raw syscoin transaction (serialized, hex-encoded) and display information pertaining to the service that is included in the transactiion data output(OP_RETURN)
 <hexstring> The transaction hex string.
-```
 
 ## **`syscoinlistreceivedbyaddress`**
 
@@ -5191,7 +5137,6 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 **`tpstestinfo`**
 Gets TPS Test information for receivers of assetallocation transfers
-```
 
 ## **`walletlock`**
 
@@ -5217,7 +5162,6 @@ Clear the passphrase since we are done before 2 minutes is up
 
 As json rpc call
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletlock", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
-```
 
 ## **`walletpassphrase`**
 
