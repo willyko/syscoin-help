@@ -1,6 +1,7 @@
 #!/bin/bash
 
 syscoin_of_the_markdown() {
+  LC_ALL=C
   while read i; do 
     c=$(echo "$i" | head -n1 | awk '{print $1;}');
     if [[ $c == "==" ]]; then 
@@ -28,9 +29,9 @@ syscoin_of_the_markdown() {
       fi
       echo "$helpdoc" | grep -q "Examples:" && EXAMPLES="Y"
       helpdoc=$(echo "$helpdoc" | sed -e "s#^${cmd}\(.*\)#**\`${cmd}\\1\`**#")
-      helpdoc=$(echo "$helpdoc" | awk -v patt="Arguments:" "\$0 ~ patt {gsub(patt, \"***\"patt\"***\n$TICKS\")}1")
-      helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:\$/${RTICKS}éé***Result\1:***é$TICKS/" | LC_ALL=C tr 'é' '\n') 
-      helpdoc=$(echo "$helpdoc" | awk -v patt="Examples:" "\$0 ~ patt {gsub(patt, \"$ETICKS\n\n***\"patt\"***\n$TICKS\")}1")
+      helpdoc=$(echo "$helpdoc" | sed -e "s/Arguments:/***Arguments:***é$TICKS/" | tr 'é' '\n') 
+      helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:/${RTICKS}éé***Result\1:***é$TICKS/" | tr 'é' '\n') 
+      helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n') 
       echo "$helpdoc"
       if [ "$ETICKS" != "" ] || [ "$RTICKS" != "" ] || [ "$EXAMPLES" != "" ]; then
         echo "\`\`\`"

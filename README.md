@@ -21,10 +21,7 @@ Returns the balance for an address(es) (requires addressindex to be enabled).
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "balance"  (string) The current balance in satoshis
@@ -59,10 +56,7 @@ Returns all changes for an address (requires addressindex to be enabled).
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -101,10 +95,7 @@ Returns all mempool deltas for an address (requires addressindex to be enabled).
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -146,10 +137,7 @@ Returns the txids for an address(es) (requires addressindex to be enabled).
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   "transactionid"  (string) The transaction id
@@ -182,10 +170,7 @@ Returns all unspent outputs for an address (requires addressindex to be enabled)
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -218,10 +203,7 @@ Returns the hash of the best (tip) block in the longest blockchain.
 
 
 
-
-
 ***Result:***
-
 ```
 "hex"      (string) the block hash hex encoded
 
@@ -247,10 +229,7 @@ If verbose is true, returns an Object with information about block <hash>.
 
 ```
 
-
-
 ***Result (for verbose = true):***
-
 ```
 {
   "hash" : "hash",     (string) the block hash (same as provided)
@@ -276,10 +255,7 @@ If verbose is true, returns an Object with information about block <hash>.
 
 ```
 
-
-
 ***Result (for verbose = false):***
-
 ```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
@@ -298,10 +274,7 @@ Returns an object containing various state info regarding blockchain processing.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "chain": "xxxx",        (string) current network name as defined in BIP70 (main, test, regtest)
@@ -350,10 +323,7 @@ Returns the number of blocks in the longest blockchain.
 
 
 
-
-
 ***Result:***
-
 ```
 n    (numeric) The current block count
 
@@ -377,10 +347,7 @@ Returns hash of block in best-block-chain at height provided.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "hash"         (string) The block hash
 
@@ -405,10 +372,7 @@ Returns array of hashes of blocks within the timestamp range provided.
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   "hash"         (string) The block hash
@@ -436,10 +400,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
 
 ```
 
-
-
 ***Result (for verbose = true):***
-
 ```
 {
   "hash" : "hash",     (string) the block hash (same as provided)
@@ -460,10 +421,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
 
 ```
 
-
-
 ***Result (for verbose = false):***
-
 ```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
@@ -492,10 +450,7 @@ If verbose is true, each item is an Object with information about a single block
 
 ```
 
-
-
 ***Result (for verbose = true):***
-
 ```
 [ {
   "hash" : "hash",               (string)  The block hash
@@ -519,10 +474,7 @@ If verbose is true, each item is an Object with information about a single block
 
 ```
 
-
-
 ***Result (for verbose = false):***
-
 ```
 [
   "data",                        (string)  A string that is serialized, hex-encoded data for block header.
@@ -549,10 +501,7 @@ Return information about all known tips in the block tree, including the main ch
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -597,10 +546,7 @@ Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
 
 
-
-
 ***Result:***
-
 ```
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 
@@ -625,10 +571,7 @@ If txid is in the mempool, returns all in-mempool ancestors.
 
 ```
 
-
-
 ***Result (for verbose = false):***
-
 ```
 [                       (json array of strings)
   "transactionid"           (string) The transaction id of an in-mempool ancestor transaction
@@ -637,10 +580,7 @@ If txid is in the mempool, returns all in-mempool ancestors.
 
 ```
 
-
-
 ***Result (for verbose = true):***
-
 ```
 {                           (json object)
   "transactionid" : {       (json object)
@@ -684,10 +624,7 @@ If txid is in the mempool, returns all in-mempool descendants.
 
 ```
 
-
-
 ***Result (for verbose = false):***
-
 ```
 [                       (json array of strings)
   "transactionid"           (string) The transaction id of an in-mempool descendant transaction
@@ -696,10 +633,7 @@ If txid is in the mempool, returns all in-mempool descendants.
 
 ```
 
-
-
 ***Result (for verbose = true):***
-
 ```
 {                           (json object)
   "transactionid" : {       (json object)
@@ -742,10 +676,7 @@ Returns mempool data for given transaction
 
 ```
 
-
-
 ***Result:***
-
 ```
 {                           (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -782,10 +713,7 @@ Returns details on the active state of the TX memory pool.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "size": xxxxx,               (numeric) Current tx count
@@ -817,10 +745,7 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
 ```
 
-
-
 ***Result (for verbose = false):***
-
 ```
 [                     (json array of string)
   "transactionid"     (string) The transaction id
@@ -829,10 +754,7 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
 ```
 
-
-
 ***Result (for verbose = true):***
-
 ```
 {                           (json object)
   "transactionid" : {       (json object)
@@ -878,10 +800,7 @@ Returns the txid and index where an output is spent.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "txid"  (string) The transaction id
@@ -911,10 +830,7 @@ Returns details about an unspent transaction output.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "bestblock" : "hash",    (string) the block hash
@@ -971,10 +887,7 @@ specify the block in which the transaction is included manually (by blockhash).
 
 ```
 
-
-
 ***Result:***
-
 ```
 "data"           (string) A string that is a serialized, hex-encoded data for the proof.
 
@@ -996,10 +909,7 @@ Note this call may take some time.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "height":n,     (numeric) The current block height (index)
@@ -1035,10 +945,7 @@ The effects of preciousblock are not retained across restarts.
 
 ```
 
-
-
 ***Result:***
-
 ```
 
 ```
@@ -1060,10 +967,7 @@ The effects of preciousblock are not retained across restarts.
 
 ```
 
-
-
 ***Result:***
-
 ```
 n    (numeric) Height of the last block pruned.
 
@@ -1088,10 +992,7 @@ Verifies blockchain database.
 
 ```
 
-
-
 ***Result:***
-
 ```
 true|false       (boolean) Verified or not
 
@@ -1116,10 +1017,7 @@ and throwing an RPC error if the block is not in our best chain
 
 ```
 
-
-
 ***Result:***
-
 ```
 ["txid"]      (array, strings) The txid(s) which the proof commits to, or empty array if the proof is invalid
 
@@ -1156,10 +1054,7 @@ DEPRECATED. Returns an object containing various state info.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "version": xxxxx,           (numeric) the server version
@@ -1197,10 +1092,7 @@ Returns an object containing information about memory usage.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "locked": {               (json object) Information about locked memory manager
@@ -1233,10 +1125,7 @@ List all commands, or get help for a specified command.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "text"     (string) The help text
 ```
@@ -1264,10 +1153,7 @@ Mine up to nblocks blocks immediately (before the RPC call returns) to an addres
 
 ```
 
-
-
 ***Result:***
-
 ```
 [ blockhashes ]     (array) hashes of blocks generated
 
@@ -1294,10 +1180,7 @@ Mine blocks immediately to a specified address (before the RPC call returns)
 
 ```
 
-
-
 ***Result:***
-
 ```
 [ blockhashes ]     (array) hashes of blocks generated
 
@@ -1326,10 +1209,7 @@ create a new block and return information required to merge-mine it.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "hash"               (string) hash of the created block
@@ -1366,10 +1246,7 @@ auxpow for a previously returned block.
 
 ```
 
-
-
 ***Result (without arguments):***
-
 ```
 {
   "hash"               (string) hash of the created block
@@ -1383,10 +1260,7 @@ auxpow for a previously returned block.
 
 ```
 
-
-
 ***Result (with arguments):***
-
 ```
 xxxxx        (boolean) whether the submitted block was correct
 
@@ -1428,10 +1302,7 @@ For full specification, see BIPs 22, 23, and 9:
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "capabilities" : [ "capability", ... ],    (array of strings) specific client side supported features
@@ -1508,10 +1379,7 @@ For full specification, see BIPs 22, 23, and 9:
 Returns a json object containing mining-related information.
 
 
-
-
 ***Result:***
-
 ```
 {
   "blocks": nnn,             (numeric) The current block
@@ -1547,10 +1415,7 @@ Pass in [height] to estimate the network speed at the time when a certain block 
 
 ```
 
-
-
 ***Result:***
-
 ```
 x             (numeric) Hashes per second estimated
 
@@ -1579,10 +1444,7 @@ Accepts the transaction into mined blocks at a higher (or lower) priority
 
 ```
 
-
-
 ***Result:***
-
 ```
 true              (boolean) Returns true
 
@@ -1607,10 +1469,7 @@ submit a solved auxpow for a previously block created by 'createauxblock'.
 
 ```
 
-
-
 ***Result:***
-
 ```
 xxxxx        (boolean) whether the submitted block was correct
 
@@ -1640,10 +1499,7 @@ See https://en.syscoin.it/wiki/BIP_0022 for full specification.
 
 ```
 
-
-
 ***Result:***
-
 ```
 
 ```
@@ -1723,10 +1579,7 @@ Returns information about the given added node, or all added nodes
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -1759,10 +1612,7 @@ Returns the number of connections to other nodes.
 
 
 
-
-
 ***Result:***
-
 ```
 n          (numeric) The connection count
 
@@ -1783,10 +1633,7 @@ and current time.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "totalbytesrecv": n,   (numeric) Total bytes received
@@ -1818,10 +1665,7 @@ Returns an object containing various state info regarding P2P networking.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "version": xxxxx,                      (numeric) the server version
@@ -1871,10 +1715,7 @@ Returns data about each connected network node as a json array of objects.
 
 
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -2023,10 +1864,7 @@ it is not stored in the wallet or transmitted to the network.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "transaction"              (string) hex string of the transaction
 
@@ -2052,10 +1890,7 @@ Return a JSON object representing the serialized, hex-encoded transaction.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "txid" : "id",        (string) The transaction id
@@ -2113,10 +1948,7 @@ Decode a hex-encoded script.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "asm":"asm",   (string) Script public key
@@ -2175,10 +2007,7 @@ Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported 
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)
@@ -2224,19 +2053,13 @@ If verbose is 'false' or omitted, returns a string that is serialized, hex-encod
 
 ```
 
-
-
 ***Result (if verbose is not set or set to false):***
-
 ```
 "data"      (string) The serialized, hex-encoded data for 'txid'
 
 ```
 
-
-
 ***Result (if verbose is set to true):***
-
 ```
 {
   "hex" : "data",       (string) The serialized, hex-encoded data for 'txid'
@@ -2305,10 +2128,7 @@ Also see createrawtransaction and signrawtransaction calls.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "hex"             (string) The transaction hash in hex
 
@@ -2369,10 +2189,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
@@ -2408,10 +2225,7 @@ Returns an object containing governance parameters.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "governanceminquorum": xxxxx,           (numeric) the absolute minimum number of votes needed to trigger a governance action
@@ -2449,10 +2263,7 @@ Returns the absolute maximum sum of superblock payments allowed.
 
 ```
 
-
-
 ***Result:***
-
 ```
 n                (numeric) The absolute maximum sum of superblock payments allowed, in SYS
 
@@ -2588,10 +2399,7 @@ Sentinel ping.
 
 ```
 
-
-
 ***Result:***
-
 ```
 state                (boolean) Ping result
 
@@ -2615,10 +2423,7 @@ Shows information about current state of sporks
 
 ```
 
-
-
 ***Result:***
-
 ```
 For 'show':
 {
@@ -2666,10 +2471,7 @@ It returns a json object with the address and redeemScript.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "address":"multisigaddress",  (string) The value of the new multisig address.
@@ -2701,10 +2503,7 @@ confirmation within nblocks blocks.
 
 ```
 
-
-
 ***Result:***
-
 ```
 n              (numeric) estimated fee-per-kilobyte
 
@@ -2730,10 +2529,7 @@ confirmation within nblocks blocks.
 
 ```
 
-
-
 ***Result:***
-
 ```
 n              (numeric) estimated priority
 
@@ -2760,10 +2556,7 @@ for which the estimate is valid.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in SYS)
@@ -2794,10 +2587,7 @@ for which the estimate is valid.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "priority" : x.x,    (numeric) estimated priority
@@ -2825,10 +2615,7 @@ Sign a message with the private key of an address
 
 ```
 
-
-
 ***Result:***
-
 ```
 "signature"          (string) The signature of the message encoded in base 64
 
@@ -2859,10 +2646,7 @@ Return information about the given syscoin address.
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "isvalid" : true|false,       (boolean) If the address is valid or not. If not, this is the only property returned.
@@ -2904,10 +2688,7 @@ Verify a signed message
 
 ```
 
-
-
 ***Result:***
-
 ```
 true|false   (boolean) If the signature is verified or not.
 
@@ -2949,10 +2730,7 @@ It has no effect on transactions which are already conflicted or abandoned.
 
 ```
 
-
-
 ***Result:***
-
 ```
 
 ```
@@ -2983,10 +2761,7 @@ If 'account' is specified (DEPRECATED), assign address to that account.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "address"         (string) A syscoin address associated with the keys.
 
@@ -3099,10 +2874,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "transaction hex"          (string) The transaction hex (unsigned) for signing and sending. Only 1 transaction is created regardless of 
                                     the number of addresses.
@@ -3343,10 +3115,7 @@ Returns an object containing sensitive private info about this HD wallet.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "hdseed": "seed",                    (string) The HD seed (bip32, in hex)
@@ -3375,10 +3144,7 @@ Then the importprivkey can be used with this output
 
 ```
 
-
-
 ***Result:***
-
 ```
 "key"                (string) The private key
 
@@ -3513,10 +3279,7 @@ DEPRECATED. Returns the account associated with the given address.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "accountname"        (string) the account address
 
@@ -3540,10 +3303,7 @@ DEPRECATED. Returns the current Syscoin address for receiving payments to this a
 
 ```
 
-
-
 ***Result:***
-
 ```
 "address"          (string) The account syscoin address
 
@@ -3569,10 +3329,7 @@ DEPRECATED. Returns the list of addresses for the given account.
 
 ```
 
-
-
 ***Result:***
-
 ```
 [                     (json array of string)
   "address"         (string) a syscoin address associated with the given account
@@ -3605,10 +3362,7 @@ The server total may be different to the balance in the default "" account.
 
 ```
 
-
-
 ***Result:***
-
 ```
 amount              (numeric) The total amount in SYS received for this account.
 
@@ -3641,10 +3395,7 @@ so payments received with the address will be credited to 'account'.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "address"    (string) The new syscoin address
 
@@ -3665,10 +3416,7 @@ This is for use with raw transactions, NOT normal use.
 
 
 
-
-
 ***Result:***
-
 ```
 "address"    (string) The address
 
@@ -3694,10 +3442,7 @@ DEPRECATED. Returns the total amount received by addresses with <account> in tra
 
 ```
 
-
-
 ***Result:***
-
 ```
 amount            (numeric) The total amount in SYS received for this account.
 
@@ -3733,10 +3478,7 @@ Returns the total amount received by the given address in transactions with at l
 
 ```
 
-
-
 ***Result:***
-
 ```
 amount   (numeric) The total amount in SYS received at this address.
 
@@ -3771,10 +3513,7 @@ Get detailed information about in-wallet transaction <txid>
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "amount" : x.xxx,        (numeric) The transaction amount in SYS
@@ -3829,10 +3568,7 @@ Returns an object containing various wallet state info.
 
 
 
-
-
 ***Result:***
-
 ```
 {
   "walletversion": xxxxx,     (numeric) the wallet version
@@ -4092,10 +3828,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "transactionid"  (string) The transaction id.
 
@@ -4146,10 +3879,7 @@ DEPRECATED. Returns Object that has account names as keys, account balances as v
 
 ```
 
-
-
 ***Result:***
-
 ```
 {                    (json object where keys are account names, and values are numeric balances
   "account": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.
@@ -4186,10 +3916,7 @@ Lists addresses of this wallet and their balances
 
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "address": amount,       (string) The syscoin address and the amount in SYS
@@ -4216,10 +3943,7 @@ in past transactions
 
 
 
-
-
 ***Result:***
-
 ```
 [
   [
@@ -4364,10 +4088,7 @@ See the lockunspent call to lock and unlock transactions for spending.
 
 
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -4432,10 +4153,7 @@ DEPRECATED. List balances by account.
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -4472,10 +4190,7 @@ List balances by receiving address.
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -4517,10 +4232,7 @@ Get all transactions in blocks since block [blockhash], or all transactions if o
 3. include_watchonly:       (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
 ```
 
-
-
 ***Result:***
-
 ```
 {
   "transactions": [
@@ -4574,10 +4286,7 @@ Returns up to 'count' most recent transactions skipping the first 'from' transac
 
 ```
 
-
-
 ***Result:***
-
 ```
 [
   {
@@ -4660,10 +4369,7 @@ Optionally filter to only include txouts paid to specified addresses.
 
 ```
 
-
-
 ***Result:***
-
 ```
 [                             (array of json object)
   {
@@ -4717,10 +4423,7 @@ Also see the listunspent call
 
 ```
 
-
-
 ***Result:***
-
 ```
 true|false    (boolean) Whether the command was successful or not
 
@@ -4761,10 +4464,7 @@ DEPRECATED. Move a specified amount from one account in your wallet to another.
 
 ```
 
-
-
 ***Result:***
-
 ```
 true|false          (boolean) true if successful.
 
@@ -4880,10 +4580,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "txid"                 (string) The transaction id.
 
@@ -4933,10 +4630,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "txid"                   (string) The transaction id for the send. Only 1 transaction is created regardless of 
                                     the number of addresses.
@@ -4979,10 +4673,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "txid"                  (string) The transaction id.
 
@@ -5027,10 +4718,7 @@ Set the transaction fee per kB. Overwrites the paytxfee parameter.
 
 ```
 
-
-
 ***Result:***
-
 ```
 true|false        (boolean) Returns true if successful
 
@@ -5056,10 +4744,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 
 ```
 
-
-
 ***Result:***
-
 ```
 "signature"          (string) The signature of the message encoded in base 64
 
@@ -5095,10 +4780,7 @@ List balances by receiving address.
 
 
 
-
-
 ***Result:***
-
 ```
 [
   {
