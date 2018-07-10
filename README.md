@@ -216,7 +216,7 @@ Blockchain
 
 Returns the hash of the best (tip) block in the longest blockchain.
 
-```
+
 
 
 
@@ -225,7 +225,7 @@ Returns the hash of the best (tip) block in the longest blockchain.
 ```
 "hex"      (string) the block hash hex encoded
 
-```
+
 
 ***Examples:***
 ```
@@ -296,7 +296,7 @@ If verbose is true, returns an Object with information about block <hash>.
 **`getblockchaininfo`**
 Returns an object containing various state info regarding blockchain processing.
 
-```
+
 
 
 
@@ -334,7 +334,7 @@ Returns an object containing various state info regarding blockchain processing.
   }
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -348,7 +348,7 @@ Returns an object containing various state info regarding blockchain processing.
 
 Returns the number of blocks in the longest blockchain.
 
-```
+
 
 
 
@@ -357,7 +357,7 @@ Returns the number of blocks in the longest blockchain.
 ```
 n    (numeric) The current block count
 
-```
+
 
 ***Examples:***
 ```
@@ -595,7 +595,7 @@ Possible values for status:
 
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-```
+
 
 
 
@@ -604,7 +604,7 @@ Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 ```
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-```
+
 
 ***Examples:***
 ```
@@ -780,7 +780,7 @@ Returns mempool data for given transaction
 
 Returns details on the active state of the TX memory pool.
 
-```
+
 
 
 
@@ -795,7 +795,7 @@ Returns details on the active state of the TX memory pool.
   "mempoolminfee": xxxxx       (numeric) Minimum fee for tx to be accepted
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -994,7 +994,7 @@ specify the block in which the transaction is included manually (by blockhash).
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
 
-```
+
 
 
 
@@ -1011,7 +1011,7 @@ Note this call may take some time.
   "total_amount": x.xxx          (numeric) The total amount
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -1140,7 +1140,7 @@ Control
 **`debug ( 0|1|addrman|alert|bench|coindb|db|lock|rand|rpc|selectcoins|mempool|mempoolrej|net|proxy|prune|http|libevent|tor|zmq|syscoin|privatesend|instantsend|masternode|spork|keepass|mnpayments|gobject )`**
 Change debug category on the fly. Specify single category or use '+' to specify many.
 
-```
+
 
 ***Examples:***
 ```
@@ -1154,7 +1154,7 @@ Change debug category on the fly. Specify single category or use '+' to specify 
 
 DEPRECATED. Returns an object containing various state info.
 
-```
+
 
 
 
@@ -1182,7 +1182,7 @@ DEPRECATED. Returns an object containing various state info.
   "errors": "..."           (string) any error messages
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -1195,7 +1195,7 @@ DEPRECATED. Returns an object containing various state info.
 **`getmemoryinfo`**
 Returns an object containing information about memory usage.
 
-```
+
 
 
 
@@ -1213,7 +1213,7 @@ Returns an object containing information about memory usage.
   }
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -1507,7 +1507,7 @@ For full specification, see BIPs 22, 23, and 9:
 **`getmininginfo`**
 
 Returns a json object containing mining-related information.
-```
+
 
 
 
@@ -1525,7 +1525,7 @@ Returns a json object containing mining-related information.
   "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -1685,7 +1685,7 @@ Or try a connection to a node once.
 
 Clear all banned IPs.
 
-```
+
 
 ***Examples:***
 ```
@@ -1758,7 +1758,7 @@ Returns information about the given added node, or all added nodes
 
 Returns the number of connections to other nodes.
 
-```
+
 
 
 
@@ -1767,7 +1767,7 @@ Returns the number of connections to other nodes.
 ```
 n          (numeric) The connection count
 
-```
+
 
 ***Examples:***
 ```
@@ -1782,7 +1782,7 @@ n          (numeric) The connection count
 Returns information about network traffic, including bytes in, bytes out,
 and current time.
 
-```
+
 
 
 
@@ -1804,7 +1804,7 @@ and current time.
   }
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -1817,7 +1817,7 @@ and current time.
 **`getnetworkinfo`**
 Returns an object containing various state info regarding P2P networking.
 
-```
+
 
 
 
@@ -1856,7 +1856,7 @@ Returns an object containing various state info regarding P2P networking.
   "warnings": "..."                    (string) any network warnings
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -1870,7 +1870,7 @@ Returns an object containing various state info regarding P2P networking.
 
 Returns data about each connected network node as a json array of objects.
 
-```
+
 
 
 
@@ -1918,7 +1918,7 @@ Returns data about each connected network node as a json array of objects.
   ,...
 ]
 
-```
+
 
 ***Examples:***
 ```
@@ -1932,7 +1932,7 @@ Returns data about each connected network node as a json array of objects.
 
 List all banned IPs/Subnets.
 
-```
+
 
 ***Examples:***
 ```
@@ -1948,7 +1948,7 @@ Requests that a ping be sent to all other nodes, to measure ping time.
 Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
 Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
-```
+
 
 ***Examples:***
 ```
@@ -2406,7 +2406,7 @@ Syscoin
 **`getgovernanceinfo`**
 Returns an object containing governance parameters.
 
-```
+
 
 
 
@@ -2424,7 +2424,7 @@ Returns an object containing governance parameters.
   "maxgovobjdatasize": xxxxx,             (numeric) maximum governance object data size in bytes
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -3335,7 +3335,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 **`dumphdinfo`**
 Returns an object containing sensitive private info about this HD wallet.
 
-```
+
 
 
 
@@ -3348,7 +3348,7 @@ Returns an object containing sensitive private info about this HD wallet.
   "mnemonicpassphrase": "passphrase",  (string) The mnemonic passphrase for this HD wallet (bip39)
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -3667,7 +3667,7 @@ so payments received with the address will be credited to 'account'.
 Returns a new Syscoin address, for receiving change.
 This is for use with raw transactions, NOT normal use.
 
-```
+
 
 
 
@@ -3676,7 +3676,7 @@ This is for use with raw transactions, NOT normal use.
 ```
 "address"    (string) The address
 
-```
+
 
 ***Examples:***
 ```
@@ -3832,7 +3832,7 @@ Returns the server's total unconfirmed balance
 **`getwalletinfo`**
 Returns an object containing various wallet state info.
 
-```
+
 
 
 
@@ -3864,7 +3864,7 @@ Returns an object containing various wallet state info.
     ]
 }
 
-```
+
 
 ***Examples:***
 ```
@@ -4219,7 +4219,7 @@ Lists groups of addresses which have had their common ownership
 made public by common use as inputs or as the resulting change
 in past transactions
 
-```
+
 
 
 
@@ -4238,7 +4238,7 @@ in past transactions
   ,...
 ]
 
-```
+
 
 ***Examples:***
 ```
@@ -4373,7 +4373,7 @@ scan through all escrows.
 Returns list of temporarily unspendable outputs.
 See the lockunspent call to lock and unlock transactions for spending.
 
-```
+
 
 
 
@@ -4388,7 +4388,7 @@ See the lockunspent call to lock and unlock transactions for spending.
   ,...
 ]
 
-```
+
 
 ***Examples:***
 ```
@@ -5111,7 +5111,7 @@ Decode raw syscoin transaction (serialized, hex-encoded) and display information
 
 List balances by receiving address.
 
-```
+
 
 
 
@@ -5128,7 +5128,7 @@ List balances by receiving address.
   ,...
 ]
 
-```
+
 
 ***Examples:***
 ```
@@ -5201,7 +5201,7 @@ Removes the wallet encryption key from memory, locking the wallet.
 After calling this method, you will need to call walletpassphrase again
 before being able to call any methods which require the wallet to be unlocked.
 
-```
+
 
 ***Examples:***
 ```

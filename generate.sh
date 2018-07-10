@@ -16,6 +16,8 @@ syscoin_of_the_markdown() {
     fi
     if [[ $cmd != "" ]]; then
       TICKS="\\\`\\\`\\\`"
+      RTICKS=""
+      ETICKS=""
       printf "## **\`${cmd}\`**\n\n";
       helpdoc=$(syscoin-cli help $cmd)
       echo "$helpdoc" | grep -q "Arguments:" && RTICKS=$TICKS
