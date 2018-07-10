@@ -19,10 +19,12 @@ Returns the balance for an address(es) (requires addressindex to be enabled).
 }
 2. separated_output(boolean) If set to true, will return balances of the addresses passed in as an array instead of the summed balance. Default is false.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "balance"  (string) The current balance in satoshis
   "received"  (string) The total number of satoshis received (including change)
@@ -54,10 +56,12 @@ Returns all changes for an address (requires addressindex to be enabled).
   "end" (number) The end block height
 }
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "satoshis"  (number) The difference of satoshis
@@ -93,10 +97,12 @@ Returns all mempool deltas for an address (requires addressindex to be enabled).
     ]
 }
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "address"  (string) The base58check encoded address
@@ -135,10 +141,12 @@ Returns the txids for an address(es) (requires addressindex to be enabled).
   "end" (number) The end block height
 }
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   "transactionid"  (string) The transaction id
   ,...
@@ -168,10 +176,12 @@ Returns all unspent outputs for an address (requires addressindex to be enabled)
     ]
 }
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "address"  (string) The address base58check encoded
@@ -201,10 +211,12 @@ Blockchain
 
 Returns the hash of the best (tip) block in the longest blockchain.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "hex"      (string) the block hash hex encoded
 
 ```
@@ -227,10 +239,12 @@ If verbose is true, returns an Object with information about block <hash>.
 1. "blockhash"          (string, required) The block hash
 2. verbose                (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
-```
 
-***Result***
-``` (for verbose = true):
+
+
+***Result (for verbose = true):***
+
+```
 {
   "hash" : "hash",     (string) the block hash (same as provided)
   "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -253,10 +267,12 @@ If verbose is true, returns an Object with information about block <hash>.
   "nextblockhash" : "hash"       (string) The hash of the next block
 }
 
-```
 
-***Result***
-``` (for verbose=false):
+
+
+***Result (for verbose=false):***
+
+```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
 ```
@@ -272,10 +288,12 @@ If verbose is true, returns an Object with information about block <hash>.
 **`getblockchaininfo`**
 Returns an object containing various state info regarding blockchain processing.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "chain": "xxxx",        (string) current network name as defined in BIP70 (main, test, regtest)
   "blocks": xxxxxx,         (numeric) the current number of blocks processed in the server
@@ -321,10 +339,12 @@ Returns an object containing various state info regarding blockchain processing.
 
 Returns the number of blocks in the longest blockchain.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n    (numeric) The current block count
 
 ```
@@ -345,10 +365,12 @@ Returns hash of block in best-block-chain at height provided.
 ```
 1. height         (numeric, required) The height index
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "hash"         (string) The block hash
 
 ```
@@ -370,10 +392,12 @@ Returns array of hashes of blocks within the timestamp range provided.
 1. high         (numeric, required) The newer block timestamp
 2. low          (numeric, required) The older block timestamp
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   "hash"         (string) The block hash
 ]
@@ -398,10 +422,12 @@ If verbose is true, returns an Object with information about blockheader <hash>.
 1. "hash"          (string, required) The block hash
 2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
-```
 
-***Result***
-``` (for verbose = true):
+
+
+***Result (for verbose = true):***
+
+```
 {
   "hash" : "hash",     (string) the block hash (same as provided)
   "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -419,10 +445,12 @@ If verbose is true, returns an Object with information about blockheader <hash>.
   "nextblockhash" : "hash",      (string) The hash of the next block
 }
 
-```
 
-***Result***
-``` (for verbose=false):
+
+
+***Result (for verbose=false):***
+
+```
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
 ```
@@ -448,10 +476,12 @@ If verbose is true, each item is an Object with information about a single block
 2. count           (numeric, optional, default/max=2000)
 3. verbose         (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
-```
 
-***Result***
-``` (for verbose = true):
+
+
+***Result (for verbose = true):***
+
+```
 [ {
   "hash" : "hash",               (string)  The block hash
   "confirmations" : n,           (numeric) The number of confirmations, or -1 if the block is not on the main chain
@@ -472,10 +502,12 @@ If verbose is true, each item is an Object with information about a single block
 ...
 ]
 
-```
 
-***Result***
-``` (for verbose=false):
+
+
+***Result (for verbose=false):***
+
+```
 [
   "data",                        (string)  A string that is serialized, hex-encoded data for block header.
   ...
@@ -499,10 +531,12 @@ Return information about all known tips in the block tree, including the main ch
 1. count       (numeric, optional) only show this much of latest tips
 2. branchlen   (numeric, optional) only show tips that have equal or greater length of branch
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "height": xxxx,             (numeric) height of the chain tip
@@ -544,10 +578,12 @@ Possible values for status:
 
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 
 ```
@@ -569,19 +605,23 @@ If txid is in the mempool, returns all in-mempool ancestors.
 1. "txid"                 (string, required) The transaction id (must be in mempool)
 2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
-```
 
-***Result***
-``` (for verbose=false):
+
+
+***Result (for verbose=false):***
+
+```
 [                       (json array of strings)
   "transactionid"           (string) The transaction id of an in-mempool ancestor transaction
   ,...
 ]
 
-```
 
-***Result***
-``` (for verbose=true):
+
+
+***Result (for verbose=true):***
+
+```
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -622,19 +662,23 @@ If txid is in the mempool, returns all in-mempool descendants.
 1. "txid"                 (string, required) The transaction id (must be in mempool)
 2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
-```
 
-***Result***
-``` (for verbose=false):
+
+
+***Result (for verbose=false):***
+
+```
 [                       (json array of strings)
   "transactionid"           (string) The transaction id of an in-mempool descendant transaction
   ,...
 ]
 
-```
 
-***Result***
-``` (for verbose=true):
+
+
+***Result (for verbose=true):***
+
+```
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -674,10 +718,12 @@ Returns mempool data for given transaction
 ```
 1. "txid"                   (string, required) The transaction id (must be in mempool)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {                           (json object)
     "size" : n,             (numeric) transaction size in bytes
     "fee" : n,              (numeric) transaction fee in SYS
@@ -711,10 +757,12 @@ Returns mempool data for given transaction
 
 Returns details on the active state of the TX memory pool.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "size": xxxxx,               (numeric) Current tx count
   "bytes": xxxxx,              (numeric) Sum of all tx sizes
@@ -743,19 +791,23 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 ```
 1. verbose (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
-```
 
-***Result***
-```: (for verbose = false):
+
+
+***Result:***
+
+``` (for verbose = false):
 [                     (json array of string)
   "transactionid"     (string) The transaction id
   ,...
 ]
 
-```
 
-***Result***
-```: (for verbose = true):
+
+
+***Result:***
+
+``` (for verbose = true):
 {                           (json object)
   "transactionid" : {       (json object)
     "size" : n,             (numeric) transaction size in bytes
@@ -798,10 +850,12 @@ Returns the txid and index where an output is spent.
   "index" (number) The start block height
 }
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "txid"  (string) The transaction id
   "index"  (number) The spending input index
@@ -828,10 +882,12 @@ Returns details about an unspent transaction output.
 2. n              (numeric, required) vout number
 3. include_mempool  (boolean, optional) Whether to include the mempool
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "bestblock" : "hash",    (string) the block hash
   "confirmations" : n,       (numeric) The number of confirmations
@@ -885,10 +941,12 @@ specify the block in which the transaction is included manually (by blockhash).
     ]
 2. "blockhash"   (string, optional) If specified, looks for txid in the block with this hash
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "data"           (string) A string that is a serialized, hex-encoded data for the proof.
 
 ```
@@ -907,10 +965,12 @@ specify the block in which the transaction is included manually (by blockhash).
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "height":n,     (numeric) The current block height (index)
   "bestblock": "hex",   (string) the best block hash hex
@@ -943,10 +1003,12 @@ The effects of preciousblock are not retained across restarts.
 ```
 1. "blockhash"   (string, required) the hash of the block to mark as precious
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 
 ```
 
@@ -965,10 +1027,12 @@ The effects of preciousblock are not retained across restarts.
 1. "height"       (numeric, required) The block height to prune up to. May be set to a discrete height, or a unix timestamp
                   to prune blocks whose block time is at least 2 hours older than the provided timestamp.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n    (numeric) Height of the last block pruned.
 
 ```
@@ -990,10 +1054,12 @@ Verifies blockchain database.
 1. checklevel   (numeric, optional, 0-4, default=4) How thorough the block verification is.
 2. nblocks      (numeric, optional, default=6, 0=all) The number of blocks to check.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 true|false       (boolean) Verified or not
 
 ```
@@ -1015,10 +1081,12 @@ and throwing an RPC error if the block is not in our best chain
 ```
 1. "proof"    (string, required) The hex-encoded proof generated by gettxoutproof
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 ["txid"]      (array, strings) The txid(s) which the proof commits to, or empty array if the proof is invalid
 
 ```
@@ -1052,10 +1120,12 @@ Change debug category on the fly. Specify single category or use '+' to specify 
 
 DEPRECATED. Returns an object containing various state info.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "version": xxxxx,           (numeric) the server version
   "dashversion": xxxxx,       (numeric) the server dashpay version
@@ -1090,10 +1160,12 @@ DEPRECATED. Returns an object containing various state info.
 **`getmemoryinfo`**
 Returns an object containing information about memory usage.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "locked": {               (json object) Information about locked memory manager
     "used": xxxxx,          (numeric) Number of bytes used
@@ -1123,10 +1195,12 @@ List all commands, or get help for a specified command.
 ```
 1. "command"     (string, optional) The command to get help on
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "text"     (string) The help text
 ```
 
@@ -1152,10 +1226,12 @@ Mine up to nblocks blocks immediately (before the RPC call returns) to an addres
 1. nblocks      (numeric, required) How many blocks are generated immediately.
 2. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [ blockhashes ]     (array) hashes of blocks generated
 
 ```
@@ -1179,10 +1255,12 @@ Mine blocks immediately to a specified address (before the RPC call returns)
 2. address      (string, required) The address to send the newly generated Syscoin to.
 3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [ blockhashes ]     (array) hashes of blocks generated
 
 ```
@@ -1208,10 +1286,12 @@ create a new block and return information required to merge-mine it.
 ```
 1. address      (string, required) specify coinbase transaction payout address
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "hash"               (string) hash of the created block
   "chainid"            (numeric) chain ID for this block
@@ -1245,10 +1325,12 @@ auxpow for a previously returned block.
 1. hash      (string, optional) hash of the block to submit
 2. auxpow    (string, optional) serialised auxpow found
 
-```
 
-***Result***
-``` (without arguments):
+
+
+***Result (without arguments):***
+
+```
 {
   "hash"               (string) hash of the created block
   "chainid"            (numeric) chain ID for this block
@@ -1259,10 +1341,12 @@ auxpow for a previously returned block.
   "_target"            (string) target in reversed byte order, deprecated
 }
 
-```
 
-***Result***
-``` (with arguments):
+
+
+***Result (with arguments):***
+
+```
 xxxxx        (boolean) whether the submitted block was correct
 
 ```
@@ -1301,10 +1385,12 @@ For full specification, see BIPs 22, 23, and 9:
      }
 
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "capabilities" : [ "capability", ... ],    (array of strings) specific client side supported features
   "version" : n,                    (numeric) The preferred block version
@@ -1378,10 +1464,12 @@ For full specification, see BIPs 22, 23, and 9:
 **`getmininginfo`**
 
 Returns a json object containing mining-related information.
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "blocks": nnn,             (numeric) The current block
   "currentblocksize": nnn,   (numeric) The last block size
@@ -1414,10 +1502,12 @@ Pass in [height] to estimate the network speed at the time when a certain block 
 1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.
 2. height      (numeric, optional, default=-1) To estimate at the time of the given height.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 x             (numeric) Hashes per second estimated
 
 ```
@@ -1443,10 +1533,12 @@ Accepts the transaction into mined blocks at a higher (or lower) priority
                   The fee is not actually paid, only the algorithm for selecting transactions into a block
                   considers the transaction as it would have paid a higher (or lower) fee.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 true              (boolean) Returns true
 
 ```
@@ -1468,10 +1560,12 @@ submit a solved auxpow for a previously block created by 'createauxblock'.
 1. hash      (string, required) hash of the block to submit
 2. auxpow    (string, required) serialised auxpow found
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 xxxxx        (boolean) whether the submitted block was correct
 
 ```
@@ -1498,10 +1592,12 @@ See https://en.syscoin.it/wiki/BIP_0022 for full specification.
       "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
     }
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 
 ```
 
@@ -1578,10 +1674,12 @@ Returns information about the given added node, or all added nodes
 ```
 1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "addednode" : "192.168.0.201",   (string) The node ip address or name (as provided to addnode)
@@ -1611,10 +1709,12 @@ Returns information about the given added node, or all added nodes
 
 Returns the number of connections to other nodes.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n          (numeric) The connection count
 
 ```
@@ -1632,10 +1732,12 @@ n          (numeric) The connection count
 Returns information about network traffic, including bytes in, bytes out,
 and current time.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "totalbytesrecv": n,   (numeric) Total bytes received
   "totalbytessent": n,   (numeric) Total bytes sent
@@ -1664,10 +1766,12 @@ and current time.
 **`getnetworkinfo`**
 Returns an object containing various state info regarding P2P networking.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "version": xxxxx,                      (numeric) the server version
   "subversion": "/Syscoin Core:x.x.x/",     (string) the server subversion string
@@ -1714,10 +1818,12 @@ Returns an object containing various state info regarding P2P networking.
 
 Returns data about each connected network node as a json array of objects.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "id": n,                   (numeric) Peer index
@@ -1786,10 +1892,7 @@ List all banned IPs/Subnets.
 **`ping`**
 
 Requests that a ping be sent to all other nodes, to measure ping time.
-```
-
-***Result***
-```s provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
+Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
 Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
 ```
@@ -1866,10 +1969,12 @@ it is not stored in the wallet or transmitted to the network.
     }
 3. locktime                  (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "transaction"              (string) hex string of the transaction
 
 ```
@@ -1892,10 +1997,12 @@ Return a JSON object representing the serialized, hex-encoded transaction.
 ```
 1. "hexstring"      (string, required) The transaction hex string
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "txid" : "id",        (string) The transaction id
   "size" : n,             (numeric) The transaction size
@@ -1950,10 +2057,12 @@ Decode a hex-encoded script.
 ```
 1. "hexstring"     (string) the hex encoded script
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "asm":"asm",   (string) Script public key
   "hex":"hex",   (string) hex encoded public key
@@ -2009,10 +2118,12 @@ Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported 
    }
                          for backward compatibility: passing in a true instead of an object will result in {"includeWatching":true}
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)
   "fee":       n,         (numeric) Fee in SYS the resulting transaction pays
@@ -2055,16 +2166,20 @@ If verbose is 'false' or omitted, returns a string that is serialized, hex-encod
 1. "txid"      (string, required) The transaction id
 2. verbose       (bool, optional, default=false) If false, return a string, otherwise return a json object
 
-```
 
-***Result***
-``` (if verbose is not set or set to false):
+
+
+***Result (if verbose is not set or set to false):***
+
+```
 "data"      (string) The serialized, hex-encoded data for 'txid'
 
-```
 
-***Result***
-``` (if verbose is set to true):
+
+
+***Result (if verbose is set to true):***
+
+```
 {
   "hex" : "data",       (string) The serialized, hex-encoded data for 'txid'
   "txid" : "id",        (string) The transaction id (same as provided)
@@ -2129,10 +2244,12 @@ Also see createrawtransaction and signrawtransaction calls.
 2. allowhighfees  (boolean, optional, default=false) Allow high fees
 3. instantsend    (boolean, optional, default=false) Use InstantSend to send this transaction
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "hex"             (string) The transaction hash in hex
 
 ```
@@ -2190,10 +2307,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
        "NONE|ANYONECANPAY"
        "SINGLE|ANYONECANPAY"
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
   "complete" : true|false,   (boolean) If the transaction has a complete set of signatures
@@ -2226,10 +2345,12 @@ Syscoin
 **`getgovernanceinfo`**
 Returns an object containing governance parameters.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "governanceminquorum": xxxxx,           (numeric) the absolute minimum number of votes needed to trigger a governance action
   "masternodewatchdogmaxseconds": xxxxx,  (numeric) sentinel watchdog expiration time in seconds (DEPRECATED)
@@ -2265,10 +2386,12 @@ Returns the absolute maximum sum of superblock payments allowed.
 ```
 1. index         (numeric, required) The block index
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n                (numeric) The absolute maximum sum of superblock payments allowed, in SYS
 
 ```
@@ -2403,10 +2526,12 @@ Sentinel ping.
 ```
 1. version           (string, required) Sentinel version in the form "x.x.x"
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 state                (boolean) Ping result
 
 ```
@@ -2427,10 +2552,12 @@ Shows information about current state of sporks
 ```
 1. "command"                     (string, required) 'show' to show all current spork values, 'active' to show which sporks are active
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 For 'show':
 {
   "SPORK_NAME" : spork_value,    (number) The value of the specific spork with the name SPORK_NAME
@@ -2476,10 +2603,12 @@ It returns a json object with the address and redeemScript.
        ,...
      ]
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "address":"multisigaddress",  (string) The value of the new multisig address.
   "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.
@@ -2508,10 +2637,12 @@ confirmation within nblocks blocks.
 ```
 1. nblocks     (numeric, required)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n              (numeric) estimated fee-per-kilobyte
 
 A negative value is returned if not enough transactions and blocks
@@ -2534,10 +2665,12 @@ confirmation within nblocks blocks.
 ```
 1. nblocks     (numeric, required)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 n              (numeric) estimated priority
 
 A negative value is returned if not enough transactions and blocks
@@ -2561,10 +2694,12 @@ for which the estimate is valid.
 ```
 1. nblocks     (numeric)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in SYS)
   "blocks" : n         (numeric) block number where estimate was found
@@ -2592,10 +2727,12 @@ for which the estimate is valid.
 ```
 1. nblocks     (numeric, required)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "priority" : x.x,    (numeric) estimated priority
   "blocks" : n         (numeric) block number where estimate was found
@@ -2620,10 +2757,12 @@ Sign a message with the private key of an address
 1. "privkey"         (string, required) The private key to sign the message with.
 2. "message"         (string, required) The message to create a signature of.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "signature"          (string) The signature of the message encoded in base 64
 
 ```
@@ -2651,10 +2790,12 @@ Return information about the given syscoin address.
 ```
 1. "address"     (string, required) The syscoin address to validate
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "isvalid" : true|false,       (boolean) If the address is valid or not. If not, this is the only property returned.
   "address" : "syscoinaddress", (string) The syscoin address validated
@@ -2693,10 +2834,12 @@ Verify a signed message
 2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
 3. "message"         (string, required) The message that was signed.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 true|false   (boolean) If the signature is verified or not.
 
 ```
@@ -2735,10 +2878,12 @@ It has no effect on transactions which are already conflicted or abandoned.
 ```
 1. "txid"    (string, required) The transaction id
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 
 ```
 
@@ -2766,10 +2911,12 @@ If 'account' is specified (DEPRECATED), assign address to that account.
      ]
 3. "account"      (string, optional) DEPRECATED. An account to assign the addresses to.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "address"         (string) A syscoin address associated with the keys.
 
 ```
@@ -2868,10 +3015,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
       ,...
     ]
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "transaction hex"          (string) The transaction hex (unsigned) for signing and sending. Only 1 transaction is created regardless of 
                                     the number of addresses.
 
@@ -3110,10 +3259,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
 **`dumphdinfo`**
 Returns an object containing sensitive private info about this HD wallet.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "hdseed": "seed",                    (string) The HD seed (bip32, in hex)
   "mnemonic": "words",                 (string) The mnemonic for this HD wallet (bip39, english words) 
@@ -3139,10 +3290,12 @@ Then the importprivkey can be used with this output
 ```
 1. "address"   (string, required) The syscoin address for the private key
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "key"                (string) The private key
 
 ```
@@ -3284,10 +3437,12 @@ DEPRECATED. Returns the account associated with the given address.
 ```
 1. "address"         (string, required) The syscoin address for account lookup.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "accountname"        (string) the account address
 
 ```
@@ -3308,10 +3463,12 @@ DEPRECATED. Returns the current Syscoin address for receiving payments to this a
 ```
 1. "account"       (string, required) The account name for the address. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "address"          (string) The account syscoin address
 
 ```
@@ -3334,10 +3491,12 @@ DEPRECATED. Returns the list of addresses for the given account.
 ```
 1. "account"        (string, required) The account name.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [                     (json array of string)
   "address"         (string) a syscoin address associated with the given account
   ,...
@@ -3367,10 +3526,12 @@ The server total may be different to the balance in the default "" account.
 3. addlockconf      (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 4. include_watchonly (bool, optional, default=false) Also include balance in watch-only addresses (see 'importaddress')
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 amount              (numeric) The total amount in SYS received for this account.
 
 ```
@@ -3400,10 +3561,12 @@ so payments received with the address will be credited to 'account'.
 ```
 1. "account"        (string, optional) DEPRECATED. The account name for the address to be linked to. If not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "address"    (string) The new syscoin address
 
 ```
@@ -3421,10 +3584,12 @@ so payments received with the address will be credited to 'account'.
 Returns a new Syscoin address, for receiving change.
 This is for use with raw transactions, NOT normal use.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "address"    (string) The address
 
 ```
@@ -3447,10 +3612,12 @@ DEPRECATED. Returns the total amount received by addresses with <account> in tra
 2. minconf        (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf    (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 amount            (numeric) The total amount in SYS received for this account.
 
 ```
@@ -3483,10 +3650,12 @@ Returns the total amount received by the given address in transactions with at l
 2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf         (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 amount   (numeric) The total amount in SYS received at this address.
 
 ```
@@ -3518,10 +3687,12 @@ Get detailed information about in-wallet transaction <txid>
 1. "txid"                  (string, required) The transaction id
 2. "include_watchonly"     (bool, optional, default=false) Whether to include watch-only addresses in balance calculation and details[]
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "amount" : x.xxx,        (numeric) The transaction amount in SYS
   "fee": x.xxx,            (numeric) The amount of the fee in SYS. This is negative and only available for the 
@@ -3574,10 +3745,12 @@ Returns the server's total unconfirmed balance
 **`getwalletinfo`**
 Returns an object containing various wallet state info.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "walletversion": xxxxx,     (numeric) the wallet version
   "balance": xxxxxxx,         (numeric) the total confirmed balance of the wallet in SYS
@@ -3833,10 +4006,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
 5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.
                              The recipient will receive less amount of Syscoin than you enter in the amount field.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "transactionid"  (string) The transaction id.
 
 ```
@@ -3885,10 +4060,12 @@ DEPRECATED. Returns Object that has account names as keys, account balances as v
 2. addlockconf         (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 3. include_watchonly   (bool, optional, default=false) Include balances in watch-only addresses (see 'importaddress')
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {                    (json object where keys are account names, and values are numeric balances
   "account": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.
   ...
@@ -3922,10 +4099,12 @@ Lists addresses of this wallet and their balances
 ```
 1. minamount               (numeric, optional, default=0) Minimum balance in SYS an address should have to be shown in the list
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "address": amount,       (string) The syscoin address and the amount in SYS
   ,...
@@ -3949,10 +4128,12 @@ Lists groups of addresses which have had their common ownership
 made public by common use as inputs or as the resulting change
 in past transactions
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   [
     [
@@ -4100,10 +4281,12 @@ scan through all escrows.
 Returns list of temporarily unspendable outputs.
 See the lockunspent call to lock and unlock transactions for spending.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "txid" : "transactionid",     (string) The transaction id locked
@@ -4166,10 +4349,12 @@ DEPRECATED. List balances by account.
 3. include_empty     (bool, optional, default=false) Whether to include accounts that haven't received any payments.
 4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "involvesWatchonly" : true,   (bool) Only returned if imported addresses were involved in transaction
@@ -4203,10 +4388,12 @@ List balances by receiving address.
 3. include_empty     (bool, optional, default=false) Whether to include addresses that haven't received any payments.
 4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "involvesWatchonly" : true,        (bool) Only returned if imported addresses were involved in transaction
@@ -4245,10 +4432,12 @@ Get all transactions in blocks since block [blockhash], or all transactions if o
 1. "blockhash"            (string, optional) The block hash to list transactions since
 2. target_confirmations:    (numeric, optional) The confirmations required, must be 1 or more
 3. include_watchonly:       (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 {
   "transactions": [
     "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction. Will be "" for the default account.
@@ -4299,10 +4488,12 @@ Returns up to 'count' most recent transactions skipping the first 'from' transac
 3. skip           (numeric, optional, default=0) The number of transactions to skip
 4. include_watchonly (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction. 
@@ -4382,10 +4573,12 @@ Optionally filter to only include txouts paid to specified addresses.
                   replacement transactions (cases where we are less sure that a conflicting
                   transaction won't be mined).
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [                             (array of json object)
   {
     "txid" : "txid",          (string) the transaction id 
@@ -4436,10 +4629,12 @@ Also see the listunspent call
        ,...
      ]
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 true|false    (boolean) Whether the command was successful or not
 
 ```
@@ -4477,10 +4672,12 @@ DEPRECATED. Move a specified amount from one account in your wallet to another.
 4. (dummy)          (numeric, optional) Ignored. Remains for backward compatibility.
 5. "comment"        (string, optional) An optional comment, stored in the wallet only.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 true|false          (boolean) true if successful.
 
 ```
@@ -4598,10 +4795,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
                        to which you're sending the transaction. This is not part of the transaction, 
                        it is just kept in your wallet.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "txid"                 (string) The transaction id.
 
 ```
@@ -4648,10 +4847,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
 7. "use_is"                (bool, optional) Send this transaction as InstantSend (default: false)
 8. "use_ps"                (bool, optional) Use anonymized funds only (default: false)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "txid"                   (string) The transaction id for the send. Only 1 transaction is created regardless of 
                                     the number of addresses.
 
@@ -4691,10 +4892,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
 6. "use_is"             (bool, optional) Send this transaction as InstantSend (default: false)
 7. "use_ps"             (bool, optional) Use anonymized funds only (default: false)
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "txid"                  (string) The transaction id.
 
 ```
@@ -4736,10 +4939,12 @@ Set the transaction fee per kB. Overwrites the paytxfee parameter.
 ```
 1. amount         (numeric or string, required) The transaction fee in SYS/kB
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 true|false        (boolean) Returns true if successful
 
 ```
@@ -4762,10 +4967,12 @@ Requires wallet passphrase to be set with walletpassphrase call.
 1. "address"         (string, required) The syscoin address to use for the private key.
 2. "message"         (string, required) The message to create a signature of.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 "signature"          (string) The signature of the message encoded in base 64
 
 ```
@@ -4799,10 +5006,12 @@ Decode raw syscoin transaction (serialized, hex-encoded) and display information
 
 List balances by receiving address.
 
-```
 
-***Result***
-```:
+
+
+***Result:***
+
+```
 [
   {
     "address" : "receivingaddress",    (string) The receiving address
@@ -4839,25 +5048,35 @@ Also see createrawtransaction and signrawtransaction calls.
 
 **`syscointxfund`**
 
-Funds a new syscoin transaction with inputs used from wallet or an array of addresses specified.
+Funds a new syscoin transaction with inputs used from the wallet or an option array of addresses. If no addresses
+are specified a new change address is created. When creating an alias via aliasnew it is recommended to specify
+the same address you assigned to the alias in the addresses argument.
+
 
 ***Arguments:***
 ```
   "hexstring" (string, required) The raw syscoin transaction output given from rpc (ie: aliasnew, aliasupdate)
   "addresses (object, optional) "
     [
-      "address"  (array, string) Address used to fund this transaction. Leave empty to use wallet. Last address gets sent the change.
+      "address"  (array, string) Address used to fund this transaction. Leave empty to use wallet. Change is sent to the last address in the array.
       ,...
     ]
 	"instantsend" (boolean, optional, default=false) Use InstantSend to send this transaction. 
 }
 
-```
+CLI ```
 
 ***Examples:***
 ```
+> syscoin-cli syscointxfund  <hexstring>
 > syscoin-cli syscointxfund  <hexstring> '{"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]}' false
-> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring> {"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]} true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+
+RPC ```
+
+***Examples:***
+```
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring>] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "syscointxfund", "params": [ <hexstring> '{"addresses": ["175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W"]}' true] }' -H 'content-type: text/plain;' http://127.0.0.1:8236/
 
 Requires wallet passphrase to be set with walletpassphrase call.
 ```
