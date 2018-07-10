@@ -19,6 +19,7 @@ Returns the balance for an address(es) (requires addressindex to be enabled).
 }
 2. separated_output(boolean) If set to true, will return balances of the addresses passed in as an array instead of the summed balance. Default is false.
 
+```
 
 
 
@@ -56,6 +57,7 @@ Returns all changes for an address (requires addressindex to be enabled).
   "end" (number) The end block height
 }
 
+```
 
 
 
@@ -97,6 +99,7 @@ Returns all mempool deltas for an address (requires addressindex to be enabled).
     ]
 }
 
+```
 
 
 
@@ -141,6 +144,7 @@ Returns the txids for an address(es) (requires addressindex to be enabled).
   "end" (number) The end block height
 }
 
+```
 
 
 
@@ -176,6 +180,7 @@ Returns all unspent outputs for an address (requires addressindex to be enabled)
     ]
 }
 
+```
 
 
 
@@ -211,6 +216,7 @@ Blockchain
 
 Returns the hash of the best (tip) block in the longest blockchain.
 
+```
 
 
 
@@ -239,6 +245,7 @@ If verbose is true, returns an Object with information about block <hash>.
 1. "blockhash"          (string, required) The block hash
 2. verbose                (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
+```
 
 
 
@@ -267,6 +274,7 @@ If verbose is true, returns an Object with information about block <hash>.
   "nextblockhash" : "hash"       (string) The hash of the next block
 }
 
+```
 
 
 
@@ -288,6 +296,7 @@ If verbose is true, returns an Object with information about block <hash>.
 **`getblockchaininfo`**
 Returns an object containing various state info regarding blockchain processing.
 
+```
 
 
 
@@ -339,6 +348,7 @@ Returns an object containing various state info regarding blockchain processing.
 
 Returns the number of blocks in the longest blockchain.
 
+```
 
 
 
@@ -365,6 +375,7 @@ Returns hash of block in best-block-chain at height provided.
 ```
 1. height         (numeric, required) The height index
 
+```
 
 
 
@@ -392,6 +403,7 @@ Returns array of hashes of blocks within the timestamp range provided.
 1. high         (numeric, required) The newer block timestamp
 2. low          (numeric, required) The older block timestamp
 
+```
 
 
 
@@ -422,6 +434,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
 1. "hash"          (string, required) The block hash
 2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
+```
 
 
 
@@ -445,6 +458,7 @@ If verbose is true, returns an Object with information about blockheader <hash>.
   "nextblockhash" : "hash",      (string) The hash of the next block
 }
 
+```
 
 
 
@@ -476,6 +490,7 @@ If verbose is true, each item is an Object with information about a single block
 2. count           (numeric, optional, default/max=2000)
 3. verbose         (boolean, optional, default=true) true for a json object, false for the hex encoded data
 
+```
 
 
 
@@ -502,6 +517,7 @@ If verbose is true, each item is an Object with information about a single block
 ...
 ]
 
+```
 
 
 
@@ -531,6 +547,7 @@ Return information about all known tips in the block tree, including the main ch
 1. count       (numeric, optional) only show this much of latest tips
 2. branchlen   (numeric, optional) only show tips that have equal or greater length of branch
 
+```
 
 
 
@@ -578,6 +595,7 @@ Possible values for status:
 
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
+```
 
 
 
@@ -605,6 +623,7 @@ If txid is in the mempool, returns all in-mempool ancestors.
 1. "txid"                 (string, required) The transaction id (must be in mempool)
 2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
+```
 
 
 
@@ -616,6 +635,7 @@ If txid is in the mempool, returns all in-mempool ancestors.
   ,...
 ]
 
+```
 
 
 
@@ -662,6 +682,7 @@ If txid is in the mempool, returns all in-mempool descendants.
 1. "txid"                 (string, required) The transaction id (must be in mempool)
 2. verbose                  (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
+```
 
 
 
@@ -673,6 +694,7 @@ If txid is in the mempool, returns all in-mempool descendants.
   ,...
 ]
 
+```
 
 
 
@@ -718,6 +740,7 @@ Returns mempool data for given transaction
 ```
 1. "txid"                   (string, required) The transaction id (must be in mempool)
 
+```
 
 
 
@@ -757,6 +780,7 @@ Returns mempool data for given transaction
 
 Returns details on the active state of the TX memory pool.
 
+```
 
 
 
@@ -791,6 +815,7 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 ```
 1. verbose (boolean, optional, default=false) True for a json object, false for array of transaction ids
 
+```
 
 
 
@@ -802,6 +827,7 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
   ,...
 ]
 
+```
 
 
 
@@ -850,6 +876,7 @@ Returns the txid and index where an output is spent.
   "index" (number) The start block height
 }
 
+```
 
 
 
@@ -882,6 +909,7 @@ Returns details about an unspent transaction output.
 2. n              (numeric, required) vout number
 3. include_mempool  (boolean, optional) Whether to include the mempool
 
+```
 
 
 
@@ -941,6 +969,7 @@ specify the block in which the transaction is included manually (by blockhash).
     ]
 2. "blockhash"   (string, optional) If specified, looks for txid in the block with this hash
 
+```
 
 
 
@@ -965,6 +994,7 @@ specify the block in which the transaction is included manually (by blockhash).
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
 
+```
 
 
 
@@ -1003,6 +1033,7 @@ The effects of preciousblock are not retained across restarts.
 ```
 1. "blockhash"   (string, required) the hash of the block to mark as precious
 
+```
 
 
 
@@ -1027,6 +1058,7 @@ The effects of preciousblock are not retained across restarts.
 1. "height"       (numeric, required) The block height to prune up to. May be set to a discrete height, or a unix timestamp
                   to prune blocks whose block time is at least 2 hours older than the provided timestamp.
 
+```
 
 
 
@@ -1054,6 +1086,7 @@ Verifies blockchain database.
 1. checklevel   (numeric, optional, 0-4, default=4) How thorough the block verification is.
 2. nblocks      (numeric, optional, default=6, 0=all) The number of blocks to check.
 
+```
 
 
 
@@ -1081,6 +1114,7 @@ and throwing an RPC error if the block is not in our best chain
 ```
 1. "proof"    (string, required) The hex-encoded proof generated by gettxoutproof
 
+```
 
 
 
@@ -1120,6 +1154,7 @@ Change debug category on the fly. Specify single category or use '+' to specify 
 
 DEPRECATED. Returns an object containing various state info.
 
+```
 
 
 
@@ -1160,6 +1195,7 @@ DEPRECATED. Returns an object containing various state info.
 **`getmemoryinfo`**
 Returns an object containing information about memory usage.
 
+```
 
 
 
@@ -1195,6 +1231,7 @@ List all commands, or get help for a specified command.
 ```
 1. "command"     (string, optional) The command to get help on
 
+```
 
 
 
@@ -1226,6 +1263,7 @@ Mine up to nblocks blocks immediately (before the RPC call returns) to an addres
 1. nblocks      (numeric, required) How many blocks are generated immediately.
 2. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
 
+```
 
 
 
@@ -1255,6 +1293,7 @@ Mine blocks immediately to a specified address (before the RPC call returns)
 2. address      (string, required) The address to send the newly generated Syscoin to.
 3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
 
+```
 
 
 
@@ -1286,6 +1325,7 @@ create a new block and return information required to merge-mine it.
 ```
 1. address      (string, required) specify coinbase transaction payout address
 
+```
 
 
 
@@ -1325,6 +1365,7 @@ auxpow for a previously returned block.
 1. hash      (string, optional) hash of the block to submit
 2. auxpow    (string, optional) serialised auxpow found
 
+```
 
 
 
@@ -1341,6 +1382,7 @@ auxpow for a previously returned block.
   "_target"            (string) target in reversed byte order, deprecated
 }
 
+```
 
 
 
@@ -1385,6 +1427,7 @@ For full specification, see BIPs 22, 23, and 9:
      }
 
 
+```
 
 
 
@@ -1464,6 +1507,7 @@ For full specification, see BIPs 22, 23, and 9:
 **`getmininginfo`**
 
 Returns a json object containing mining-related information.
+```
 
 
 
@@ -1502,6 +1546,7 @@ Pass in [height] to estimate the network speed at the time when a certain block 
 1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.
 2. height      (numeric, optional, default=-1) To estimate at the time of the given height.
 
+```
 
 
 
@@ -1533,6 +1578,7 @@ Accepts the transaction into mined blocks at a higher (or lower) priority
                   The fee is not actually paid, only the algorithm for selecting transactions into a block
                   considers the transaction as it would have paid a higher (or lower) fee.
 
+```
 
 
 
@@ -1560,6 +1606,7 @@ submit a solved auxpow for a previously block created by 'createauxblock'.
 1. hash      (string, required) hash of the block to submit
 2. auxpow    (string, required) serialised auxpow found
 
+```
 
 
 
@@ -1592,6 +1639,7 @@ See https://en.syscoin.it/wiki/BIP_0022 for full specification.
       "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
     }
 
+```
 
 
 
@@ -1674,6 +1722,7 @@ Returns information about the given added node, or all added nodes
 ```
 1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
 
+```
 
 
 
@@ -1709,6 +1758,7 @@ Returns information about the given added node, or all added nodes
 
 Returns the number of connections to other nodes.
 
+```
 
 
 
@@ -1732,6 +1782,7 @@ n          (numeric) The connection count
 Returns information about network traffic, including bytes in, bytes out,
 and current time.
 
+```
 
 
 
@@ -1766,6 +1817,7 @@ and current time.
 **`getnetworkinfo`**
 Returns an object containing various state info regarding P2P networking.
 
+```
 
 
 
@@ -1818,6 +1870,7 @@ Returns an object containing various state info regarding P2P networking.
 
 Returns data about each connected network node as a json array of objects.
 
+```
 
 
 
@@ -1969,6 +2022,7 @@ it is not stored in the wallet or transmitted to the network.
     }
 3. locktime                  (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs
 
+```
 
 
 
@@ -1997,6 +2051,7 @@ Return a JSON object representing the serialized, hex-encoded transaction.
 ```
 1. "hexstring"      (string, required) The transaction hex string
 
+```
 
 
 
@@ -2057,6 +2112,7 @@ Decode a hex-encoded script.
 ```
 1. "hexstring"     (string) the hex encoded script
 
+```
 
 
 
@@ -2118,6 +2174,7 @@ Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported 
    }
                          for backward compatibility: passing in a true instead of an object will result in {"includeWatching":true}
 
+```
 
 
 
@@ -2166,6 +2223,7 @@ If verbose is 'false' or omitted, returns a string that is serialized, hex-encod
 1. "txid"      (string, required) The transaction id
 2. verbose       (bool, optional, default=false) If false, return a string, otherwise return a json object
 
+```
 
 
 
@@ -2174,6 +2232,7 @@ If verbose is 'false' or omitted, returns a string that is serialized, hex-encod
 ```
 "data"      (string) The serialized, hex-encoded data for 'txid'
 
+```
 
 
 
@@ -2244,6 +2303,7 @@ Also see createrawtransaction and signrawtransaction calls.
 2. allowhighfees  (boolean, optional, default=false) Allow high fees
 3. instantsend    (boolean, optional, default=false) Use InstantSend to send this transaction
 
+```
 
 
 
@@ -2307,6 +2367,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
        "NONE|ANYONECANPAY"
        "SINGLE|ANYONECANPAY"
 
+```
 
 
 
@@ -2345,6 +2406,7 @@ Syscoin
 **`getgovernanceinfo`**
 Returns an object containing governance parameters.
 
+```
 
 
 
@@ -2386,6 +2448,7 @@ Returns the absolute maximum sum of superblock payments allowed.
 ```
 1. index         (numeric, required) The block index
 
+```
 
 
 
@@ -2526,6 +2589,7 @@ Sentinel ping.
 ```
 1. version           (string, required) Sentinel version in the form "x.x.x"
 
+```
 
 
 
@@ -2552,6 +2616,7 @@ Shows information about current state of sporks
 ```
 1. "command"                     (string, required) 'show' to show all current spork values, 'active' to show which sporks are active
 
+```
 
 
 
@@ -2603,6 +2668,7 @@ It returns a json object with the address and redeemScript.
        ,...
      ]
 
+```
 
 
 
@@ -2637,6 +2703,7 @@ confirmation within nblocks blocks.
 ```
 1. nblocks     (numeric, required)
 
+```
 
 
 
@@ -2665,6 +2732,7 @@ confirmation within nblocks blocks.
 ```
 1. nblocks     (numeric, required)
 
+```
 
 
 
@@ -2694,6 +2762,7 @@ for which the estimate is valid.
 ```
 1. nblocks     (numeric)
 
+```
 
 
 
@@ -2727,6 +2796,7 @@ for which the estimate is valid.
 ```
 1. nblocks     (numeric, required)
 
+```
 
 
 
@@ -2757,6 +2827,7 @@ Sign a message with the private key of an address
 1. "privkey"         (string, required) The private key to sign the message with.
 2. "message"         (string, required) The message to create a signature of.
 
+```
 
 
 
@@ -2790,6 +2861,7 @@ Return information about the given syscoin address.
 ```
 1. "address"     (string, required) The syscoin address to validate
 
+```
 
 
 
@@ -2834,6 +2906,7 @@ Verify a signed message
 2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
 3. "message"         (string, required) The message that was signed.
 
+```
 
 
 
@@ -2878,6 +2951,7 @@ It has no effect on transactions which are already conflicted or abandoned.
 ```
 1. "txid"    (string, required) The transaction id
 
+```
 
 
 
@@ -2911,6 +2985,7 @@ If 'account' is specified (DEPRECATED), assign address to that account.
      ]
 3. "account"      (string, optional) DEPRECATED. An account to assign the addresses to.
 
+```
 
 
 
@@ -3015,6 +3090,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
       ,...
     ]
 
+```
 
 
 
@@ -3259,6 +3335,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 **`dumphdinfo`**
 Returns an object containing sensitive private info about this HD wallet.
 
+```
 
 
 
@@ -3290,6 +3367,7 @@ Then the importprivkey can be used with this output
 ```
 1. "address"   (string, required) The syscoin address for the private key
 
+```
 
 
 
@@ -3437,6 +3515,7 @@ DEPRECATED. Returns the account associated with the given address.
 ```
 1. "address"         (string, required) The syscoin address for account lookup.
 
+```
 
 
 
@@ -3463,6 +3542,7 @@ DEPRECATED. Returns the current Syscoin address for receiving payments to this a
 ```
 1. "account"       (string, required) The account name for the address. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.
 
+```
 
 
 
@@ -3491,6 +3571,7 @@ DEPRECATED. Returns the list of addresses for the given account.
 ```
 1. "account"        (string, required) The account name.
 
+```
 
 
 
@@ -3526,6 +3607,7 @@ The server total may be different to the balance in the default "" account.
 3. addlockconf      (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 4. include_watchonly (bool, optional, default=false) Also include balance in watch-only addresses (see 'importaddress')
 
+```
 
 
 
@@ -3561,6 +3643,7 @@ so payments received with the address will be credited to 'account'.
 ```
 1. "account"        (string, optional) DEPRECATED. The account name for the address to be linked to. If not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.
 
+```
 
 
 
@@ -3584,6 +3667,7 @@ so payments received with the address will be credited to 'account'.
 Returns a new Syscoin address, for receiving change.
 This is for use with raw transactions, NOT normal use.
 
+```
 
 
 
@@ -3612,6 +3696,7 @@ DEPRECATED. Returns the total amount received by addresses with <account> in tra
 2. minconf        (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf    (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 
+```
 
 
 
@@ -3650,6 +3735,7 @@ Returns the total amount received by the given address in transactions with at l
 2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.
 3. addlockconf         (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 
+```
 
 
 
@@ -3687,6 +3773,7 @@ Get detailed information about in-wallet transaction <txid>
 1. "txid"                  (string, required) The transaction id
 2. "include_watchonly"     (bool, optional, default=false) Whether to include watch-only addresses in balance calculation and details[]
 
+```
 
 
 
@@ -3745,6 +3832,7 @@ Returns the server's total unconfirmed balance
 **`getwalletinfo`**
 Returns an object containing various wallet state info.
 
+```
 
 
 
@@ -4006,6 +4094,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.
                              The recipient will receive less amount of Syscoin than you enter in the amount field.
 
+```
 
 
 
@@ -4060,6 +4149,7 @@ DEPRECATED. Returns Object that has account names as keys, account balances as v
 2. addlockconf         (bool, optional, default=false) Whether to add 5 confirmations to transactions locked via InstantSend.
 3. include_watchonly   (bool, optional, default=false) Include balances in watch-only addresses (see 'importaddress')
 
+```
 
 
 
@@ -4099,6 +4189,7 @@ Lists addresses of this wallet and their balances
 ```
 1. minamount               (numeric, optional, default=0) Minimum balance in SYS an address should have to be shown in the list
 
+```
 
 
 
@@ -4128,6 +4219,7 @@ Lists groups of addresses which have had their common ownership
 made public by common use as inputs or as the resulting change
 in past transactions
 
+```
 
 
 
@@ -4281,6 +4373,7 @@ scan through all escrows.
 Returns list of temporarily unspendable outputs.
 See the lockunspent call to lock and unlock transactions for spending.
 
+```
 
 
 
@@ -4349,6 +4442,7 @@ DEPRECATED. List balances by account.
 3. include_empty     (bool, optional, default=false) Whether to include accounts that haven't received any payments.
 4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
 
+```
 
 
 
@@ -4388,6 +4482,7 @@ List balances by receiving address.
 3. include_empty     (bool, optional, default=false) Whether to include addresses that haven't received any payments.
 4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
 
+```
 
 
 
@@ -4432,6 +4527,7 @@ Get all transactions in blocks since block [blockhash], or all transactions if o
 1. "blockhash"            (string, optional) The block hash to list transactions since
 2. target_confirmations:    (numeric, optional) The confirmations required, must be 1 or more
 3. include_watchonly:       (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
+```
 
 
 
@@ -4488,6 +4584,7 @@ Returns up to 'count' most recent transactions skipping the first 'from' transac
 3. skip           (numeric, optional, default=0) The number of transactions to skip
 4. include_watchonly (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
 
+```
 
 
 
@@ -4573,6 +4670,7 @@ Optionally filter to only include txouts paid to specified addresses.
                   replacement transactions (cases where we are less sure that a conflicting
                   transaction won't be mined).
 
+```
 
 
 
@@ -4629,6 +4727,7 @@ Also see the listunspent call
        ,...
      ]
 
+```
 
 
 
@@ -4672,6 +4771,7 @@ DEPRECATED. Move a specified amount from one account in your wallet to another.
 4. (dummy)          (numeric, optional) Ignored. Remains for backward compatibility.
 5. "comment"        (string, optional) An optional comment, stored in the wallet only.
 
+```
 
 
 
@@ -4795,6 +4895,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
                        to which you're sending the transaction. This is not part of the transaction, 
                        it is just kept in your wallet.
 
+```
 
 
 
@@ -4847,6 +4948,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 7. "use_is"                (bool, optional) Send this transaction as InstantSend (default: false)
 8. "use_ps"                (bool, optional) Use anonymized funds only (default: false)
 
+```
 
 
 
@@ -4892,6 +4994,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 6. "use_is"             (bool, optional) Send this transaction as InstantSend (default: false)
 7. "use_ps"             (bool, optional) Use anonymized funds only (default: false)
 
+```
 
 
 
@@ -4939,6 +5042,7 @@ Set the transaction fee per kB. Overwrites the paytxfee parameter.
 ```
 1. amount         (numeric or string, required) The transaction fee in SYS/kB
 
+```
 
 
 
@@ -4967,6 +5071,7 @@ Requires wallet passphrase to be set with walletpassphrase call.
 1. "address"         (string, required) The syscoin address to use for the private key.
 2. "message"         (string, required) The message to create a signature of.
 
+```
 
 
 
@@ -5006,6 +5111,7 @@ Decode raw syscoin transaction (serialized, hex-encoded) and display information
 
 List balances by receiving address.
 
+```
 
 
 
