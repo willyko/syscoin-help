@@ -3,6 +3,7 @@
 syscoin_of_the_markdown() {
   LC_ALL=C
   category="RPC Commands"
+  categorylink="RPC%20Commands"
   mkdir -p docs && cd docs
   version=$(syscoin-cli -version | grep -o "v\d\.\d\.\d")
   rm -rf "${version}"
@@ -20,7 +21,7 @@ syscoin_of_the_markdown() {
           cd ..
         fi
         head="$h";
-        echo "## [$head](${category}/$head.md)" >> "../${category}.md"
+        echo "## [$head](${categorylink}/$head.md)" >> "../${category}.md"
         mkdir -p ${head}
         cd $head
         echo "# ${head}" > "../${head}.md"
