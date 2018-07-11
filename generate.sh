@@ -20,7 +20,7 @@ syscoin_of_the_markdown() {
           cd ..
         fi
         head="$h";
-        echo "## [$head](/$head)" >> "../${category}.md"
+        echo "## [$head](${category}/$head.md)" >> "../${category}.md"
         mkdir -p ${head}
         cd $head
         echo "# ${head}" > "../${head}.md"
