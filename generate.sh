@@ -2,7 +2,14 @@
 
 syscoin_of_the_markdown() {
   LC_ALL=C
-  echo "# Syscoin Command Reference" > README.md
+  category="RPC Commands"
+  mkdir -p docs && cd docs
+  version=$(syscoin-cli -version | grep -o "v\d\.\d\.\d")
+  rm -rf "${version}"
+  mkdir -p "${version}" && cd "${version}"
+  mkdir -p "${category}" && cd "${category}"
+
+  echo "# ${category}" > "../${category}.md"
   while read i; do 
     c=$(echo "$i" | head -n1 | awk '{print $1;}');
     if [[ $c == "==" ]]; then 
@@ -13,10 +20,10 @@ syscoin_of_the_markdown() {
           cd ..
         fi
         head="$h";
-        echo "## [$head](/$head)" >> README.md
-        mkdir -p $head
+        echo "## [$head](/$head)" >> "../${category}.md"
+        mkdir -p ${head}
         cd $head
-        echo "# $head" > README.md
+        echo "# ${head}" > "../${head}.md"
       fi
     else
       if [[ $c != $cmd ]]; then
@@ -37,22 +44,22 @@ syscoin_of_the_markdown() {
       fi
       echo "$helpdoc" | grep -q "Examples:" && EXAMPLES="Y"
 
-      cli=$(echo "$helpdoc" | grep "^${cmd}.*\$")
+      cli=$(echo "$helpdoc" | grep -o "^${cmd}.*\$")
 
       helpdoc=$(echo "$helpdoc" | sed -e "s#^${cmd}\(.*\)#**\`${cmd}\\1\`**#")
       helpdoc=$(echo "$helpdoc" | sed -e "s/Arguments:/***Arguments:***é$TICKS/" | tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:/${RTICKS}éé***Result\1:***é$TICKS/" | tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n')
 
-      # ad command to parent readme
-      echo "* [\`$cmd\`](${head}/${cmd}.md)" >> ../README.md
+      # add command to parent readme
+      echo "* [\`$cmd\`](${head}/${cmd}.md)" >> "../${head}.md"
 
       # add command to directory readme
-      echo "## [\`$cmd\`](${cmd}.md)" >> README.md
-      echo "\`\`\`" >> README.md
-      echo "$cli" >> README.md
-      echo "\`\`\`" >> README.md
-      echo "" >> README.md
+      echo "## [\`$cmd\`](${cmd}.md)" >> "${cmd}.md"
+      echo "\`\`\`" >> "${cmd}.md"
+      echo "$cli" >> "${cmd}.md"
+      echo "\`\`\`" >> "${cmd}.md"
+      echo "" >> "${cmd}.md"
 
       # create command markdown file
       echo "## **\`${cmd}\`**" > "${cmd}.md"
@@ -63,6 +70,7 @@ syscoin_of_the_markdown() {
       fi
     fi
   done < <(syscoin-cli help)
+  cd ../../..
 }
 
 syscoin_of_the_markdown
