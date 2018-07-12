@@ -1,9 +1,0 @@
-# Mining
-* [`createauxblock`](Mining/createauxblock.md)
-* [`getauxblock`](Mining/getauxblock.md)
-* [`getblocktemplate`](Mining/getblocktemplate.md)
-* [`getmininginfo`](Mining/getmininginfo.md)
-* [`getnetworkhashps`](Mining/getnetworkhashps.md)
-* [`prioritisetransaction`](Mining/prioritisetransaction.md)
-* [`submitauxblock`](Mining/submitauxblock.md)
-* [`submitblock`](Mining/submitblock.md)

@@ -2,14 +2,11 @@
 
 syscoin_of_the_markdown() {
   LC_ALL=C
-  category="RPC Commands"
-  categorylink="RPC%20Commands"
   mkdir -p docs && cd docs
   version=$(syscoin-cli -version | grep -o "v\d\.\d\.\d")
   rm -rf "${version}"
   mkdir -p "${version}" && cd "${version}"
-  mkdir -p "${category}" && cd "${category}"
-
+  
   echo "# ${category}" > "../${category}.md"
   while read i; do 
     c=$(echo "$i" | head -n1 | awk '{print $1;}');
@@ -21,10 +18,10 @@ syscoin_of_the_markdown() {
           cd ..
         fi
         head="$h";
-        echo "## [$head](${categorylink}/$head.md)" >> "../${category}.md"
+        #echo "## [$head](${categorylink}/$head.md)" >> "../${category}.md"
         mkdir -p ${head}
         cd $head
-        echo "# ${head}" > "../${head}.md"
+        #echo "# ${head}" > "../${head}.md"
       fi
     else
       if [[ $c != $cmd ]]; then
@@ -53,7 +50,7 @@ syscoin_of_the_markdown() {
       helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n')
 
       # add command to parent readme
-      echo "* [\`$cmd\`](${head}/${cmd}.md)" >> "../${head}.md"
+      #echo "* [\`$cmd\`](${head}/${cmd}.md)" >> "../${head}.md"
 
       # add command to directory readme
       echo "## [\`$cmd\`](${cmd}.md)" >> "${cmd}.md"
