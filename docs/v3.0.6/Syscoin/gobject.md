@@ -3,7 +3,10 @@
 **`gobject "command"...`**
 Manage governance objects
 
-Available commands:
+
+
+***Available commands:***
+```
   check              - Validate governance object data (proposal only)
   prepare            - Prepare governance object by signing and creating tx
   submit             - Submit governance object to network
@@ -17,3 +20,4 @@ Available commands:
   vote-name         - Vote on a governance object by masternode name (using masternode.conf setup)
   vote-conf          - Vote on a governance object by masternode configured in syscoin.conf
   vote-many          - Vote on a governance object by all masternodes (using masternode.conf setup)
+```

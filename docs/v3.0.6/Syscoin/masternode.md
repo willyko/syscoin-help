@@ -7,7 +7,10 @@ Set of commands to execute masternode related actions
 ```
 1. "command"        (string or set of strings, required) The command to execute
 
-Available commands:
+```
+
+***Available commands:***
+```
   count        - Get information about number of masternodes (DEPRECATED options: 'total', 'ps', 'enabled', 'qualify', 'all')
   current      - Print info on current masternode winner to be paid the next block (calculated locally)
   genkey       - Generate new masternodeprivkey

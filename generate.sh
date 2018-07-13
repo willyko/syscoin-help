@@ -33,8 +33,10 @@ syscoin_of_the_markdown() {
       TICKS="\\\`\\\`\\\`"
       RTICKS=""
       ETICKS=""
+      CTICKS=""
       EXAMPLES=""
       helpdoc=$(syscoin-cli help $cmd)
+      echo "$helpdoc" | grep -q "Available commands:" && CTICKS=$TICKS
       echo "$helpdoc" | grep -q "Arguments:" && RTICKS=$TICKS
       echo "$helpdoc" | grep -q "Arguments:" && ETICKS=$TICKS
       if [ "$ETICKS" = "" ]; then
@@ -47,6 +49,7 @@ syscoin_of_the_markdown() {
       helpdoc=$(echo "$helpdoc" | sed -e "s#^${cmd}\(.*\)#**\`${cmd}\\1\`**#")
       helpdoc=$(echo "$helpdoc" | sed -e "s/Arguments:/***Arguments:***é$TICKS/" | tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | sed -e "s/Result\( (.*)\)*:/${RTICKS}éé***Result\1:***é$TICKS/" | tr 'é' '\n') 
+      helpdoc=$(echo "$helpdoc" | sed -e "s/Available commands:/${ETICKS}éé***Available commands:***é$TICKS/" | tr 'é' '\n') 
       helpdoc=$(echo "$helpdoc" | sed -e "s/Examples:/${ETICKS}éé***Examples:***é$TICKS/" | tr 'é' '\n')
 
       # add command to parent readme
@@ -63,7 +66,7 @@ syscoin_of_the_markdown() {
       echo "## **\`${cmd}\`**" > "${cmd}.md"
       echo "" >> "${cmd}.md"
       echo "$helpdoc" >> "${cmd}.md"
-      if [ "$ETICKS" != "" ] || [ "$RTICKS" != "" ] || [ "$EXAMPLES" != "" ]; then
+      if [ "$ETICKS" != "" ] || [ "$CTICKS" != "" ] || [ "$RTICKS" != "" ] || [ "$EXAMPLES" != "" ]; then
         echo "\`\`\`" >> "${cmd}.md"
       fi
     fi
