@@ -1,0 +1,3 @@
+## **`addressbalance`**
+
+**`addressbalance [address]`**
